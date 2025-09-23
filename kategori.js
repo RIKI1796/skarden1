@@ -10,8 +10,11 @@ button.forEach((btn) => {
 
     localStorage.setItem("kategori", kategori);
 
-    window.location.href = "/marketpage.html?kategori=" + encodeURIComponent(kategori);
+    window.location.href =
+    "/skarden_main/app/UI/html/marketpage.html?kategori=" +
+    encodeURIComponent(kategori);
   });
 });
+
 
 
