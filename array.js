@@ -3194,18 +3194,11 @@ document.addEventListener("DOMContentLoaded", () => {
   const params = new URLSearchParams(window.location.search);
   const kategori = params.get("kategori");
 
-  console.log("Kategori dari URL:", kategori);
-  console.log("Semua jenis unik di produk:", [
-    ...new Set(produk.map((p) => p.jenis)),
-  ]);
-
   let produkTampil = kategori
     ? produk.filter((item) =>
         item.jenis.toLowerCase().includes(kategori.toLowerCase().trim())
       )
     : [...produk];
-
-  console.log("Hasil produkTampil:", produkTampil);
 
   const container = document.getElementById("products-scroll");
 
