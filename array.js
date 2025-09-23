@@ -3191,8 +3191,10 @@ document.addEventListener("DOMContentLoaded", () => {
     return;
   }
 
-  const params = new URLSearchParams(window.location.search);
-  const kategori = params.get("kategori");
+ const params = new URLSearchParams(window.location.search);
+ const kategori = params.get("kategori");
+ console.log("Kategori dari URL:", kategori);
+
 
   let produkTampil = kategori
     ? produk.filter(
@@ -3379,3 +3381,4 @@ document.addEventListener("DOMContentLoaded", () => {
     renderProduk(produkTampil)
   };
 });
+
