@@ -3197,10 +3197,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
   let produkTampil = kategori
-    ? produk.filter(
-        (item) => item.jenis.toLowerCase() === kategori.toLowerCase()
-      )
-    : [...produk];
+  ? produk.filter(
+      (item) => item.jenis.toLowerCase().trim() === kategori.toLowerCase().trim()
+    )
+  : [...produk];
 
   const container = document.getElementById("products-scroll");
 
@@ -3381,4 +3381,5 @@ document.addEventListener("DOMContentLoaded", () => {
     renderProduk(produkTampil)
   };
 });
+
 
