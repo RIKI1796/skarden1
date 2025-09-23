@@ -1,0 +1,407 @@
+   @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet');
+   @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap');
+
+   * {
+       box-sizing: border-box;
+       margin: 0;
+       padding: 0;
+   }
+
+   body {
+       background: linear-gradient(to bottom, #e8f5e9, #ffffff);
+       color: #333;
+       font-family: Segoe UI, sans-serif;
+   }
+
+   body::-webkit-scrollbar {
+       display: none;
+   }
+
+   html, body {
+       height: auto;
+
+   }
+
+   .navbar-container {
+       height: auto;
+   }
+
+   .navbar-container, .navbar {
+       position: relative;
+       z-index: 2000;
+   }
+
+   .navbar {
+       background-color: white;
+       display: flex;
+       justify-content: space-evenly;
+       align-items: center;
+       box-shadow: none;
+       width: 100%;
+       z-index: 1000;
+       position: relative;
+       transition: background-color 0.3s ease, transform 0.4s ease-out;
+   }
+
+   .nav-links {
+       list-style: none;
+       display: flex;
+       justify-content: center;
+       align-items: center;
+       gap: 1.5rem;
+       flex: 2;
+       padding: 0;
+       margin: 0;
+   }
+
+   .nav-links a {
+       text-decoration: none;
+       color: #333;
+       font-family: 'Open Sans', sans-serif;
+       transition: color 0.3s;
+   }
+
+   .nav-links a:hover {
+       color: #8FB299;
+       text-decoration: none;
+   }
+
+   /* Dropdown Menu */
+   .dropdown {
+       position: relative;
+   }
+
+   .dropdown-content {
+       display: block;
+       pointer-events: none;
+       opacity: 0;
+       transform: translateY(10px);
+       transition: opacity 0.3s cubic-bezier(.4, 0, .2, 1), transform 0.3s cubic-bezier(.4, 0, .2, 1);
+       position: absolute;
+       background-color: #4b794e;
+       min-width: 160px;
+       box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+       z-index: 3000;
+       border-radius: 5px;
+       top: 100%;
+       left: 0;
+   }
+
+   .dropdown:hover .dropdown-content,
+   .dropdown:focus-within .dropdown-content {
+       opacity: 1;
+       transform: translateY(0);
+       pointer-events: auto;
+   }
+
+   .dropdown-content a {
+       color: #ffffff;
+       padding: 12px 16px;
+       text-decoration: none;
+       display: block;
+       font-family: 'Open Sans', sans-serif;
+   }
+
+   .dropdown-content a:hover {
+       background-color: rgba(255, 255, 255, 0.1);
+       color: #8FB299;
+   }
+
+
+   .search-cart {
+       display: flex;
+       align-items: center;
+       gap: 1rem;
+       padding-right: 2rem;
+   }
+
+   .search-cart input[type="search"] {
+       padding: 0.5rem;
+       border-radius: 999px;
+       border: 1px solid #ccc;
+   }
+
+   .search-cart i {
+       color: #666;
+   }
+
+   .about-section {
+       padding: 60px 20px;
+       background-color: #fff;
+       position: relative;
+       z-index: 2;
+   }
+
+   .about-container {
+       max-width: 1200px;
+       margin: auto;
+       display: flex;
+       flex-wrap: wrap;
+       align-items: center;
+       justify-content: space-between;
+       gap: 40px;
+   }
+
+   .about-text {
+       flex: 1 1 500px;
+   }
+
+   .about-text h2 {
+       font-size: 2rem;
+       font-weight: 700;
+       margin-bottom: 10px;
+   }
+
+   .about-text .highlight {
+       width: 60px;
+       height: 3px;
+       background-color: #6BAE75;
+       margin-bottom: 20px;
+   }
+
+   .about-text p {
+       font-size: 1rem;
+       line-height: 1.6;
+       color: #333;
+   }
+
+   .about-image {
+       flex: 1 1 400px;
+   }
+
+   .about-image img {
+       width: 100%;
+       height: auto;
+       border-radius: 8px;
+       box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.3);
+   }
+
+   .team-section {
+       text-align: center;
+       background-color: #f9f9f9;
+       padding: 60px 20px;
+       display: flex;
+       justify-content: center;
+       gap: 40px;
+       flex-wrap: wrap;
+       position: relative;
+       z-index: 6;
+   }
+
+   .abtext {
+       align-items: center;
+       justify-content: center;
+       width: 100%;
+   }
+
+   .abtext h2 {
+       font-size: 1.8rem;
+       font-weight: 700;
+   }
+
+   .team-member {
+       max-width: 300px;
+       text-align: center;
+   }
+
+   .team-member img {
+       width: 100%;
+       height: auto;
+       background-color: #eaeaea;
+       border-radius: 8px;
+   }
+
+   .team-member h3 {
+       margin-top: 15px;
+       font-size: 18px;
+       font-weight: 600;
+   }
+
+   .team-member p {
+       margin-top: 5px;
+       font-size: 15px;
+       color: #666;
+   }
+
+
+   .map {
+       width: 100%;
+       padding: 60px 20px;
+       background-color: #fff;
+       position: relative;
+       justify-content: center;
+       align-items: center;
+       z-index: 6;
+       display: flex;
+       flex-direction: column;
+       gap: 40px;
+   }
+
+   .maptext {
+       align-items: center;
+       justify-content: center;
+       display: flex;
+       width: 100%;
+   }
+
+   .maptext h2 {
+       font-size: 1.8rem;
+       font-weight: 700;
+   }
+
+   .subscribe-section {
+       position: relative;
+       z-index: 2;
+       background-color: #0e1625;
+       padding: 20px 20px;
+       text-align: start;
+       border-top: 1px solid #1f2a3c;
+   }
+
+   .subs-content {
+       max-width: 800px;
+       margin: auto;
+       color: #fff;
+       text-align: center;
+       padding: 20px;
+   }
+
+   .subscribe-section h3 {
+       font-size: 24px;
+       margin-bottom: 10px;
+   }
+
+   .subscribe-section p {
+       color: #ccc;
+       margin-bottom: 20px;
+   }
+
+   .subscribe-form {
+       display: flex;
+       justify-content: center;
+       flex-wrap: wrap;
+       gap: 10px;
+   }
+
+   .subscribe-form input[type="email"] {
+       padding: 12px;
+       border: none;
+       border-radius: 6px;
+       background-color: #1f2a3c;
+       color: #fff;
+       width: 250px;
+   }
+
+   .subscribe-form button {
+       background-color: #00b26f;
+       border: none;
+       padding: 12px 20px;
+       color: #fff;
+       border-radius: 6px;
+       cursor: pointer;
+       display: flex;
+       align-items: center;
+       gap: 8px;
+   }
+
+   .subscribe-form button:hover {
+       background-color: #009e61;
+   }
+
+   .main-footer {
+       position: sticky;
+       bottom: 0;
+       z-index: 0;
+       background-color: #0e1625;
+       padding: 40px 20px;
+       border-top: 1px solid #1f2a3c;
+   }
+
+   .footer-content {
+       display: flex;
+       flex-wrap: wrap;
+       justify-content: space-between;
+       max-width: 1200px;
+       margin: auto;
+   }
+
+   .footer-column {
+       flex: 1 1 250px;
+       margin: 20px;
+   }
+
+   .footer-column-img {
+       display: flex;
+       align-items: center;
+       justify-content: center;
+       width: fit-content;
+   }
+
+   .footer-column h3,
+   .logo {
+       color: #fff;
+       font-weight: bold;
+   }
+
+   .footer-column p {
+       color: #ccc;
+       margin-top: 10px;
+   }
+
+   .footer-column ul {
+       list-style: none;
+       padding: 0;
+   }
+
+   .footer-column ul li {
+       margin: 8px 0;
+   }
+
+   .footer-column ul li a {
+       color: #ccc;
+       text-decoration: none;
+   }
+
+   .footer-column ul li a:hover {
+       color: #4cd964;
+   }
+
+   .social-icons a {
+       margin-top: 20px;
+       display: inline-block;
+       margin-right: 10px;
+       background-color: #1f2a3c;
+       padding: 10px 14px;
+       border-radius: 50%;
+       color: #ccc;
+   }
+
+   .social-icons a:hover {
+       background-color: #4cd964;
+       color: #fff;
+   }
+
+   .footer-bottom {
+       border-top: 1px solid #1f2a3c;
+       margin-top: 30px;
+       padding-top: 20px;
+       display: flex;
+       justify-content: space-between;
+       flex-wrap: wrap;
+       max-width: 1200px;
+       margin: 30px auto 0;
+   }
+
+   .footer-bottom a {
+       color: #ccc;
+       text-decoration: none;
+       margin-left: 15px;
+   }
+
+   .footer-bottom p {
+       color: #ccc;
+   }
+
+   .footer-bottom a:hover {
+       color: #4cd964;
+   }

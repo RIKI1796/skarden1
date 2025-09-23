@@ -1,0 +1,178 @@
+:root {
+    --dark-green: #2e7d32;
+    --white: #ffffff;
+    --light-gray: #f5f5f5;
+    --text-dark: #111;
+    --text-medium: #555;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--light-gray);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--text-dark);
+    padding: 2rem 0;
+}
+
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+.back-button {
+    position: absolute;
+    top: 1rem;
+    left: 0.5rem;
+    background-color: var(--white);
+    color: var(--dark-green);
+    border: 1px solid var(--dark-green);
+    border-radius: 30px;
+    padding: 0.5rem 1rem;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+}
+
+.back-button:hover {
+    background-color: var(--dark-green);
+    color: var(--white);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(46, 125, 50, 0.2);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.faq {
+    background-color: var(--white);
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    padding: 2rem;
+    margin-bottom: 2rem;
+}
+
+h1 {
+    color: var(--dark-green);
+    font-weight: 700;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    position: relative;
+    padding-bottom: 1rem;
+}
+
+h1:after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background-color: var(--dark-green);
+    border-radius: 2px;
+}
+
+.pertanyaan {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.quest {
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.quest:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+.quest-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.25rem;
+    cursor: pointer;
+    background-color: var(--white);
+    transition: background-color 0.3s ease;
+}
+
+.quest:hover .quest-header {
+    background-color: rgba(46, 125, 50, 0.05);
+}
+
+.quest h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin: 0;
+    flex: 1;
+}
+
+.quest i {
+    font-size: 1.2rem;
+    color: var(--dark-green);
+    transition: transform 0.3s ease;
+}
+
+.quest i.open {
+    transform: rotate(180deg);
+}
+
+.quest p {
+    margin: 0;
+    padding: 0 1.25rem 1.25rem;
+    color: var(--text-medium);
+    line-height: 1.6;
+    display: none;
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.border-bawah {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .faq {
+        padding: 1.5rem;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    .quest h3 {
+        font-size: 1rem;
+    }
+
+    .quest-header {
+        padding: 1rem;
+    }
+}

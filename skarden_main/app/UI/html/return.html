@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/skarden_main/app/UI/icon/png/prim1.1nbg.png">
+    <title>Skarden | Return</title>
+    <link rel="stylesheet" href="/skarden_main/app/UI/css/return.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Informasi pengembalian</h1>
+
+        <button class="back-button" onclick="history.back()">
+            <i class="bi bi-arrow-left"></i> Kembali
+        </button>
+
+        <!-- Return Policy -->
+        <div class="section-card">
+            <h2>Syarat pengembalian</h2>
+            <p>
+                Kami ingin Anda sepenuhnya puas dengan pembelian Anda. Jika karena alasan tertentu Anda tidak puas, Anda
+                dapat mengembalikan barang dengan ketentuan berikut:</p>
+
+            <ul class="policy-list">
+                <li>Barang hanya bisa dikembalikan dalam 30 hari setelah diterima</li>
+                <li>Barang harus dalam kondisi yang sama seperti ketika diterima</li>
+                <li>Semua tag, label, dan aksesoris harus lengkap</li>
+                <li>Bukti pembelian harus lengkap dan dalam keadaan bagus</li>
+                <li>Barang yang telah digunakan atau dicuci tidak dapat dikembalikan</li>
+                <li>Pengembalian harus dikirim menggunakan layanan pengiriman dengan pelacakan</li>
+                <li>Pengembalian dana akan diproses dalam 3–5 hari setelah barang diterima</li>
+            </ul>
+
+            <div class="policy-highlight">
+                <h5 class="fw-bold text-dark">Pengembalian dana</h5>
+                <p class="mb-0">Setelah kami menerima barang yang Anda kembalikan dan memverifikasi kondisinya, kami
+                    akan memproses pengembalian dana Anda dalam 5-7 hari. Pengembalian dana akan dikirimkan ke metode
+                    pembayaran awal yang digunakan untuk pembelian.</p>
+            </div>
+        </div>
+
+        <!-- Return Procedure -->
+        <div class="section-card">
+            <h2>Prosedur pengembalian</h2>
+            <p>Ikuti langkah-langkah berikut untuk mengembalikan barang anda:</p>
+
+            <div class="procedure-step">
+                <div class="step-number">1</div>
+                <div class="step-content">
+                    <div class="step-title">Hubungi Customer Service</div>
+                    <div class="step-description">Hubungi tim Customer Service kami melalui telepon atau email untuk
+                        memproses permintaan pengembalian Anda. Siapkan nomor pesanan Anda agar prosesnya lebih cepat.
+                    </div>
+                </div>
+            </div>
+
+            <div class="procedure-step">
+                <div class="step-number">2</div>
+                <div class="step-content">
+                    <div class="step-title">Isi formulir pengembalian</div>
+                    <div class="step-description">Lengkapi formulir pengembalian di bawah ini dengan detail pesanan dan
+                        alasan pengembalian Anda. Ini membantu kami memproses pengembalian Anda dengan lebih efisien.
+                    </div>
+                </div>
+            </div>
+
+            <div class="procedure-step">
+                <div class="step-number">3</div>
+                <div class="step-content">
+                    <div class="step-title">Serahkan paket ke jasa pengiriman</div>
+                    <div class="step-description">Kemas barang dengan aman menggunakan semua label dan kemasan asli.
+                        Kirimkan ke alamat pengembalian kami menggunakan metode pengiriman yang dapat dilacak.</div>
+                </div>
+            </div>
+
+            <div class="procedure-step">
+                <div class="step-number">4</div>
+                <div class="step-content">
+                    <div class="step-title">Tunggu verifikasi</div>
+                    <div class="step-description">Setelah kami menerima dan memeriksa paket Anda, kami akan memberitahu
+                        Anda via email. Jika disetujui, pengembalian dana Anda akan diproses dalam 5-7 hari.</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Return Form -->
+        <div class="section-card">
+            <h2>Formulir pengembalian</h2>
+            <p>Silahkan isi formulir berikut untuk mengembalikan paket anda:</p>
+
+            <form id="return-form">
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label for="orderNumber" class="form-label">Nomor pesanan</label>
+                        <input type="text" class="form-control" id="orderNumber"
+                            placeholder="Masukkan nomor pesanan anda" required>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="email" class="form-label">Alamat email</label>
+                        <input type="email" class="form-control" id="email" placeholder="Masukkan email anda" required>
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="reason" class="form-label">Alasan pengembalian</label>
+                    <select class="form-select" id="reason" required>
+                        <option value="" selected disabled>Pilih alasan</option>
+                        <option value="wrong-item">Barang yang diterima salah</option>
+                        <option value="damaged">Kemasan rusak</option>
+                        <option value="defective">Barang cacat</option>
+                        <option value="not-as-described">Barang tidak sesuai deskripsi</option>
+                        <option value="changed-mind">Saya berubah pikiran</option>
+                        <option value="other">Lainnya</option>
+                    </select>
+                </div>
+
+                <div class="mb-3">
+                    <label for="description" class="form-label">Detail tambahan</label>
+                    <textarea class="form-control" id="description" rows="4"
+                        placeholder="Masukkan detail tambahan mengenai alasan pengembalian anda"></textarea>
+                </div>
+
+                <div class="mb-4">
+                    <label class="form-label">Upload foto (Opsional)</label>
+                    <div class="image-upload" onclick="document.getElementById('image-upload').click()">
+                        <i class="bi bi-cloud-upload"></i>
+                        <p class="mb-0">Klik atau drag & drop untuk mengupload foto</p>
+                        <p class="form-text mb-0">PNG, JPG, GIF hingga 10MB</p>
+                        <input type="file" id="image-upload" accept="image/*" style="display: none;">
+                    </div>
+                    <div id="file-name" class="mt-2 text-success" style="display: none;">
+                        <i class="bi bi-check-circle-fill"></i> <span></span>
+                    </div>
+                </div>
+
+                <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                    <button type="submit" class="btn-submitretrn">Konfirmasi pengembalian</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        document.getElementById('image-upload').addEventListener('change', function () {
+            const fileName = this.files[0]?.name;
+            if (fileName) {
+                document.getElementById('file-name').querySelector('span').textContent = fileName;
+                document.getElementById('file-name').style.display = 'block';
+            } else {
+                document.getElementById('file-name').style.display = 'none';
+            }
+        });
+
+        document.getElementById('return-form').addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            alert('Your return request has been submitted successfully! We will process it within 1-2 business days.');
+            this.reset();
+            document.getElementById('file-name').style.display = 'none';
+        });
+    </script>
+
+        <script>
+        const originalTitle = document.title;
+        const hiddenTitle = "Sleeping... 😴😴";
+
+        document.addEventListener("visibilitychange", () => {
+            if (document.hidden) {
+                document.title = hiddenTitle;
+            } else {
+                document.title = originalTitle;
+            }
+        });
+    </script>
+</body>
+
+</html>
