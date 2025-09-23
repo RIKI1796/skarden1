@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -11,157 +10,293 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
 </head>
-
 <body>
-
   <script id="cid0020000415284110942" data-cfasync="false" async src="//st.chatango.com/js/gz/emb.js" style="width: 200px;height: 300px;">{"handle":"skardenchat","arch":"js","styles":{"a":"006600","b":100,"c":"FFFFFF","d":"FFFFFF","k":"006600","l":"006600","m":"006600","n":"FFFFFF","p":"10","q":"006600","r":100,"pos":"br","cv":1,"cvbg":"006600","cvw":200,"cvh":30,"ticker":1,"fwtickm":1}}</script>
   
-  <div class="sidebar d-flex flex-column justify-content-center align-items-center py-4"
-    style="position:fixed; top:10vh; left:0; height:40rem; width:70px; background:#2e7d32; border-radius:0 2rem 2rem 0; box-shadow: 2px 0 8px rgba(44,62,80,0.08); z-index:1000;">
-    <a href="../../../../index.html" class="mb-4" style="text-decoration:none;">
-      <img src="/skarden_main/app/UI/icon/png/prim1.1nbg.png" alt="Skarden Logo" style="width:38px;">
-    </a>
-    <ul class="nav flex-column align-items-center" style="gap:2rem; list-style:none; padding-left:0;">
-      <li>
-        <a href="../../../../index.html" style="color:#fff; font-size:1.5rem;" title="Home">  
-          <i class="bi bi-house-door"></i>
-        </a>
-      </li>
-      <li>
-        <a href="marketpage.html" style="color:#fff; font-size:1.5rem;" title="Shop">
-          <i class="bi bi-bag"></i>
-        </a>
-      </li>
-      <li>
-        <a href="about.html" style="color:#fff; font-size:1.5rem;" title="About">
-          <i class="bi bi-info-circle"></i>
-        </a>
-      </li>
-      <li>
-        <a href="blog.html" style="color:#fff; font-size:1.5rem; font-weight:600;" title="Blog">
-          <i class="bi bi-journal-text"></i>
-        </a>
-      </li>
-      <li>
-        <a href="contact.html" style="color:#fff; font-size:1.5rem;" title="Contact">
-          <i class="bi bi-envelope"></i>
-        </a>
-      </li>
-    </ul>
+  <!-- NAVBAR START -->
+  <div class="navbar-container">
+    <nav class="navbar">
+      <a href="../../../../index.html">
+        <img src="/skarden_main/app/UI/icon/png/prim1.1nbg.png" style="width: 65px;">
+      </a>
+      <ul class="nav-links">
+        <li><a href="../../../../index.html">Home</a></li>
+        <li><a href="marketpage.html">Shop</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="blog.html" class="active">Blog</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="search-cart">
+        <input type="search" placeholder="Search articles..."><i class="fas fa-search"></i>
+        <a href="#"><i class="fas fa-shopping-cart"></i></a>
+      </div>
+    </nav>
   </div>
+  <!-- NAVBAR END -->
 
 
-  <div class="container py-5" style="margin-left:90px;">
-    <!-- Row 1: Featured + Side Highlight -->
-    <div class="row g-4 mb-3">
+  <div class="container py-5">
+    <div class="row">
+      <!-- Main Content -->
       <div class="col-lg-8">
-        <div class="featured-card">
-          <div class="col-lg-6">
-            <img
-              src="https://images.unsplash.com/photo-1680124744736-859f16257ef0?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-              alt="Gardening Tools">
-          </div>
-          <div class="featured-content col-lg-6">
-            <span class="badge mb-2"><i class="bi bi-tools"></i> Tool Reviews</span>
-            <h2 class="fw-bold">Top 10 Must-Have Tools for the Home Gardener</h2>
-            <p>From ergonomic trowels to moisture-sensing soil probes, we’ve tested and rounded up the best tools to
-              make your garden thrive—no matter its size.</p>
-            <small class="text-light">Aug 4, 2025</small>
+        <!-- Row 1: Featured + Side Highlight -->
+        <div class="row g-4 mb-3">
+          <div class="col-lg-12">
+            <div class="featured-card">
+              <div class="col-lg-6">
+                <img
+                  src="https://images.unsplash.com/photo-1680124744736-859f16257ef0?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                  alt="Gardening Tools">
+              </div>
+              <div class="featured-content col-lg-6">
+                <span class="badge mb-2"><i class="bi bi-tools"></i> Ulasan Alat</span>
+                <h2 class="fw-bold">10 Alat Wajib untuk Tukang Kebun Rumahan</h2>
+                <p>Dari sekop ergonomis hingga alat pengukur kelembapan tanah, kami telah mencoba dan merangkum alat terbaik untuk membuat kebun Anda tumbuh subur—apapun jenisnya.</p>
+                <div class="d-flex justify-content-between align-items-center mt-3">
+                  <small class="text-light">4 Agustus 2025</small>
+                  <a href="#" class="read-more">Baca Selengkapnya <i class="bi bi-arrow-right"></i></a>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
+        
+        <!-- Row 2: G.O.P. -->
+        <div class="row g-4">
+          <!-- Pst 1 -->
+          <div class="col-sm-6 col-lg-6">
+            <div class="card h-100">
+              <img
+                src="https://plus.unsplash.com/premium_photo-1683121593702-fa71cf311971?q=80&w=1025&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                alt="Planters">
+              <div class="card-body">
+                <span class="badge badge-green mb-2"><i class="bi bi-box-seam"></i> produk sorotan</span>
+                <h6 class="card-title">5 Pot Stylish untuk Ruang Sempit</h6>
+                <p class="card-text small text-muted">Pot-pot keren yang ramah di kantong.</p>
+                <div class="d-flex justify-content-between align-items-center mt-3">
+                  <small class="text-muted">30 Juli 2025</small>
+                  <a href="#" class="read-more-sm">Baca Selengkapnya</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Pst 2 -->
+          <div class="col-sm-6 col-lg-6">
+            <div class="card h-100">
+              <img
+                src="https://images.unsplash.com/photo-1530987573051-8050dcf0c69f?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                alt="Pruning shears">
+              <div class="card-body">
+                <span class="badge badge-green mb-2"><i class="bi bi-scissors"></i> Panduan</span>
+                <h6 class="card-title">Memangkas Mawar & Daftar</h6>
+                <p class="card-text small text-muted">Tips agar bunga tetap sehat dan melimpah.</p>
+                <div class="d-flex justify-content-between align-items-center mt-3">
+                  <small class="text-muted">25 Juli 2025</small>
+                  <a href="#" class="read-more-sm">Baca Selengkapnya</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Pst 3 -->
+          <div class="col-sm-6 col-lg-6">
+            <div class="card h-100">
+              <img
+                src="https://images.unsplash.com/photo-1605000797499-95a51c5269ae?q=80&w=1171&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                alt="Harvest">
+              <div class="card-body">
+                <span class="badge badge-green mb-2"><i class="bi bi-basket"></i> Panen Segar</span>
+                <h6 class="card-title">Waktu & Cara</h6>
+                <p class="card-text small text-muted">Dapatkan kesegaran dari tanaman Anda.</p>
+                <div class="d-flex justify-content-between align-items-center mt-3">
+                  <small class="text-muted">20 Juli 2025</small>
+                  <a href="#" class="read-more-sm">Baca Selengkapnya</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Pst 4 -->
+          <div class="col-sm-6 col-lg-6">
+            <div class="card h-100">
+              <img
+                src="https://images.unsplash.com/photo-1584479898061-15742e14f50d?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                alt="Vegetable garden">
+              <div class="card-body">
+                <span class="badge badge-green mb-2"><i class="bi bi-calendar3"></i> Pilihan</span>
+                <h6 class="card-title">Panduan Penanaman</h6>
+                <p class="card-text small text-muted">Tanaman terbaik untuk ditanam di Kebun anda.</p>
+                <div class="d-flex justify-content-between align-items-center mt-3">
+                  <small class="text-muted">15 Juli 2025</small>
+                  <a href="#" class="read-more-sm">Baca Selengkapnya</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Load More Button -->
+        <div class="text-center mt-5">
+          <button class="btn-load-more">Muat Artikel Lainnya</button>
+        </div>
       </div>
-
+      
+      <!-- Sidebar -->
       <div class="col-lg-4">
-        <div class="card h-100">
-          <img
-            src="https://images.unsplash.com/photo-1621496654772-c66c48290259?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-            alt="Composting">
-          <div class="card-body">
-            <span class="badge badge-green mb-2"><i class="bi bi-recycle"></i> Composting Tips</span>
-            <h5>Composting 101: Turn Kitchen Scraps into Black Gold</h5>
-            <p class="small text-muted">Learn how simple composting tricks can transform your soil and reduce waste at
-              the same time.</p>
-            <small class="text-muted">Jul 28, 2025</small>
+        <!-- Categories Widget -->
+        <div class="sidebar-widget">
+          <h4>Kategori</h4>
+          <ul class="category-list">
+            <li><a href="#"><i class="bi bi-tools"></i> Alat <span>(12)</span></a></li>
+            <li><a href="#"><i class="bi bi-recycle"></i> Tips <span>(8)</span></a></li>
+            <li><a href="#"><i class="bi bi-box-seam"></i> Produk Sorotan <span>(15)</span></a></li>
+            <li><a href="#"><i class="bi bi-scissors"></i> Panduan <span>(20)</span></a></li>
+            <li><a href="#"><i class="bi bi-basket"></i> Panen Segar <span>(7)</span></a></li>
+            <li><a href="#"><i class="bi bi-calendar3"></i> Pilihan <span>(10)</span></a></li>
+          </ul>
+        </div>
+        
+        <!-- Popular Posts Widget -->
+        <div class="sidebar-widget mt-4">
+          <h4>Postingan Populer</h4>
+          <div class="popular-post">
+            <div class="popular-post-img">
+              <img src="https://images.unsplash.com/photo-1595476197247-7d3e9f8f8d7a?auto=format&fit=crop&w=100" alt="Popular post">
+            </div>
+            <div class="popular-post-content">
+              <h6>10 Tanaman Indoor terbaik</h6>
+              <small>28 Juni 2025</small>
+            </div>
+          </div>
+          <div class="popular-post">
+            <div class="popular-post-img">
+              <img src="https://images.unsplash.com/photo-1621496654772-c66c48290259?auto=format&fit=crop&w=100" alt="Popular post">
+            </div>
+            <div class="popular-post-content">
+              <h6> Ubah Sisa Dapur Jadi kompos</h6>
+              <small>15 Juni 2025</small>
+            </div>
+          </div>
+          <div class="popular-post">
+            <div class="popular-post-img">
+              <img src="https://images.unsplash.com/photo-1530987573051-8050dcf0c69f?auto=format&fit=crop&w=100" alt="Popular post">
+            </div>
+            <div class="popular-post-content">
+              <h6> Daftar Musim</h6>
+              <small>5 Juni 2025</small>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Newsletter Widget -->
+        <div class="sidebar-widget mt-4 newsletter-widget">
+          <h4>Berlangganan Newsletter Kami</h4>
+          <p>Dapatkan tips berkebun dan artikel terbaru langsung ke email Anda.</p>
+          <form>
+            <input type="email" placeholder="Alamat email Anda" class="form-control mb-3">
+            <button type="submit" class="btn-subscribe">Langganan</button>
+          </form>
+        </div>
+        
+        <!-- Tags Widget -->
+        <div class="sidebar-widget mt-4">
+          <h4>Tag Populer</h4>
+          <div class="tag-cloud">
+            <a href="#" class="tag">berkebun</a>
+            <a href="#" class="tag">tips</a>
+            <a href="#" class="tag">sayuran</a>
+            <a href="#" class="tag">bunga</a>
+            <a href="#" class="tag">alat</a>
+            <a href="#" class="tag">musiman</a>
+            <a href="#" class="tag">organik</a>
+            <a href="#" class="tag">indoor</a>
           </div>
         </div>
       </div>
     </div>
+  </div>
 
-    <!-- Row 2: G.O.P. -->
-    <div class="row g-4">
-      <!-- Pst 1 -->
-      <div class="col-sm-6 col-lg-3">
-        <div class="card h-100">
-          <img
-            src="https://plus.unsplash.com/premium_photo-1683121593702-fa71cf311971?q=80&w=1025&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-            alt="Planters">
-          <div class="card-body">
-            <span class="badge badge-green mb-2"><i class="bi bi-box-seam"></i> Product Spotlight</span>
-            <h6 class="card-title">5 Stylish Planters for Small Spaces</h6>
-            <p class="card-text small text-muted">Great-looking pots that won’t break your back—or your budget.</p>
-          </div>
+  <!-- Subscribe Section -->
+  <section class="subscribe-section">
+    <div class="subs-content">
+      <h3>Selalu Update</h3>
+      <p>
+        Dapatkan tips bertani terbaru dan penawaran eksklusif langsung ke email Anda.
+      </p>
+      <form class="subscribe-form">
+        <input type="email" placeholder="Masukkan email Anda" />
+        <button type="submit">
+          <i class="fas fa-envelope"></i> Langganan
+        </button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <div class="main-footer">
+    <div class="footer-content">
+      <div class="footer-column">
+        <div class="footer-column-img">
+          <img src="/skarden_main/app/UI/icon/png/whitegrayscale.png" style="width: 70%" />
         </div>
       </div>
-      <!-- Pst 2 -->
-      <div class="col-sm-6 col-lg-3">
-        <div class="card h-100">
-          <img
-            src="https://images.unsplash.com/photo-1530987573051-8050dcf0c69f?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-            alt="Pruning shears">
-          <div class="card-body">
-            <span class="badge badge-green mb-2"><i class="bi bi-scissors"></i> How-To Guide</span>
-            <h6 class="card-title">Pruning Roses: A Seasonal Checklist</h6>
-            <p class="card-text small text-muted">Step-by-step tips to keep your blooms healthy and abundant.</p>
-          </div>
+      <div class="footer-column">
+        <h2 class="logo">Skarden</h2>
+        <p>
+          Mitra terpercaya Anda dalam membangun pertanian yang produktif dan subur.
+          Kualitas perlengkapan untuk setiap perjalanan bertani.
+        </p>
+        <div class="social-icons">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-x-twitter"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-whatsapp"></i></a>
         </div>
       </div>
-      <!-- Pst 3 -->
-      <div class="col-sm-6 col-lg-3">
-        <div class="card h-100">
-          <img
-            src="https://images.unsplash.com/photo-1605000797499-95a51c5269ae?q=80&w=1171&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-            alt="Harvest">
-          <div class="card-body">
-            <span class="badge badge-green mb-2"><i class="bi bi-basket"></i> Farm Fresh</span>
-            <h6 class="card-title">Harvesting Herbs: When & How</h6>
-            <p class="card-text small text-muted">Get the best flavor and long-lasting freshness from your herb garden.
-            </p>
-          </div>
-        </div>
+
+      <div class="footer-column">
+        <h3>Link Cepat</h3>
+        <ul>
+          <li><a href="about.html">Tentang Kami</a></li>
+          <li><a href="contact.html">Kontak</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="shipping.html">Info Pengiriman</a></li>
+          <li><a href="return.html">Pengembalian</a></li>
+        </ul>
       </div>
-      <!-- Pst 4 -->
-      <div class="col-sm-6 col-lg-3">
-        <div class="card h-100">
-          <img
-            src="https://images.unsplash.com/photo-1584479898061-15742e14f50d?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-            alt="Vegetable garden">
-          <div class="card-body">
-            <span class="badge badge-green mb-2"><i class="bi bi-calendar3"></i> Seasonal Picks</span>
-            <h6 class="card-title">Autumn Veggies: Planting Guide</h6>
-            <p class="card-text small text-muted">The best cool-weather crops to sow in your backyard this fall.</p>
-          </div>
-        </div>
+
+      <div class="footer-column">
+        <h3>Kategori</h3>
+        <ul>
+          <li><a href="#">Benih & Umbi</a></li>
+          <li><a href="#">Alat Taman</a></li>
+          <li><a href="#">Pupuk</a></li>
+          <li><a href="#">Pot & Planter</a></li>
+          <li><a href="#">Tanaman Hidup</a></li>
+        </ul>
       </div>
     </div>
 
+    <div class="footer-bottom">
+      <p>© 2025 Skarden. Semua hak dilindungi.</p>
+      <div class="footer-links">
+        <a href="#">Kebijakan Privasi</a>
+        <a href="#">Syarat Layanan</a>
+        <a href="#">Kebijakan Cookie</a>
+      </div>
+    </div>
   </div>
 
 
-
-  <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-      <script>
-        const originalTitle = document.title;
-        const hiddenTitle = "Sleeping... 😴😴";
-
-        document.addEventListener("visibilitychange", () => {
-            if (document.hidden) {
-                document.title = hiddenTitle;
-            } else {
-                document.title = originalTitle;
-            }
-        });
-    </script>
+  <script>
+    const originalTitle = document.title;
+    const hiddenTitle = "Sleeping... 😴😴";
+    document.addEventListener("visibilitychange", () => {
+        if (document.hidden) {
+            document.title = hiddenTitle;
+        } else {
+            document.title = originalTitle;
+        }
+    });
+  </script>
 </body>
-
 </html>

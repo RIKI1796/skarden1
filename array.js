@@ -14,7 +14,7 @@ const dataArray = [
       "https://flavorgod.com/cdn/shop/files/43809595588803.png?v=1744135765",
       "https://bakeitwithlove.com/wp-content/uploads/2021/04/Microwave-Steamed-Broccoli-lg-600x600.jpg.webp",
     ],
-    jenis: "Sayuran",
+    jenis: "Sayuran Dan Buah",
     berat: "500g",
     manfaat: "Kaya akan vitamin C, serat dan antioksidan.",
     qna: [
@@ -43,6 +43,8 @@ const dataArray = [
     ],
     kondisi: "Organik, Bebas Pestisida",
     penyimpanan: "Disimpan di lemari es, tahan hingga 7 hari",
+    tanggal: "2021-09-17",
+    rating: 4.5,
   },
   {
     id: 2,
@@ -59,7 +61,7 @@ const dataArray = [
       "https://flavorgod.com/cdn/shop/files/43809595588803.png?v=1744135765",
       "https://bakeitwithlove.com/wp-content/uploads/2021/04/Microwave-Steamed-Broccoli-lg-600x600.jpg.webp",
     ],
-    jenis: "Sayuran",
+    jenis: "Sayuran Dan Buah",
     berat: "500g",
     manfaat: "Kaya akan vitamin C, serat dan antioksidan.",
     qna: [
@@ -88,6 +90,8 @@ const dataArray = [
     ],
     kondisi: "Organik, Bebas Pestisida",
     penyimpanan: "Disimpan di lemari es, tahan hingga 7 hari",
+    tanggal: "2021-09-17",
+    rating: 4.5,
   },
   {
     id: 3,
@@ -104,7 +108,7 @@ const dataArray = [
       "https://flavorgod.com/cdn/shop/files/43809595588803.png?v=1744135765",
       "https://bakeitwithlove.com/wp-content/uploads/2021/04/Microwave-Steamed-Broccoli-lg-600x600.jpg.webp",
     ],
-    jenis: "Sayuran",
+    jenis: "Sayuran Dan Buah",
     berat: "500g",
     manfaat: "Kaya akan vitamin C, serat dan antioksidan.",
     qna: [
@@ -133,6 +137,8 @@ const dataArray = [
     ],
     kondisi: "Organik, Bebas Pestisida",
     penyimpanan: "Disimpan di lemari es, tahan hingga 7 hari",
+    tanggal: "2021-09-17",
+    rating: 4.5,
   },
   {
     id: 4,
@@ -149,7 +155,7 @@ const dataArray = [
       "https://flavorgod.com/cdn/shop/files/43809595588803.png?v=1744135765",
       "https://bakeitwithlove.com/wp-content/uploads/2021/04/Microwave-Steamed-Broccoli-lg-600x600.jpg.webp",
     ],
-    jenis: "Sayuran",
+    jenis: "Sayuran Dan Buah",
     berat: "500g",
     manfaat: "Kaya akan vitamin C, serat dan antioksidan.",
     qna: [
@@ -178,6 +184,8 @@ const dataArray = [
     ],
     kondisi: "Organik, Bebas Pestisida",
     penyimpanan: "Disimpan di lemari es, tahan hingga 7 hari",
+    tanggal: "2021-09-17",
+    rating: 4.5,
   },
   {
     id: 5,
@@ -194,7 +202,7 @@ const dataArray = [
       "https://flavorgod.com/cdn/shop/files/43809595588803.png?v=1744135765",
       "https://bakeitwithlove.com/wp-content/uploads/2021/04/Microwave-Steamed-Broccoli-lg-600x600.jpg.webp",
     ],
-    jenis: "Sayuran",
+    jenis: "Sayuran Dan Buah",
     berat: "500g",
     manfaat: "Kaya akan vitamin C, serat dan antioksidan.",
     qna: [
@@ -223,6 +231,8 @@ const dataArray = [
     ],
     kondisi: "Organik, Bebas Pestisida",
     penyimpanan: "Disimpan di lemari es, tahan hingga 7 hari",
+    tanggal: "2021-09-17",
+    rating: 4.5,
   },
   {
     id: 6,
@@ -239,7 +249,7 @@ const dataArray = [
       "https://flavorgod.com/cdn/shop/files/43809595588803.png?v=1744135765",
       "https://bakeitwithlove.com/wp-content/uploads/2021/04/Microwave-Steamed-Broccoli-lg-600x600.jpg.webp",
     ],
-    jenis: "Sayuran",
+    jenis: "Sayuran Dan Buah",
     berat: "500g",
     manfaat: "Kaya akan vitamin C, serat dan antioksidan.",
     qna: [
@@ -268,6 +278,8 @@ const dataArray = [
     ],
     kondisi: "Organik, Bebas Pestisida",
     penyimpanan: "Disimpan di lemari es, tahan hingga 7 hari",
+    tanggal: "2021-09-17",
+    rating: 4.5,
   },
   {
     id: 7,
@@ -284,7 +296,7 @@ const dataArray = [
       "https://flavorgod.com/cdn/shop/files/43809595588803.png?v=1744135765",
       "https://bakeitwithlove.com/wp-content/uploads/2021/04/Microwave-Steamed-Broccoli-lg-600x600.jpg.webp",
     ],
-    jenis: "Sayuran",
+    jenis: "Sayuran Dan Buah",
     berat: "500g",
     manfaat: "Kaya akan vitamin C, serat dan antioksidan.",
     qna: [
@@ -313,6 +325,8 @@ const dataArray = [
     ],
     kondisi: "Organik, Bebas Pestisida",
     penyimpanan: "Disimpan di lemari es, tahan hingga 7 hari",
+    tanggal: "2021-09-17",
+    rating: 4.5,
   },
   {
     id: 8,
@@ -329,7 +343,7 @@ const dataArray = [
       "https://flavorgod.com/cdn/shop/files/43809595588803.png?v=1744135765",
       "https://bakeitwithlove.com/wp-content/uploads/2021/04/Microwave-Steamed-Broccoli-lg-600x600.jpg.webp",
     ],
-    jenis: "Sayuran",
+    jenis: "Sayuran Dan Buah",
     berat: "500g",
     manfaat: "Kaya akan vitamin C, serat dan antioksidan.",
     qna: [
@@ -358,6 +372,8 @@ const dataArray = [
     ],
     kondisi: "Organik, Bebas Pestisida",
     penyimpanan: "Disimpan di lemari es, tahan hingga 7 hari",
+    tanggal: "2021-09-17",
+    rating: 4.5,
   },
   {
     id: 9,
@@ -374,7 +390,7 @@ const dataArray = [
       "https://flavorgod.com/cdn/shop/files/43809595588803.png?v=1744135765",
       "https://bakeitwithlove.com/wp-content/uploads/2021/04/Microwave-Steamed-Broccoli-lg-600x600.jpg.webp",
     ],
-    jenis: "Sayuran",
+    jenis: "Sayuran Dan Buah",
     berat: "500g",
     manfaat: "Kaya akan vitamin C, serat dan antioksidan.",
     qna: [
@@ -403,6 +419,8 @@ const dataArray = [
     ],
     kondisi: "Organik, Bebas Pestisida",
     penyimpanan: "Disimpan di lemari es, tahan hingga 7 hari",
+    tanggal: "2021-09-17",
+    rating: 4.5,
   },
   {
     id: 10,
@@ -419,7 +437,7 @@ const dataArray = [
       "https://flavorgod.com/cdn/shop/files/43809595588803.png?v=1744135765",
       "https://bakeitwithlove.com/wp-content/uploads/2021/04/Microwave-Steamed-Broccoli-lg-600x600.jpg.webp",
     ],
-    jenis: "Sayuran",
+    jenis: "Sayuran Dan Buah",
     berat: "500g",
     manfaat: "Kaya akan vitamin C, serat dan antioksidan.",
     qna: [
@@ -448,6 +466,8 @@ const dataArray = [
     ],
     kondisi: "Organik, Bebas Pestisida",
     penyimpanan: "Disimpan di lemari es, tahan hingga 7 hari",
+    tanggal: "2021-09-17",
+    rating: 4.5,
   },
   {
     id: 11,
@@ -464,7 +484,7 @@ const dataArray = [
       "https://flavorgod.com/cdn/shop/files/43809595588803.png?v=1744135765",
       "https://bakeitwithlove.com/wp-content/uploads/2021/04/Microwave-Steamed-Broccoli-lg-600x600.jpg.webp",
     ],
-    jenis: "Sayuran",
+    jenis: "Sayuran Dan Buah",
     berat: "500g",
     manfaat: "Kaya akan vitamin C, serat dan antioksidan.",
     qna: [
@@ -493,6 +513,8 @@ const dataArray = [
     ],
     kondisi: "Organik, Bebas Pestisida",
     penyimpanan: "Disimpan di lemari es, tahan hingga 7 hari",
+    tanggal: "2021-09-17",
+    rating: 4.5,
   },
   {
     id: 12,
@@ -509,7 +531,7 @@ const dataArray = [
       "https://flavorgod.com/cdn/shop/files/43809595588803.png?v=1744135765",
       "https://bakeitwithlove.com/wp-content/uploads/2021/04/Microwave-Steamed-Broccoli-lg-600x600.jpg.webp",
     ],
-    jenis: "Sayuran",
+    jenis: "Sayuran Dan Buah",
     berat: "500g",
     manfaat: "Kaya akan vitamin C, serat dan antioksidan.",
     qna: [
@@ -538,6 +560,8 @@ const dataArray = [
     ],
     kondisi: "Organik, Bebas Pestisida",
     penyimpanan: "Disimpan di lemari es, tahan hingga 7 hari",
+    tanggal: "2021-09-17",
+    rating: 4.5,
   },
   {
     id: 13,
@@ -554,7 +578,7 @@ const dataArray = [
       "https://flavorgod.com/cdn/shop/files/43809595588803.png?v=1744135765",
       "https://bakeitwithlove.com/wp-content/uploads/2021/04/Microwave-Steamed-Broccoli-lg-600x600.jpg.webp",
     ],
-    jenis: "Sayuran",
+    jenis: "Sayuran Dan Buah",
     berat: "500g",
     manfaat: "Kaya akan vitamin C, serat dan antioksidan.",
     qna: [
@@ -583,6 +607,8 @@ const dataArray = [
     ],
     kondisi: "Organik, Bebas Pestisida",
     penyimpanan: "Disimpan di lemari es, tahan hingga 7 hari",
+    tanggal: "2021-09-17",
+    rating: 4.5,
   },
   {
     id: 14,
@@ -599,7 +625,7 @@ const dataArray = [
       "https://flavorgod.com/cdn/shop/files/43809595588803.png?v=1744135765",
       "https://bakeitwithlove.com/wp-content/uploads/2021/04/Microwave-Steamed-Broccoli-lg-600x600.jpg.webp",
     ],
-    jenis: "Sayuran",
+    jenis: "Sayuran Dan Buah",
     berat: "500g",
     manfaat: "Kaya akan vitamin C, serat dan antioksidan.",
     qna: [
@@ -628,6 +654,8 @@ const dataArray = [
     ],
     kondisi: "Organik, Bebas Pestisida",
     penyimpanan: "Disimpan di lemari es, tahan hingga 7 hari",
+    tanggal: "2021-09-17",
+    rating: 4.5,
   },
   {
     id: 15,
@@ -644,7 +672,7 @@ const dataArray = [
       "https://flavorgod.com/cdn/shop/files/43809595588803.png?v=1744135765",
       "https://bakeitwithlove.com/wp-content/uploads/2021/04/Microwave-Steamed-Broccoli-lg-600x600.jpg.webp",
     ],
-    jenis: "Sayuran",
+    jenis: "Sayuran Dan Buah",
     berat: "500g",
     manfaat: "Kaya akan vitamin C, serat dan antioksidan.",
     qna: [
@@ -673,6 +701,8 @@ const dataArray = [
     ],
     kondisi: "Organik, Bebas Pestisida",
     penyimpanan: "Disimpan di lemari es, tahan hingga 7 hari",
+    tanggal: "2021-09-17",
+    rating: 4.5,
   },
 
   {
@@ -721,6 +751,8 @@ const dataArray = [
     ],
     kondisi: "Baru dan mulus",
     penyimpanan: "simpan di tempat yang aman",
+    tanggal: "2023-03-21",
+    rating: 4,
   },
   {
     id: 17,
@@ -768,6 +800,8 @@ const dataArray = [
     ],
     kondisi: "Baru dan mulus",
     penyimpanan: "simpan di tempat yang aman",
+    tanggal: "2023-03-21",
+    rating: 4,
   },
   {
     id: 18,
@@ -815,6 +849,8 @@ const dataArray = [
     ],
     kondisi: "Baru dan mulus",
     penyimpanan: "simpan di tempat yang aman",
+    tanggal: "2023-03-21",
+    rating: 4,
   },
   {
     id: 19,
@@ -862,6 +898,8 @@ const dataArray = [
     ],
     kondisi: "Baru dan mulus",
     penyimpanan: "simpan di tempat yang aman",
+    tanggal: "2023-03-21",
+    rating: 4,
   },
   {
     id: 20,
@@ -909,6 +947,8 @@ const dataArray = [
     ],
     kondisi: "Baru dan mulus",
     penyimpanan: "simpan di tempat yang aman",
+    tanggal: "2023-03-21",
+    rating: 4,
   },
   {
     id: 21,
@@ -956,6 +996,8 @@ const dataArray = [
     ],
     kondisi: "Baru dan mulus",
     penyimpanan: "simpan di tempat yang aman",
+    tanggal: "2023-03-21",
+    rating: 4,
   },
   {
     id: 22,
@@ -1003,6 +1045,8 @@ const dataArray = [
     ],
     kondisi: "Baru dan mulus",
     penyimpanan: "simpan di tempat yang aman",
+    tanggal: "2023-03-21",
+    rating: 4,
   },
   {
     id: 23,
@@ -1050,6 +1094,8 @@ const dataArray = [
     ],
     kondisi: "Baru dan mulus",
     penyimpanan: "simpan di tempat yang aman",
+    tanggal: "2023-03-21",
+    rating: 4,
   },
   {
     id: 24,
@@ -1097,6 +1143,8 @@ const dataArray = [
     ],
     kondisi: "Baru dan mulus",
     penyimpanan: "simpan di tempat yang aman",
+    tanggal: "2023-03-21",
+    rating: 4,
   },
   {
     id: 25,
@@ -1144,6 +1192,8 @@ const dataArray = [
     ],
     kondisi: "Baru dan mulus",
     penyimpanan: "simpan di tempat yang aman",
+    tanggal: "2023-03-21",
+    rating: 4,
   },
   {
     id: 26,
@@ -1192,6 +1242,8 @@ const dataArray = [
     ],
     kondisi: "Bagus",
     penyimpanan: "Simpan di tempat kering, sejuk, dan tertutup rapat",
+    tanggal: "2020-07-27",
+    rating: 5,
   },
   {
     id: 27,
@@ -1240,6 +1292,8 @@ const dataArray = [
     ],
     kondisi: "Bagus",
     penyimpanan: "Simpan di tempat kering, sejuk, dan tertutup rapat",
+    tanggal: "2020-07-27",
+    rating: 5,
   },
   {
     id: 28,
@@ -1288,6 +1342,8 @@ const dataArray = [
     ],
     kondisi: "Bagus",
     penyimpanan: "Simpan di tempat kering, sejuk, dan tertutup rapat",
+    tanggal: "2020-07-27",
+    rating: 5,
   },
   {
     id: 29,
@@ -1336,6 +1392,8 @@ const dataArray = [
     ],
     kondisi: "Bagus",
     penyimpanan: "Simpan di tempat kering, sejuk, dan tertutup rapat",
+    tanggal: "2020-07-27",
+    rating: 5,
   },
   {
     id: 30,
@@ -1384,6 +1442,8 @@ const dataArray = [
     ],
     kondisi: "Bagus",
     penyimpanan: "Simpan di tempat kering, sejuk, dan tertutup rapat",
+    tanggal: "2020-07-27",
+    rating: 5,
   },
   {
     id: 31,
@@ -1432,6 +1492,8 @@ const dataArray = [
     ],
     kondisi: "Bagus",
     penyimpanan: "Simpan di tempat kering, sejuk, dan tertutup rapat",
+    tanggal: "2020-07-27",
+    rating: 5,
   },
   {
     id: 32,
@@ -1480,6 +1542,8 @@ const dataArray = [
     ],
     kondisi: "Bagus",
     penyimpanan: "Simpan di tempat kering, sejuk, dan tertutup rapat",
+    tanggal: "2020-07-27",
+    rating: 5,
   },
   {
     id: 33,
@@ -1528,6 +1592,8 @@ const dataArray = [
     ],
     kondisi: "Bagus",
     penyimpanan: "Simpan di tempat kering, sejuk, dan tertutup rapat",
+    tanggal: "2020-07-27",
+    rating: 5,
   },
   {
     id: 34,
@@ -1576,6 +1642,8 @@ const dataArray = [
     ],
     kondisi: "Bagus",
     penyimpanan: "Simpan di tempat kering, sejuk, dan tertutup rapat",
+    tanggal: "2020-07-27",
+    rating: 5,
   },
   {
     id: 35,
@@ -1624,6 +1692,8 @@ const dataArray = [
     ],
     kondisi: "Bagus",
     penyimpanan: "Simpan di tempat kering, sejuk, dan tertutup rapat",
+    tanggal: "2020-07-27",
+    rating: 5,
   },
   {
     id: 36,
@@ -1670,6 +1740,8 @@ const dataArray = [
     ],
     kondisi: "Baru, kokoh, dan bersih",
     penyimpanan: "Simpan di tempat kering agar tetap awet",
+    tanggal: "2022-08-29",
+    rating: 3,
   },
   {
     id: 37,
@@ -1715,7 +1787,8 @@ const dataArray = [
       "Ukuran pas untuk tanaman hias di rumah.",
     ],
     kondisi: "Baru, kokoh, dan bersih",
-    penyimpanan: "Simpan di tempat kering agar tetap awet",
+    tanggal: "2022-08-29",
+    rating: 3,
   },
   {
     id: 38,
@@ -1762,6 +1835,8 @@ const dataArray = [
     ],
     kondisi: "Baru, kokoh, dan bersih",
     penyimpanan: "Simpan di tempat kering agar tetap awet",
+    tanggal: "2022-08-29",
+    rating: 3,
   },
   {
     id: 39,
@@ -1808,6 +1883,8 @@ const dataArray = [
     ],
     kondisi: "Baru, kokoh, dan bersih",
     penyimpanan: "Simpan di tempat kering agar tetap awet",
+    tanggal: "2022-08-29",
+    rating: 3,
   },
   {
     id: 40,
@@ -1854,6 +1931,8 @@ const dataArray = [
     ],
     kondisi: "Baru, kokoh, dan bersih",
     penyimpanan: "Simpan di tempat kering agar tetap awet",
+    tanggal: "2022-08-29",
+    rating: 3,
   },
   {
     id: 41,
@@ -1900,6 +1979,8 @@ const dataArray = [
     ],
     kondisi: "Baru, kokoh, dan bersih",
     penyimpanan: "Simpan di tempat kering agar tetap awet",
+    tanggal: "2022-08-29",
+    rating: 3,
   },
   {
     id: 42,
@@ -1946,6 +2027,8 @@ const dataArray = [
     ],
     kondisi: "Baru, kokoh, dan bersih",
     penyimpanan: "Simpan di tempat kering agar tetap awet",
+    tanggal: "2022-08-29",
+    rating: 3,
   },
   {
     id: 43,
@@ -1992,6 +2075,8 @@ const dataArray = [
     ],
     kondisi: "Baru, kokoh, dan bersih",
     penyimpanan: "Simpan di tempat kering agar tetap awet",
+    tanggal: "2022-08-29",
+    rating: 3,
   },
   {
     id: 44,
@@ -2038,6 +2123,8 @@ const dataArray = [
     ],
     kondisi: "Baru, kokoh, dan bersih",
     penyimpanan: "Simpan di tempat kering agar tetap awet",
+    tanggal: "2022-08-29",
+    rating: 3,
   },
   {
     id: 45,
@@ -2084,6 +2171,8 @@ const dataArray = [
     ],
     kondisi: "Baru, kokoh, dan bersih",
     penyimpanan: "Simpan di tempat kering agar tetap awet",
+    tanggal: "2022-08-29",
+    rating: 3,
   },
   {
     id: 46,
@@ -2131,6 +2220,8 @@ const dataArray = [
     ],
     kondisi: "Segar, baru dipetik",
     penyimpanan: "Simpan di vas berisi air segar dan ganti air setiap hari",
+    tanggal: "2023-02-21",
+    rating: 4,
   },
   {
     id: 47,
@@ -2178,6 +2269,8 @@ const dataArray = [
     ],
     kondisi: "Segar, baru dipetik",
     penyimpanan: "Simpan di vas berisi air segar dan ganti air setiap hari",
+    tanggal: "2023-02-21",
+    rating: 4,
   },
   {
     id: 48,
@@ -2225,6 +2318,8 @@ const dataArray = [
     ],
     kondisi: "Segar, baru dipetik",
     penyimpanan: "Simpan di vas berisi air segar dan ganti air setiap hari",
+    tanggal: "2023-02-21",
+    rating: 4,
   },
   {
     id: 49,
@@ -2272,6 +2367,8 @@ const dataArray = [
     ],
     kondisi: "Segar, baru dipetik",
     penyimpanan: "Simpan di vas berisi air segar dan ganti air setiap hari",
+    tanggal: "2023-02-21",
+    rating: 4,
   },
   {
     id: 50,
@@ -2319,6 +2416,8 @@ const dataArray = [
     ],
     kondisi: "Segar, baru dipetik",
     penyimpanan: "Simpan di vas berisi air segar dan ganti air setiap hari",
+    tanggal: "2023-02-21",
+    rating: 4,
   },
   {
     id: 51,
@@ -2366,6 +2465,8 @@ const dataArray = [
     ],
     kondisi: "Segar, baru dipetik",
     penyimpanan: "Simpan di vas berisi air segar dan ganti air setiap hari",
+    tanggal: "2023-02-21",
+    rating: 4,
   },
   {
     id: 52,
@@ -2413,6 +2514,8 @@ const dataArray = [
     ],
     kondisi: "Segar, baru dipetik",
     penyimpanan: "Simpan di vas berisi air segar dan ganti air setiap hari",
+    tanggal: "2023-02-21",
+    rating: 4,
   },
   {
     id: 53,
@@ -2460,6 +2563,8 @@ const dataArray = [
     ],
     kondisi: "Segar, baru dipetik",
     penyimpanan: "Simpan di vas berisi air segar dan ganti air setiap hari",
+    ttanggal: "2023-02-21",
+    rating: 4,
   },
   {
     id: 54,
@@ -2507,6 +2612,8 @@ const dataArray = [
     ],
     kondisi: "Segar, baru dipetik",
     penyimpanan: "Simpan di vas berisi air segar dan ganti air setiap hari",
+    tanggal: "2023-02-21",
+    rating: 4,
   },
   {
     id: 55,
@@ -2554,6 +2661,8 @@ const dataArray = [
     ],
     kondisi: "Segar, baru dipetik",
     penyimpanan: "Simpan di vas berisi air segar dan ganti air setiap hari",
+    tanggal: "2023-02-21",
+    rating: 4,
   },
   {
     id: 56,
@@ -2570,7 +2679,7 @@ const dataArray = [
       "https://www.panahmerah.id/uploads/ngc_master_item/63ec9e1103c6a_20230215155545-1.jpg",
       "https://png.pngtree.com/png-clipart/20230921/original/pngtree-tomato-seeds-png-image_10166825.png",
     ],
-    jenis: "Bibit Sayuran",
+    jenis: "Bibit",
     berat: "50g",
     manfaat:
       "Mempermudah budidaya tomat di rumah, bisa menghasilkan buah segar untuk kebutuhan dapur maupun dijual kembali.",
@@ -2603,6 +2712,8 @@ const dataArray = [
     kondisi: "Kering, bersih, dan siap tanam",
     penyimpanan:
       "Simpan di tempat sejuk, kering, dan terhindar dari sinar matahari langsung",
+    tanggal: "2022-04-15",
+    rating: 5,
   },
   {
     id: 57,
@@ -2619,7 +2730,7 @@ const dataArray = [
       "https://www.panahmerah.id/uploads/ngc_master_item/63ec9e1103c6a_20230215155545-1.jpg",
       "https://png.pngtree.com/png-clipart/20230921/original/pngtree-tomato-seeds-png-image_10166825.png",
     ],
-    jenis: "Bibit Sayuran",
+    jenis: "Bibit",
     berat: "50g",
     manfaat:
       "Mempermudah budidaya tomat di rumah, bisa menghasilkan buah segar untuk kebutuhan dapur maupun dijual kembali.",
@@ -2652,6 +2763,8 @@ const dataArray = [
     kondisi: "Kering, bersih, dan siap tanam",
     penyimpanan:
       "Simpan di tempat sejuk, kering, dan terhindar dari sinar matahari langsung",
+    tanggal: "2022-04-15",
+    rating: 5,
   },
   {
     id: 58,
@@ -2668,7 +2781,7 @@ const dataArray = [
       "https://www.panahmerah.id/uploads/ngc_master_item/63ec9e1103c6a_20230215155545-1.jpg",
       "https://png.pngtree.com/png-clipart/20230921/original/pngtree-tomato-seeds-png-image_10166825.png",
     ],
-    jenis: "Bibit Sayuran",
+    jenis: "Bibit",
     berat: "50g",
     manfaat:
       "Mempermudah budidaya tomat di rumah, bisa menghasilkan buah segar untuk kebutuhan dapur maupun dijual kembali.",
@@ -2701,6 +2814,8 @@ const dataArray = [
     kondisi: "Kering, bersih, dan siap tanam",
     penyimpanan:
       "Simpan di tempat sejuk, kering, dan terhindar dari sinar matahari langsung",
+    tanggal: "2022-04-15",
+    rating: 5,
   },
   {
     id: 59,
@@ -2717,7 +2832,7 @@ const dataArray = [
       "https://www.panahmerah.id/uploads/ngc_master_item/63ec9e1103c6a_20230215155545-1.jpg",
       "https://png.pngtree.com/png-clipart/20230921/original/pngtree-tomato-seeds-png-image_10166825.png",
     ],
-    jenis: "Bibit Sayuran",
+    jenis: "Bibit",
     berat: "50g",
     manfaat:
       "Mempermudah budidaya tomat di rumah, bisa menghasilkan buah segar untuk kebutuhan dapur maupun dijual kembali.",
@@ -2750,6 +2865,8 @@ const dataArray = [
     kondisi: "Kering, bersih, dan siap tanam",
     penyimpanan:
       "Simpan di tempat sejuk, kering, dan terhindar dari sinar matahari langsung",
+    tanggal: "2022-04-15",
+    rating: 5,
   },
   {
     id: 60,
@@ -2766,7 +2883,7 @@ const dataArray = [
       "https://www.panahmerah.id/uploads/ngc_master_item/63ec9e1103c6a_20230215155545-1.jpg",
       "https://png.pngtree.com/png-clipart/20230921/original/pngtree-tomato-seeds-png-image_10166825.png",
     ],
-    jenis: "Bibit Sayuran",
+    jenis: "Bibit",
     berat: "50g",
     manfaat:
       "Mempermudah budidaya tomat di rumah, bisa menghasilkan buah segar untuk kebutuhan dapur maupun dijual kembali.",
@@ -2798,7 +2915,9 @@ const dataArray = [
     ],
     kondisi: "Kering, bersih, dan siap tanam",
     penyimpanan:
-      "Simpan di tempat sejuk, kering, dan terhindar dari sinar matahari langsung",
+      " Simpan di tempat sejuk, kering, dan terhindar dari sinar matahari langsung",
+    tanggal: "2022-04-15",
+    rating: 5,
   },
   {
     id: 61,
@@ -2815,7 +2934,7 @@ const dataArray = [
       "https://www.panahmerah.id/uploads/ngc_master_item/63ec9e1103c6a_20230215155545-1.jpg",
       "https://png.pngtree.com/png-clipart/20230921/original/pngtree-tomato-seeds-png-image_10166825.png",
     ],
-    jenis: "Bibit Sayuran",
+    jenis: "Bibit",
     berat: "50g",
     manfaat:
       "Mempermudah budidaya tomat di rumah, bisa menghasilkan buah segar untuk kebutuhan dapur maupun dijual kembali.",
@@ -2848,6 +2967,8 @@ const dataArray = [
     kondisi: "Kering, bersih, dan siap tanam",
     penyimpanan:
       "Simpan di tempat sejuk, kering, dan terhindar dari sinar matahari langsung",
+    tanggal: "2022-04-15",
+    rating: 5,
   },
   {
     id: 62,
@@ -2864,7 +2985,7 @@ const dataArray = [
       "https://www.panahmerah.id/uploads/ngc_master_item/63ec9e1103c6a_20230215155545-1.jpg",
       "https://png.pngtree.com/png-clipart/20230921/original/pngtree-tomato-seeds-png-image_10166825.png",
     ],
-    jenis: "Bibit Sayuran",
+    jenis: "Bibit",
     berat: "50g",
     manfaat:
       "Mempermudah budidaya tomat di rumah, bisa menghasilkan buah segar untuk kebutuhan dapur maupun dijual kembali.",
@@ -2897,6 +3018,8 @@ const dataArray = [
     kondisi: "Kering, bersih, dan siap tanam",
     penyimpanan:
       "Simpan di tempat sejuk, kering, dan terhindar dari sinar matahari langsung",
+    tanggal: "2022-04-15",
+    rating: 5,
   },
   {
     id: 63,
@@ -2913,7 +3036,7 @@ const dataArray = [
       "https://www.panahmerah.id/uploads/ngc_master_item/63ec9e1103c6a_20230215155545-1.jpg",
       "https://png.pngtree.com/png-clipart/20230921/original/pngtree-tomato-seeds-png-image_10166825.png",
     ],
-    jenis: "Bibit Sayuran",
+    jenis: "Bibit",
     berat: "50g",
     manfaat:
       "Mempermudah budidaya tomat di rumah, bisa menghasilkan buah segar untuk kebutuhan dapur maupun dijual kembali.",
@@ -2946,6 +3069,8 @@ const dataArray = [
     kondisi: "Kering, bersih, dan siap tanam",
     penyimpanan:
       "Simpan di tempat sejuk, kering, dan terhindar dari sinar matahari langsung",
+    tanggal: "2022-04-15",
+    rating: 5,
   },
   {
     id: 64,
@@ -2962,7 +3087,7 @@ const dataArray = [
       "https://www.panahmerah.id/uploads/ngc_master_item/63ec9e1103c6a_20230215155545-1.jpg",
       "https://png.pngtree.com/png-clipart/20230921/original/pngtree-tomato-seeds-png-image_10166825.png",
     ],
-    jenis: "Bibit Sayuran",
+    jenis: "Bibit",
     berat: "50g",
     manfaat:
       "Mempermudah budidaya tomat di rumah, bisa menghasilkan buah segar untuk kebutuhan dapur maupun dijual kembali.",
@@ -2995,6 +3120,8 @@ const dataArray = [
     kondisi: "Kering, bersih, dan siap tanam",
     penyimpanan:
       "Simpan di tempat sejuk, kering, dan terhindar dari sinar matahari langsung",
+    tanggal: "2022-04-15",
+    rating: 5,
   },
   {
     id: 65,
@@ -3011,7 +3138,7 @@ const dataArray = [
       "https://www.panahmerah.id/uploads/ngc_master_item/63ec9e1103c6a_20230215155545-1.jpg",
       "https://png.pngtree.com/png-clipart/20230921/original/pngtree-tomato-seeds-png-image_10166825.png",
     ],
-    jenis: "Bibit Sayuran",
+    jenis: "Bibit",
     berat: "50g",
     manfaat:
       "Mempermudah budidaya tomat di rumah, bisa menghasilkan buah segar untuk kebutuhan dapur maupun dijual kembali.",
@@ -3044,85 +3171,211 @@ const dataArray = [
     kondisi: "Kering, bersih, dan siap tanam",
     penyimpanan:
       "Simpan di tempat sejuk, kering, dan terhindar dari sinar matahari langsung",
+    tanggal: "2022-04-15",
+    rating: 5,
   },
 ];
 
-function formatRupiah(angka) {
-  return "Rp " + angka.toLocaleString("id-ID");
-}
+document.addEventListener("DOMContentLoaded", () => {
+  function formatRupiah(angka) {
+    return "Rp " + angka.toLocaleString("id-ID");
+  }
 
-if (!localStorage.getItem("dataFarm")) {
-  localStorage.setItem("dataFarm", JSON.stringify(dataArray));
-}
+  let produk = JSON.parse(localStorage.getItem("dataFarm"));
+  if (!produk || !Array.isArray(produk) || produk.length === 0) {
+    produk = [...dataArray];
+    localStorage.setItem("dataFarm", JSON.stringify(produk));
+  }
+  if (!produk || !Array.isArray(produk) || produk.length === 0) {
+    console.warn("No product data found in localStorage under 'dataFarm'.");
+    return;
+  }
 
-const container = document.getElementById("products-scroll");
+  const params = new URLSearchParams(window.location.search);
+  const kategori = params.get("kategori");
 
-const produk = JSON.parse(localStorage.getItem("dataFarm")) || [];
+  let produkTampil = kategori
+    ? produk.filter(
+        (item) => item.jenis.toLowerCase() === kategori.toLowerCase()
+      )
+    : [...produk];
 
-produk.forEach((product) => {
-  const card = document.createElement("div");
-  card.classList.add("product-card");
+  const container = document.getElementById("products-scroll");
 
-  const diskonPersen = Math.round(
-    ((product.diskon - product.harga) / product.diskon) * 100
-  );
+  const detailProduk = [];
 
-  card.innerHTML = `
-    <div class="product-image-wrapper">
-      <img src="${product.gambar}" alt="${product.nama}" />
-      <span class="discount-badge">-${diskonPersen}%</span>
-    </div>
-    <div class="product-info">
-      <h3>${product.nama}</h3>
-      <div class="price-row">
-        <span class="product-price">${formatRupiah(product.harga)}</span>
-        <span class="product-price-old">${formatRupiah(product.diskon)}</span>
-      </div>
-      <div class="product-meta">
-        <span class="product-weight">${product.berat}</span> | 
-        <span class="product-type">${product.jenis}</span>
-      </div>
-      <div class="product-rating">
-        <span class="stars">★★★★⯪</span>
-        <span class="sold">Terjual 100+</span>
-      </div>
-    </div>
-    <button class="buy-button">Beli Sekarang</button>
-  `;
-  container.appendChild(card);
-});
+  function renderProduk(arr) {
+    container.innerHTML = "";
+    arr.forEach((product) => {
+      const card = document.createElement("div");
+      card.classList.add("product-card");
 
-const detailProduk = [];
+      let diskonPersen = 0;
+      if (product.diskon && product.harga && product.diskon > 0) {
+        diskonPersen = Math.round(
+          ((product.diskon - product.harga) / product.diskon) * 100
+        );
+      }
+      function renderStars(rating) {
+        let r = Math.round(rating * 2) / 2;
+        return (
+          "★".repeat(Math.floor(r)) +
+          (r % 1 ? "⯪" : "") +
+          "☆".repeat(5 - Math.ceil(r))
+        );
+      }
 
-document.querySelectorAll(".buy-button").forEach((btn, index) => {
-  btn.addEventListener("click", () => {
-    const card = btn.closest(".product-card");
+      card.innerHTML = `
+        <div class="product-image-wrapper">
+          <img src="${product.gambar}" alt="${product.nama}" />
+          <span class="discount-badge">-${diskonPersen}%</span>
+        </div>
+        <div class="product-info">
+          <h3>${product.nama}</h3>
+          <div class="price-row">
+            <span class="product-price">${formatRupiah(product.harga)}</span>
+            <span class="product-price-old">${formatRupiah(
+              product.diskon
+            )}</span>
+          </div>
+          <div class="product-meta">
+            <span class="product-weight">${product.berat}</span> | 
+            <span class="product-type">${product.jenis}</span>
+          </div>
+          <div class="product-rating">
+            <span class="stars">${renderStars(product.rating || 0)}</span>
+            <span class="sold">Terjual 100+</span>
+          </div>
+        </div>
+        <button class="buy-button">Beli Sekarang</button>
+      `;
+      container.appendChild(card);
 
-    const data = {
-      id: produk[index].id,
-      nama: card.querySelector("h3").textContent,
-      deskripsi: produk[index].deskripsi,
-      harga: produk[index].harga,
-      gambar: card.querySelector("img").src,
-      gambarBawah: produk[index].gambarBawah,
-      diskon: produk[index].diskon,
-      jenis: produk[index].jenis,
-      manfaat: produk[index].manfaat,
-      namaKomen: produk[index].namaKomen,
-      isiKomen: produk[index].isiKomen,
-      tanya: produk[index].qna.map((item) => item.tanya),
-      jawab: produk[index].qna.map((item) => item.jawab),
-      kondisi: produk[index].kondisi,
-      penyimpanan: produk[index].penyimpanan,
-      berat: produk[index].berat,
-    };
+      card.querySelector(".buy-button").addEventListener("click", () => {
+        const data = {
+          id: product.id,
+          nama: product.nama,
+          deskripsi: product.deskripsi,
+          harga: product.harga,
+          gambar: product.gambar,
+          gambarBawah: product.gambarBawah,
+          diskon: product.diskon,
+          jenis: product.jenis,
+          manfaat: product.manfaat,
+          namaKomen: product.namaKomen,
+          isiKomen: product.isiKomen,
+          tanya: product.qna ? product.qna.map((item) => item.tanya) : [],
+          jawab: product.qna ? product.qna.map((item) => item.jawab) : [],
+          kondisi: product.kondisi,
+          penyimpanan: product.penyimpanan,
+          berat: product.berat,
+        };
+        detailProduk.length = 0;
+        detailProduk.push(data);
+        localStorage.setItem("detailProduk", JSON.stringify(detailProduk));
+        window.location.href =
+          "/skarden_main/app/UI/productHtml/protoproductpurchase.html?id=" +
+          data.id;
+      });
+    });
+  }
 
-    detailProduk.push(data);
+  renderProduk(produkTampil);
 
-    localStorage.setItem("detailProduk", JSON.stringify(detailProduk));
+  const btn = document.getElementById("apply-filters");
+  const selectPrice = document.getElementById("sort-price");
+  const selectName = document.getElementById("sort-name");
+  const selectDate = document.getElementById("sort-date");
+  const filterKategori = document.getElementById("filter-category");
+  const filterRating = document.getElementById("filter-rating");
+  const minPriceInput = document.getElementById("price-min");
+  const maxPriceInput = document.getElementById("price-max");
+  const resetBtn = document.getElementById("reset-filters");
 
-    window.location.href =
-      "/skarden_main/app/UI/productHtml/protoproductpurchase.html?id=" +
-      data.id;
-  });
+  btn.onclick = () => {
+    let productt = [...produkTampil];
+
+    if (selectPrice.value === "low-to-high") {
+      productt.sort((a, b) => a.harga - b.harga);
+    } else if (selectPrice.value === "high-to-low") {
+      productt.sort((a, b) => b.harga - a.harga);
+    }
+
+    if (selectName.value === "a-to-z") {
+      productt.sort((a, b) => a.nama.localeCompare(b.nama, "id"));
+    } else if (selectName.value === "z-to-a") {
+      productt.sort((a, b) => b.nama.localeCompare(a.nama, "id"));
+    }
+
+    if (selectDate.value === "terbaru") {
+      productt.sort((a, b) => new Date(b.tanggal) - new Date(a.tanggal));
+    } else if (selectDate.value === "terlama") {
+      productt.sort((a, b) => new Date(a.tanggal) - new Date(b.tanggal));
+    }
+
+    if (filterKategori.value !== "default") {
+      console.log("Filter kategori dipilih:", filterKategori.value);
+      productt = productt.filter(
+        (item) =>
+          item.jenis.toLowerCase() === filterKategori.value.toLowerCase()
+      );
+    }
+    if (filterRating.value !== "all") {
+      let minRating = 0;
+      let maxRating = 5;
+
+      if (filterRating.value === "4") {
+        minRating = 4;
+        maxRating = 5;
+      } else if (filterRating.value === "3") {
+        minRating = 3;
+        maxRating = 3.9;
+      } else if (filterRating.value === "2") {
+        minRating = 2;
+        maxRating = 2.9;
+      }
+
+      productt = productt.filter((item) => {
+        const r = Number(item.rating) || 0;
+        const lolos = r >= minRating && r <= maxRating;
+        return lolos;
+      });
+    }
+
+    const minPrice =
+      minPriceInput.value !== "" ? Number(minPriceInput.value) : 0;
+    const maxPrice =
+      maxPriceInput.value !== "" ? Number(maxPriceInput.value) : Infinity;
+
+    productt = productt.filter((item) => {
+      const h = Number(item.harga) || 0;
+      const lolos = h >= minPrice && h <= maxPrice;
+      return lolos;
+    });
+
+    if (
+      selectPrice.value === "default" &&
+      selectName.value === "default" &&
+      selectDate.value === "default" &&
+      filterKategori.value === "default" &&
+      filterRating.value === "default" &&
+      minPriceInput.value === "" &&
+      maxPriceInput.value === ""
+    ) {
+      productt = produkTampil;
+    }
+    renderProduk(productt);
+  };
+
+  resetBtn.onclick = () => {
+    selectPrice.value = "default";
+    selectName.value = "default";
+    selectDate.value = "default";
+    filterKategori.value = "default";
+    filterRating.value = "default";
+    maxPriceInput.value = "";
+    minPriceInput.value = "";
+
+    renderProduk(produkTampil)
+  };
 });

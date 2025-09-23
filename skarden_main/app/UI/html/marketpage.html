@@ -1,253 +1,291 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="/skarden_main/app/UI/icon/png/prim1.1nbg.png" />
+    <title>Skarden | Shop</title>
+    <link rel="stylesheet" href="/skarden_main/app/UI/css/market.css" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <div id="page-fade"></div>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="icon" href="/skarden_main/app/UI/icon/png/prim1.1nbg.png" />
-  <title>Skarden | Shop</title>
-  <link rel="stylesheet" href="/skarden_main/app/UI/css/market.css" />
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
-</head>
-<div id="page-fade"></div>
+  <body>
+    <section class="hero">
+      <!-- NAVBAR START -->
+      <div class="navbar-container">
+        <nav class="navbar">
+          <a href="../../../../index.html">
+            <img
+              src="/skarden_main/app/UI/icon/png/prim1.1nbg.png"
+              style="width: 65px"
+            />
+          </a>
+          <ul class="nav-links">
+            <li><a href="../../../../index.html">Home</a></li>
+            <li class="dropdown">
+              <a href="marketpage.html" class="dropbtn active">Shop</a>
+              <div class="dropdown-content">
+                <a href="#">Plants</a>
+                <a href="#">Tools</a>
+                <a href="#">Seeds</a>
+              </div>
+            </li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+          <div class="search-cart">
+            <input type="search" placeholder="Search products..." /><i
+              class="fas fa-search"
+            ></i>
+            <a href="#"><i class="fas fa-shopping-cart"></i></a>
+          </div>
+        </nav>
+      </div>
+      <!-- NAVBAR END -->
 
-<body>
-  <div class="productslist-container">
-    <div class="mainlogo">
-      <img src="/skarden_main/app/UI/icon/png/prim1.1nbg.png" style="width: 60%" />
-    </div>
+      <div class="productslist-container">
+        <!-- HAPUS SIDEBAR NAVIGATION -->
+        <!-- <div class="navigation"> ... </div> -->
 
-    <button class="toggle-sorting-section" id="toggle-sorting-section-btn">
-      <span class="toggle-arrow-bg"><span class="toggle-arrow">&lt;</span></span>
-    </button>
+        <!-- FILTER/SORTING SECTION -->
+        <div class="sorting">
+          <button
+            class="toggle-sorting-btn"
+            aria-expanded="false"
+            aria-controls="sorting-menu"
+          >
+            <span class="toggle-icon">▼</span> Sort & Filter Options
+          </button>
+          <div class="collapsible-sorting" id="sorting-menu">
+            <div class="filter-section">
+              <h4>Sort By</h4>
+              <label for="sort-price" class="sr-only">Sort by Price</label>
+              <select id="sort-price">
+                <option value="default">Price: Default</option>
+                <option value="low-to-high">Price: Low to High</option>
+                <option value="high-to-low">Price: High to Low</option>
+              </select>
+              <label for="sort-name" class="sr-only">Sort by Name</label>
+              <select id="sort-name">
+                <option value="default">Name: Default</option>
+                <option value="a-to-z">Name: A to Z</option>
+                <option value="z-to-a">Name: Z to A</option>
+              </select>
+              <label for="sort-date" class="sr-only">Sort by Date</label>
+              <select id="sort-date">
+                <option value="default">Date: Default</option>
+                <option value="terbaru">Newest First</option>
+                <option value="terlama">Oldest First</option>
+              </select>
+            </div>
 
-    <div class="navigation">
-      <nav>
-        <ul>
-          <li>
-            <a href="../../../../index.html"><i class="fas fa-home"></i> Home</a>
-          </li>
-          <li>
-            <a href="#" class="active"><i class="fas fa-store"></i> Shop</a>
-          </li>
-          <li>
-            <a href="about.html"><i class="fas fa-info-circle"></i> About</a>
-          </li>
-          <li>
-            <a href="blog.html"><i class="fas fa-blog"></i> Blog</a>
-          </li>
-          <li>
-            <a href="contact.html"><i class="fas fa-envelope"></i> Contact</a>
-          </li>
-        </ul>
-      </nav>
-    </div>
- 
-    <div class="sorting">
-      <button class="toggle-sorting-btn" aria-expanded="false" aria-controls="sorting-menu">
-        <span class="toggle-icon">▼</span> Sort & Filter Options
-      </button>
-      <div class="collapsible-sorting" id="sorting-menu">
-        <div class="filter-section">
-          <h4>Sort By</h4>
-          <label for="sort-price" class="sr-only">Sort by Price</label>
-          <select id="sort-price">
-            <option value="default">Price: Default</option>
-            <option value="low-to-high">Price: Low to High</option>
-            <option value="high-to-low">Price: High to Low</option>
-          </select>
-          <label for="sort-name" class="sr-only">Sort by Name</label>
-          <select id="sort-name">
-            <option value="default">Name: Default</option>
-            <option value="a-to-z">Name: A to Z</option>
-            <option value="z-to-a">Name: Z to A</option>
-          </select>
-          <label for="sort-date" class="sr-only">Sort by Date</label>
-          <select id="sort-date">
-            <option value="default">Date: Default</option>
-            <option value="newest">Newest First</option>
-            <option value="oldest">Oldest First</option>
-          </select>
+            <div class="filter-section">
+              <h4>Filter By</h4>
+              <label for="filter-category" class="sr-only"
+                >Filter by Category</label
+              >
+              <select id="filter-category">
+                <option value="default">All Categories</option>
+                <option value="Bibit">Bibit Tanaman</option>
+                <option value="Alat Pertanian">Alat Pertanian</option>
+                <option value="Pupuk">Pupuk</option>
+                <option value="Pot">Pot Tanaman</option>
+                <option value="Bunga">Bunga</option>
+                <option value="Sayuran Dan Buah">Sayuran Dan Buah</option>
+              </select>
+
+              <label for="filter-rating" class="sr-only"
+                >Filter by Rating</label
+              >
+              <select id="filter-rating">
+                <option value="default">All Ratings</option>
+                <option value="4">4+ Stars</option>
+                <option value="3">3+ Stars</option>
+                <option value="2">2+ Stars</option>
+              </select>
+
+              <div class="price-range">
+                <label for="price-min">Price Range:</label>
+                <div class="price-inputs">
+                  <input
+                    type="number"
+                    id="price-min"
+                    placeholder="Min"
+                    min="0"
+                  />
+                  <span>-</span>
+                  <input
+                    type="number"
+                    id="price-max"
+                    placeholder="Max"
+                    min="0"
+                  />
+                </div>
+              </div>
+
+              <!-- <div class="filter-checkboxes">
+                <div class="checkbox-item">
+                  <input type="checkbox" id="filter-new" name="filter-new" />
+                  <label for="filter-new">New Products</label>vvl
+                </div>
+                <div class="checkbox-item">
+                  <input type="checkbox" id="filter-sale" name="filter-sale" />
+                  <label for="filter-sale">On Sale</label>
+                </div>
+                <div class="checkbox-item">
+                  <input
+                    type="checkbox"
+                    id="filter-stock"
+                    name="filter-stock"
+                  />
+                  <label for="filter-stock">In Stock Only</label>
+                </div>
+              </div> -->
+            </div>
+
+            <div class="filter-actions">
+              <button id="apply-filters" class="apply-btn">
+                Apply Filters
+              </button>
+              <button id="reset-filters" class="reset-btn">Reset</button>
+            </div>
+          </div>
         </div>
 
-        <div class="filter-section">
-          <h4>Filter By</h4>
-          <label for="filter-category" class="sr-only">Filter by Category</label>
-          <select id="filter-category">
-            <option value="all">All Categories</option>
-            <option value="seeds">Seeds & Bulbs</option>
-            <option value="tools">Garden Tools</option>
-            <option value="fertilizers">Fertilizers</option>
-            <option value="pots">Pots & Planters</option>
-            <option value="plants">Live Plants</option>
-          </select>
+        <div id="products-scroll" class="products-scroll"></div>
+      </div>
 
-          <label for="filter-rating" class="sr-only">Filter by Rating</label>
-          <select id="filter-rating">
-            <option value="all">All Ratings</option>
-            <option value="4">4+ Stars</option>
-            <option value="3">3+ Stars</option>
-            <option value="2">2+ Stars</option>
-          </select>
+      <section class="subscribe-section">
+        <div class="subs-content">
+          <h3>Stay Updated</h3>
+          <p>
+            Get the latest farming tips and exclusive offers delivered to your
+            inbox.
+          </p>
+          <form class="subscribe-form">
+            <input type="email" placeholder="Enter your email" />
+            <button type="submit">
+              <i class="fas fa-envelope"></i> Subscribe
+            </button>
+          </form>
+        </div>
+      </section>
 
-          <div class="price-range">
-            <label for="price-min">Price Range:</label>
-            <div class="price-inputs">
-              <input type="number" id="price-min" placeholder="Min" min="0">
-              <span>-</span>
-              <input type="number" id="price-max" placeholder="Max" min="0">
+      <div class="main-footer">
+        <div class="footer-content">
+          <div class="footer-column">
+            <div class="footer-column-img">
+              <img
+                src="/skarden_main/app/UI/icon/png/whitegrayscale.png"
+                style="width: 70%"
+              />
+            </div>
+          </div>
+          <div class="footer-column">
+            <h2 class="logo">Skarden</h2>
+            <p>
+              Your trusted partner in building productive, flourishing farms.
+              Quality supplies for every farming journey.
+            </p>
+            <div class="social-icons">
+              <a href="#"><i class="fab fa-facebook-f"></i></a>
+              <a href="#"><i class="fab fa-x-twitter"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+              <a href="#"><i class="fab fa-whatsapp"></i></a>
             </div>
           </div>
 
-          <div class="filter-checkboxes">
-            <div class="checkbox-item">
-              <input type="checkbox" id="filter-new" name="filter-new">
-              <label for="filter-new">New Products</label>
-            </div>
-            <div class="checkbox-item">
-              <input type="checkbox" id="filter-sale" name="filter-sale">
-              <label for="filter-sale">On Sale</label>
-            </div>
-            <div class="checkbox-item">
-              <input type="checkbox" id="filter-stock" name="filter-stock">
-              <label for="filter-stock">In Stock Only</label>
-            </div>
+          <div class="footer-column">
+            <h3>Quick Links</h3>
+            <ul>
+              <li><a href="about.html">About Us</a></li>
+              <li><a href="contact.html">Contact</a></li>
+              <li><a href="faq.html">FAQ</a></li>
+              <li><a href="shipping.html">Shipping Info</a></li>
+              <li><a href="return.html">Returns</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-column">
+            <h3>Categories</h3>
+            <ul>
+              <li><a href="#">Seeds & Bulbs</a></li>
+              <li><a href="#">Garden Tools</a></li>
+              <li><a href="#">Fertilizers</a></li>
+              <li><a href="#">Pots & Planters</a></li>
+              <li><a href="#">Live Plants</a></li>
+            </ul>
           </div>
         </div>
 
-        <div class="filter-actions">
-          <button id="apply-filters" class="apply-btn">Apply Filters</button>
-          <button id="reset-filters" class="reset-btn">Reset</button>
+        <div class="footer-bottom">
+          <p>© 2025 Skarden. All rights reserved.</p>
+          <div class="footer-links">
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
+            <a href="#">Cookie Policy</a>
+          </div>
         </div>
       </div>
-    </div>
-
-    <div id="products-scroll" class="products-scroll">
-
-    </div>
-  </div>
-
-  <section class="subscribe-section">
-    <div class="subs-content">
-      <h3>Stay Updated</h3>
-      <p>
-        Get the latest farming tips and exclusive offers delivered to your
-        inbox.
-      </p>
-      <form class="subscribe-form">
-        <input type="email" placeholder="Enter your email" />
-        <button type="submit">
-          <i class="fas fa-envelope"></i> Subscribe
-        </button>
-      </form>
-    </div>
-  </section>
-
-  <div class="main-footer">
-    <div class="footer-content">
-      <div class="footer-column">
-        <div class="footer-column-img">
-          <img src="/skarden_main/app/UI/icon/png/whitegrayscale.png" style="width: 70%" />
-        </div>
-      </div>
-      <div class="footer-column">
-        <h2 class="logo">Skarden</h2>
-        <p>
-          Your trusted partner in building productive, flourishing farms.
-          Quality supplies for every farming journey.
-        </p>
-        <div class="social-icons">
-          <a href="#"><i class="fab fa-facebook-f"></i></a>
-          <a href="#"><i class="fab fa-x-twitter"></i></a>
-          <a href="#"><i class="fab fa-instagram"></i></a>
-          <a href="#"><i class="fab fa-whatsapp"></i></a>
-        </div>
-      </div>
-
-      <div class="footer-column">
-        <h3>Quick Links</h3>
-        <ul>
-          <li><a href="about.html">About Us</a></li>
-          <li><a href="contact.html">Contact</a></li>
-          <li><a href="faq.html">FAQ</a></li>
-          <li><a href="shipping.html">Shipping Info</a></li>
-          <li><a href="return.html">Returns</a></li>
-        </ul>
-      </div>
-
-      <div class="footer-column">
-        <h3>Categories</h3>
-        <ul>
-          <li><a href="#">Seeds & Bulbs</a></li>
-          <li><a href="#">Garden Tools</a></li>
-          <li><a href="#">Fertilizers</a></li>
-          <li><a href="#">Pots & Planters</a></li>
-          <li><a href="#">Live Plants</a></li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="footer-bottom">
-      <p>© 2025 Skarden. All rights reserved.</p>
-      <div class="footer-links">
-        <a href="#">Privacy Policy</a>
-        <a href="#">Terms of Service</a>
-        <a href="#">Cookie Policy</a>
-      </div>
-    </div>
-  </div>
-
-  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
-  <script src="/array.js"></script>
-  <script src="/skarden_main/app/UI/js/nav.js"></script>
-  <script src="/skarden_main/app/UI/js/fade.js"></script>
-  <script>
-    (function () {
-      function c() {
-        var b = a.contentDocument || a.contentWindow.document;
-        if (b) {
-          var d = b.createElement("script");
-          d.innerHTML =
-            "window.__CF$cv$params={r:'96404c677b2ae785',t:'MTc1MzMyNzQwMi4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";
-          b.getElementsByTagName("head")[0].appendChild(d);
+    </section>
+    <script
+      data-cfasync="false"
+      src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"
+    ></script>
+    <script src="/array.js"></script>
+    <script src="/skarden_main/app/UI/js/nav.js"></script>
+    <script src="/skarden_main/app/UI/js/fade.js"></script>
+    <script>
+      (function () {
+        function c() {
+          var b = a.contentDocument || a.contentWindow.document;
+          if (b) {
+            var d = b.createElement("script");
+            d.innerHTML =
+              "window.__CF$cv$params={r:'96404c677b2ae785',t:'MTc1MzMyNzQwMi4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";
+            b.getElementsByTagName("head")[0].appendChild(d);
+          }
         }
-      }
-      if (document.body) {
-        var a = document.createElement("iframe");
-        a.height = 1;
-        a.width = 1;
-        a.style.position = "absolute";
-        a.style.top = 0;
-        a.style.left = 0;
-        a.style.border = "none";
-        a.style.visibility = "hidden";
-        document.body.appendChild(a);
-        if ("loading" !== document.readyState) c();
-        else if (window.addEventListener)
-          document.addEventListener("DOMContentLoaded", c);
-        else {
-          var e = document.onreadystatechange || function () { };
-          document.onreadystatechange = function (b) {
-            e(b);
-            "loading" !== document.readyState &&
-              ((document.onreadystatechange = e), c());
-          };
+        if (document.body) {
+          var a = document.createElement("iframe");
+          a.height = 1;
+          a.width = 1;
+          a.style.position = "absolute";
+          a.style.top = 0;
+          a.style.left = 0;
+          a.style.border = "none";
+          a.style.visibility = "hidden";
+          document.body.appendChild(a);
+          if ("loading" !== document.readyState) c();
+          else if (window.addEventListener)
+            document.addEventListener("DOMContentLoaded", c);
+          else {
+            var e = document.onreadystatechange || function () {};
+            document.onreadystatechange = function (b) {
+              e(b);
+              "loading" !== document.readyState &&
+                ((document.onreadystatechange = e), c());
+            };
+          }
         }
-      }
-    })();
-  </script>
-  <script>
-    const originalTitle = document.title;
-    const hiddenTitle = "Sleeping... 😴😴";
+      })();
+    </script>
+    <script>
+      const originalTitle = document.title;
+      const hiddenTitle = "Sleeping... 😴😴";
 
-    document.addEventListener("visibilitychange", () => {
-      if (document.hidden) {
-        document.title = hiddenTitle;
-      } else {
-        document.title = originalTitle;
-      }
-    });
-  </script>
-</body>
-
+      document.addEventListener("visibilitychange", () => {
+        if (document.hidden) {
+          document.title = hiddenTitle;
+        } else {
+          document.title = originalTitle;
+        }
+      });
+    </script>
+  </body>
 </html>
