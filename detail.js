@@ -2,9 +2,6 @@ const params = new URLSearchParams(window.location.search);
 
 const id = params.get("id");
 const detailProduk = JSON.parse(localStorage.getItem("detailProduk")) || [];
-
-console.log("Product ID:", id); // Debugging line
-console.log("Detail Produk:", detailProduk); // Debugging line
 const produk = detailProduk.find((item) => item.id == id);
 
 const image = document.getElementById("main-product-image");

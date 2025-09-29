@@ -1,0 +1,39 @@
+{
+  "harvest-time-methods": {
+    "title": "Waktu & Cara Panen yang Tepat",
+    "author": "Siti Nurhaliza",
+    "date": "20 Juli 2025",
+    "category": "Panen Segar",
+    "image": "https://images.unsplash.com/photo-1605000797499-95a51c5269ae?q=80&w=1171&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "tags": ["panen", "sayuran", "buah"],
+    "content": [
+      {
+        "type": "paragraph",
+        "text": "Memanen pada waktu yang tepat adalah kunci untuk mendapatkan hasil terbaik dari kebun Anda. Artikel ini akan membahas kapan dan bagaimana cara memanen berbagai jenis sayuran dan buah dengan benar."
+      },
+      {
+        "type": "heading",
+        "level": 2,
+        "text": "Tanda-tanda Siap Panen"
+      },
+      {
+        "type": "paragraph",
+        "text": "Setiap tanaman memiliki tanda-tanda tersendiri ketika siap dipanen. Beberapa tanda umum termasuk warna yang matang, ukuran yang sesuai, dan tekstur yang tepat."
+      },
+      {
+        "type": "image",
+        "src": "https://images.unsplash.com/photo-1593699588296-74e3e3f8489f?q=80&w=1170&auto=format&fit=crop",
+        "caption": "Tomat yang sudah matang sempurna siap dipanen"
+      },
+      {
+        "type": "heading",
+        "level": 2,
+        "text": "Teknik Panen yang Benar"
+      },
+      {
+        "type": "paragraph",
+        "text": "Gunakan alat yang bersih dan tajat untuk memotong hasil panen. Hindari menarik atau memutar buah/sayuran karena dapat merusak tanaman. Untuk sayuran daun, petik daun luar terlebih dahulu dan biarkan daun muda terus tumbuh."
+      }
+    ]
+  }
+}

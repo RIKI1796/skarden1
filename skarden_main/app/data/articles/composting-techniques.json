@@ -1,0 +1,39 @@
+{
+  "composting-techniques": {
+    "title": "Teknik Kompos Modern untuk Pemula",
+    "author": "Dewi Lestari",
+    "date": "10 Juli 2025",
+    "category": "Panduan",
+    "image": "https://images.unsplash.com/photo-1516711345667-ebafb3ebea12?q=80&w=1172&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "tags": ["kompos", "daur ulang", "pemula"],
+    "content": [
+      {
+        "type": "paragraph",
+        "text": "Membuat kompos adalah cara terbaik untuk mendaur ulang sisa organik dan menciptakan pupuk alami untuk kebun Anda. Artikel ini akan memandu Anda melalui teknik kompos modern yang mudah diikuti bahkan oleh pemula sekalipun."
+      },
+      {
+        "type": "heading",
+        "level": 2,
+        "text": "Apa Itu Kompos?"
+      },
+      {
+        "type": "paragraph",
+        "text": "Kompos adalah hasil dari proses penguraian bahan organik seperti sisa makanan, daun, dan ranting. Proses ini mengubah limbah organik menjadi pupuk kaya nutrisi yang dapat meningkatkan kesehatan tanah dan tanaman."
+      },
+      {
+        "type": "image",
+        "src": "https://images.unsplash.com/photo-1545333212-ffebc7933c12?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "caption": "Kompos matang siap digunakan di kebun"
+      },
+      {
+        "type": "heading",
+        "level": 2,
+        "text": "Metode Kompos Cepat"
+      },
+      {
+        "type": "paragraph",
+        "text": "Metode kompos cepat dapat menghasilkan kompos siap pakai dalam waktu 2-3 minggu. Teknik ini memerlukan perhatian lebih pada rasio bahan coklat (karbon) dan hijau (nitrogen), serta memastikan kelembapan dan aerasi yang tepat."
+      }
+    ]
+  }
+}

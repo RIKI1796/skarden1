@@ -1,0 +1,979 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="/skarden_main/app/UI/icon/png/prim1.1nbg.png" />
+    <title>Payment | Skarden</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css"
+    />
+    <style>
+      :root {
+        --dark-green: #2e7d32;
+        --white: #ffffff;
+        --light-gray: #f5f5f5;
+        --text-dark: #111;
+        --text-medium: #555;
+      }
+
+      @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet');
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap");
+
+      body {
+        background-color: var(--light-gray);
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        color: var(--text-dark);
+        padding-top: 2rem;
+      }
+
+      body::-webkit-scrollbar {
+        display: none;
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        position: relative;
+        z-index: 6;
+      }
+
+      /* Checkout Steps */
+      .checkout-steps {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 2rem;
+        position: relative;
+      }
+
+      .checkout-steps::before {
+        content: "";
+        position: absolute;
+        top: 20px;
+        left: 0;
+        right: 0;
+        height: 2px;
+        background-color: #e0e0e0;
+        z-index: 1;
+      }
+
+      .step {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: relative;
+        z-index: 2;
+        background-color: var(--light-gray);
+        padding: 0 10px;
+      }
+
+      .step-circle {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background-color: #e0e0e0;
+        color: #999;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-weight: 600;
+        margin-bottom: 8px;
+        transition: all 0.3s ease;
+      }
+
+      .step.active .step-circle {
+        background-color: var(--dark-green);
+        color: var(--white);
+      }
+
+      .step.completed .step-circle {
+        background-color: var(--dark-green);
+        color: var(--white);
+      }
+
+      .step.completed .step-circle::after {
+        content: "✓";
+      }
+
+      .step-label {
+        font-size: 0.9rem;
+        color: #666;
+        text-align: center;
+      }
+
+      .step.active .step-label {
+        color: var(--dark-green);
+        font-weight: 600;
+      }
+
+      /* Section Styling */
+      .section-card {
+        background-color: var(--white);
+        border-radius: 10px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        padding: 1.5rem;
+        margin-bottom: 1.5rem;
+      }
+
+      .section-title {
+        font-size: 1.5rem;
+        font-weight: 600;
+        color: var(--dark-green);
+        margin-bottom: 1.5rem;
+        padding-bottom: 0.5rem;
+        border-bottom: 2px solid #e8f5e9;
+      }
+
+      /* Payment Methods */
+      .payment-method-card {
+        display: none;
+      }
+
+      .payment-method-card.active {
+        display: block;
+      }
+
+      .payment-method {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        padding: 1rem 1.5rem;
+        border: 2px solid #e0e0e0;
+        border-radius: 8px;
+        margin-bottom: 1rem;
+        cursor: pointer;
+        background: #fff;
+        transition: border-color 0.2s, box-shadow 0.2s, background 0.2s;
+        box-shadow: 0 2px 8px rgba(46, 125, 50, 0.03);
+        position: relative;
+      }
+      .payment-method.selected,
+      .payment-method:hover {
+        border-color: var(--dark-green);
+        background: #e8f5e9;
+        box-shadow: 0 4px 16px rgba(46, 125, 50, 0.08);
+      }
+      .payment-method.selected::after {
+        content: "\f26b";
+        font-family: "Bootstrap-icons";
+        color: var(--dark-green);
+        font-size: 1.5rem;
+        position: absolute;
+        right: 20px;
+        top: 50%;
+        transform: translateY(-50%);
+        background: #fff;
+        border-radius: 50%;
+        padding: 0.1em 0.3em;
+      }
+      .payment-method-icon {
+        font-size: 2rem;
+        color: var(--dark-green);
+        transition: transform 0.2s;
+      }
+      .payment-method:hover .payment-method-icon,
+      .payment-method.selected .payment-method-icon {
+        transform: scale(1.15) rotate(-8deg);
+      }
+
+      /* Card Payment Form */
+      .card-form {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+      }
+
+      .card-form .full-width {
+        grid-column: 1 / -1;
+      }
+
+      .card-input-group {
+        position: relative;
+      }
+
+      .card-icon {
+        position: absolute;
+        right: 15px;
+        top: 50%;
+        transform: translateY(-50%);
+        color: #999;
+      }
+
+      .form-control,
+      .form-select {
+        border-radius: 6px;
+        border: 1px solid #ddd;
+        padding: 0.75rem;
+      }
+
+      .form-control:focus,
+      .form-select:focus {
+        border-color: var(--dark-green);
+        box-shadow: 0 0 0 0.25rem rgba(46, 125, 50, 0.25);
+      }
+
+      .form-label {
+        font-weight: 500;
+        margin-bottom: 0.5rem;
+      }
+
+      /* Bank Transfer */
+      .bank-details {
+        background-color: #f9f9f9;
+        border-radius: 8px;
+        padding: 1.5rem;
+        margin-bottom: 1.5rem;
+      }
+
+      .bank-item {
+        display: flex;
+        align-items: center;
+        margin-bottom: 1.5rem;
+        padding-bottom: 1.5rem;
+        border-bottom: 1px solid #eee;
+      }
+
+      .bank-item:last-child {
+        margin-bottom: 0;
+        padding-bottom: 0;
+        border-bottom: none;
+      }
+
+      .bank-logo {
+        width: 60px;
+        height: 60px;
+        background-color: var(--white);
+        border-radius: 8px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-right: 1rem;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+      }
+
+      .bank-logo i {
+        font-size: 1.5rem;
+        color: var(--dark-green);
+      }
+
+      .bank-info h4 {
+        margin-bottom: 0.25rem;
+        font-size: 1.1rem;
+      }
+
+      .bank-account {
+        font-family: monospace;
+        font-weight: 600;
+        margin-bottom: 0.25rem;
+      }
+
+      .bank-name {
+        color: var(--text-medium);
+        font-size: 0.9rem;
+      }
+
+      .copy-btn {
+        background-color: var(--light-gray);
+        border: none;
+        color: var(--text-dark);
+        padding: 0.25rem 0.75rem;
+        border-radius: 4px;
+        font-size: 0.85rem;
+        cursor: pointer;
+        transition: all 0.2s ease;
+      }
+
+      .copy-btn:hover {
+        background-color: var(--dark-green);
+        color: var(--white);
+      }
+
+      /* E-Wallet */
+      .ewallet-container {
+        text-align: center;
+        padding: 1rem 0;
+      }
+
+      .qr-code {
+        width: 200px;
+        height: 200px;
+        background-color: var(--white);
+        border: 1px solid #ddd;
+        margin: 0 auto 1.5rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 8px;
+      }
+
+      .qr-code i {
+        font-size: 5rem;
+        color: #ddd;
+      }
+
+      .ewallet-instructions {
+        background-color: #f9f9f9;
+        border-radius: 8px;
+        padding: 1.5rem;
+        margin-bottom: 1.5rem;
+      }
+
+      .ewallet-steps {
+        counter-reset: step-counter;
+        list-style-type: none;
+        padding-left: 0;
+      }
+
+      .ewallet-steps li {
+        position: relative;
+        padding-left: 2rem;
+        margin-bottom: 1rem;
+        counter-increment: step-counter;
+      }
+
+      .ewallet-steps li::before {
+        content: counter(step-counter);
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 1.5rem;
+        height: 1.5rem;
+        background-color: var(--dark-green);
+        color: var(--white);
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 0.85rem;
+        font-weight: 600;
+      }
+
+      .wallet-id-input {
+        margin-top: 1rem;
+      }
+
+      /* Order Summary */
+      .order-item {
+        display: flex;
+        align-items: center;
+        padding: 1rem 0;
+        border-bottom: 1px solid #eee;
+      }
+
+      .order-item:last-child {
+        border-bottom: none;
+      }
+
+      .order-item-img {
+        width: 60px;
+        height: 60px;
+        object-fit: cover;
+        border-radius: 8px;
+        margin-right: 1rem;
+      }
+
+      .order-item-details {
+        flex: 1;
+      }
+
+      .order-item-title {
+        font-weight: 600;
+        margin-bottom: 0.25rem;
+        font-size: 0.95rem;
+      }
+
+      .order-item-quantity {
+        color: var(--text-medium);
+        font-size: 0.85rem;
+      }
+
+      .order-item-price {
+        font-weight: 600;
+        color: var(--dark-green);
+      }
+
+      /* Price Breakdown */
+      .price-row {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 0.75rem;
+      }
+
+      .price-row.total {
+        font-weight: 700;
+        font-size: 1.2rem;
+        color: var(--dark-green);
+        padding-top: 0.75rem;
+        border-top: 2px solid #eee;
+        margin-top: 0.75rem;
+      }
+
+      /* Action Buttons */
+      .action-buttons {
+        display: flex;
+        gap: 1rem;
+        margin-top: 1.5rem;
+      }
+
+      .btn-back {
+        background-color: transparent;
+        color: var(--dark-green);
+        border: 2px solid var(--dark-green);
+        padding: 0.75rem 1.5rem;
+        font-weight: 600;
+        border-radius: 6px;
+        flex: 1;
+        transition: all 0.3s ease;
+      }
+
+      .btn-back:hover {
+        background-color: rgba(46, 125, 50, 0.1);
+        transform: translateY(-2px);
+      }
+
+      .btn-proceed {
+        background-color: var(--dark-green);
+        color: var(--white);
+        border: none;
+        padding: 0.75rem 1.5rem;
+        font-weight: 600;
+        border-radius: 6px;
+        flex: 1;
+        transition: all 0.3s ease;
+      }
+
+      .btn-proceed:hover {
+        background-color: #1b5e20;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      /* Security Badge */
+      .security-badge {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 2rem;
+        padding: 1rem;
+        background-color: rgba(46, 125, 50, 0.1);
+        border-radius: 8px;
+        color: var(--dark-green);
+      }
+
+      .security-badge i {
+        font-size: 1.5rem;
+        margin-right: 0.75rem;
+      }
+
+      /* Mobile Responsive */
+      @media (max-width: 768px) {
+        .checkout-steps {
+          overflow-x: auto;
+          padding-bottom: 1rem;
+        }
+
+        .step {
+          min-width: 100px;
+        }
+
+        .section-title {
+          font-size: 1.3rem;
+        }
+
+        .card-form {
+          grid-template-columns: 1fr;
+        }
+
+        .action-buttons {
+          flex-direction: column;
+        }
+
+        .bank-item {
+          flex-direction: column;
+          text-align: center;
+        }
+
+        .bank-logo {
+          margin-right: 0;
+          margin-bottom: 0.75rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="text-center mb-4">Pembayaran</h1>
+
+      <!-- Checkout Steps -->
+      <div class="checkout-steps">
+        <div class="step completed">
+          <div class="step-circle">1</div>
+          <div class="step-label">Keranjang</div>
+        </div>
+        <div class="step completed">
+          <div class="step-circle">2</div>
+          <div class="step-label">Pengiriman</div>
+        </div>
+        <div class="step active">
+          <div class="step-circle">3</div>
+          <div class="step-label">Pembayaran</div>
+        </div>
+        <div class="step">
+          <div class="step-circle">4</div>
+          <div class="step-label">Konfirmasi</div>
+        </div>
+      </div>
+
+      <div class="row">
+        <!-- Left Column - - Payment Details -->
+        <div class="col-lg-8">
+          <div class="section-card">
+            <h3 class="section-title">Metode Pembayaran</h3>
+
+            <div class="payment-methods">
+              <div class="payment-method" onclick="selectPaymentMethod('card')">
+                <div class="payment-method-icon">
+                  <i class="bi bi-credit-card"></i>
+                </div>
+                <div class="payment-method-details">
+                  <div class="payment-method-title">Kartu Kredit/Debit</div>
+                  <div class="payment-method-desc">
+                    Pembayaran aman dengan Visa, Mastercard, atau JCB
+                  </div>
+                </div>
+              </div>
+
+              <div class="payment-method" onclick="selectPaymentMethod('bank')">
+                <div class="payment-method-icon">
+                  <i class="bi bi-bank"></i>
+                </div>
+                <div class="payment-method-details">
+                  <div class="payment-method-title">Transfer Bank</div>
+                  <div class="payment-method-desc">
+                    Transfer melalui ATM, Internet Banking, atau Mobile Banking
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="payment-method"
+                onclick="selectPaymentMethod('ewallet')"
+              >
+                <div class="payment-method-icon">
+                  <i class="bi bi-wallet2"></i>
+                </div>
+                <div class="payment-method-details">
+                  <div class="payment-method-title">E-Wallet</div>
+                  <div class="payment-method-desc">
+                    OVO, GoPay, Dana, atau LinkAja
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Form -->
+          <div id="card-payment" class="section-card payment-method-card">
+            <h3 class="section-title">Detail Kartu</h3>
+
+            <form id="card-form">
+              <div class="card-form">
+                <div class="card-input-group full-width">
+                  <label for="cardName" class="form-label"
+                    >Nama Pemegang Kartu</label
+                  >
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="cardName"
+                    placeholder="Nama lengkap"
+                    required
+                  />
+                </div>
+
+                <div class="card-input-group full-width">
+                  <label for="cardNumber" class="form-label">Nomor Kartu</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="cardNumber"
+                    placeholder="0000 0000 0000 0000"
+                    maxlength="19"
+                    required
+                  />
+                  <i class="bi bi-credit-card card-icon"></i>
+                </div>
+
+                <div class="card-input-group">
+                  <label for="expiryDate" class="form-label"
+                    >Tanggal Kadaluarsa</label
+                  >
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="expiryDate"
+                    placeholder="MM/YY"
+                    maxlength="5"
+                    required
+                  />
+                </div>
+
+                <div class="card-input-group">
+                  <label for="cvv" class="form-label">CVV</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="cvv"
+                    placeholder="123"
+                    maxlength="3"
+                    required
+                  />
+                </div>
+              </div>
+            </form>
+          </div>
+
+          <!-- Transfer Bank -->
+          <div id="bank-payment" class="section-card payment-method-card">
+            <h3 class="section-title">Instruksi Transfer Bank</h3>
+
+            <p>Silakan transfer ke salah satu rekening berikut:</p>
+
+            <div class="bank-details">
+              <div class="bank-item">
+                <div class="bank-logo">
+                  <i class="bi bi-bank"></i>
+                </div>
+                <div class="bank-info">
+                  <h4>Bank Central Asia (BCA)</h4>
+                  <div class="bank-account">1234 5678 9012 3456</div>
+                  <div class="bank-name">a.n. PT Skarden Indonesia</div>
+                </div>
+                <button
+                  class="copy-btn"
+                  onclick="copyToClipboard('1234 5678 9012 3456')"
+                >
+                  Salin
+                </button>
+              </div>
+
+              <div class="bank-item">
+                <div class="bank-logo">
+                  <i class="bi bi-bank2"></i>
+                </div>
+                <div class="bank-info">
+                  <h4>Bank Mandiri</h4>
+                  <div class="bank-account">9876 5432 1098 7654</div>
+                  <div class="bank-name">a.n. PT Skarden Indonesia</div>
+                </div>
+                <button
+                  class="copy-btn"
+                  onclick="copyToClipboard('9876 5432 1098 7654')"
+                >
+                  Salin
+                </button>
+              </div>
+
+              <div class="bank-item">
+                <div class="bank-logo">
+                  <i class="bi bi-building"></i>
+                </div>
+                <div class="bank-info">
+                  <h4>Bank Rakyat Indonesia (BRI)</h4>
+                  <div class="bank-account">5555 4444 3333 2222</div>
+                  <div class="bank-name">a.n. PT Skarden Indonesia</div>
+                </div>
+                <button
+                  class="copy-btn"
+                  onclick="copyToClipboard('5555 4444 3333 2222')"
+                >
+                  Salin
+                </button>
+              </div>
+            </div>
+
+            <div class="alert alert-info">
+              <i class="bi bi-info-circle"></i> Setelah melakukan transfer,
+              silakan upload bukti transfer pada halaman konfirmasi.
+            </div>
+          </div>
+
+          <!-- E-Wallet -->
+          <div id="ewallet-payment" class="section-card payment-method-card">
+            <h3 class="section-title">Pembayaran E-Wallet</h3>
+
+            <div class="ewallet-container">
+              <div class="qr-code">
+                <i class="bi bi-qr-code"></i>
+              </div>
+
+              <p>Scan kode QR di atas dengan aplikasi e-wallet Anda</p>
+            </div>
+
+            <div class="ewallet-instructions">
+              <h4>Cara Pembayaran:</h4>
+              <ol class="ewallet-steps">
+                <li>
+                  Pilih metode pembayaran e-wallet (OVO, GoPay, Dana, atau
+                  LinkAja)
+                </li>
+                <li>Buka aplikasi e-wallet Anda</li>
+                <li>Pindai kode QR yang ditampilkan</li>
+                <li>Konfirmasi pembayaran</li>
+              </ol>
+            </div>
+
+            <div class="wallet-id-input">
+              <label for="walletId" class="form-label"
+                >Atau masukkan ID E-Wallet Anda</label
+              >
+              <input
+                type="text"
+                class="form-control"
+                id="walletId"
+                placeholder="Contoh: 081234567890"
+              />
+            </div>
+          </div>
+
+          <div class="action-buttons">
+            <button class="btn-back" onclick="goBack()">
+              <i class="bi bi-arrow-left"></i> Kembali ke Pengiriman
+            </button>
+            <button class="btn-proceed" onclick="proceedToConfirmation()">
+              Lanjut ke Konfirmasi <i class="bi bi-arrow-right"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Right Column - - Order Summary -->
+        <div class="col-lg-4">
+          <div class="section-card" id="order-summary-section"></div>
+
+          <div class="security-badge">
+            <i class="bi bi-shield-check"></i>
+            <div>
+              <strong>Pembayaran Aman</strong>
+              <p class="mb-0">Transaksi Anda terenkripsi dan dilindungi</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      let hargacheckout = JSON.parse(localStorage.getItem("harga") || "{}"); // default object
+      let subtotal = hargacheckout.subtotal || 0;
+      let diskon = hargacheckout.diskon || 0;
+      let totalsemua = hargacheckout.total || 0;
+      let pajak = hargacheckout.pajak || 0;
+
+      function renderOrderSummary() {
+        let cart = JSON.parse(localStorage.getItem("produkcheckout") || "[]");
+
+        
+        if (!Array.isArray(cart)) {
+          cart = []; 
+        }
+
+        let html = "";
+
+        cart.forEach((item) => {
+          html += `
+                    <div class="order-item">
+                        <img src="${
+                          item.gambar
+                        }" alt="Product" class="order-item-img">
+                        <div class="order-item-details">
+                            <div class="order-item-title">${item.nama}</div>
+                            <div class="order-item-quantity">${
+                              item.quantity
+                            } x Rp ${item.harga.toLocaleString("id-ID")}</div>
+                        </div>
+                        <div class="order-item-price">Rp ${(
+                          item.harga * item.quantity
+                        ).toLocaleString("id-ID")}</div>
+                    </div>
+                `;
+          subtotal = subtotal; 
+        });
+
+        const shipping = 15000;
+        const tax = pajak;
+        const discount = diskon;
+        const total = totalsemua;
+
+        document.getElementById("order-summary-section").innerHTML = `
+                <h3 class="section-title">Ringkasan Pesanan</h3>
+                ${html}
+                <div class="price-row">
+                    <span>Subtotal</span>
+                    <span>Rp ${subtotal.toLocaleString("id-ID")}</span>
+                </div>
+                <div class="price-row">
+                    <span>Biaya Pengiriman</span>
+                    <span>Rp ${shipping.toLocaleString("id-ID")}</span>
+                </div>
+                <div class="price-row">
+                    <span>Pajak (10%)</span>
+                    <span>Rp ${tax.toLocaleString("id-ID")}</span>
+                </div>
+                <div class="price-row">
+                    <span>Diskon</span>
+                    <span>-Rp ${discount.toLocaleString("id-ID")}</span>
+                </div>
+                <div class="price-row total">
+                    <span>Total</span>
+                    <span>Rp ${total.toLocaleString("id-ID")}</span>
+                </div>
+            `;
+      }
+
+      document.addEventListener("DOMContentLoaded", renderOrderSummary);
+
+      let selectedPaymentMethod = "";
+
+      function selectPaymentMethod(method) {
+        selectedPaymentMethod = method;
+        document.querySelectorAll(".payment-method").forEach((el) => {
+          el.classList.remove("selected");
+        });
+        event.currentTarget.classList.add("selected");
+        document.querySelectorAll(".payment-method-card").forEach((card) => {
+          card.classList.remove("active");
+        });
+        if (method === "card") {
+          document.getElementById("card-payment").classList.add("active");
+        } else if (method === "bank") {
+          document.getElementById("bank-payment").classList.add("active");
+        } else if (method === "ewallet") {
+          document.getElementById("ewallet-payment").classList.add("active");
+        }
+      }
+
+      function copyToClipboard(text) {
+        navigator.clipboard.writeText(text).then(() => {
+          // Show a temporary success message
+          const originalText = event.target.textContent;
+          event.target.textContent = "Tersalin!";
+          event.target.style.backgroundColor = "var(--dark-green)";
+          event.target.style.color = "var(--white)";
+
+          setTimeout(() => {
+            event.target.textContent = originalText;
+            event.target.style.backgroundColor = "";
+            event.target.style.color = "";
+          }, 2000);
+        });
+      }
+
+      // Format card num
+      document
+        .getElementById("cardNumber")
+        ?.addEventListener("input", function (e) {
+          let value = e.target.value
+            .replace(/\s+/g, "")
+            .replace(/[^0-9]/gi, "");
+          let formattedValue = value.match(/.{1,4}/g)?.join(" ") || value;
+          e.target.value = formattedValue;
+        });
+
+      // Format expiry date
+      document
+        .getElementById("expiryDate")
+        ?.addEventListener("input", function (e) {
+          let value = e.target.value
+            .replace(/\s+/g, "")
+            .replace(/[^0-9]/gi, "");
+          if (value.length >= 2) {
+            value = value.substring(0, 2) + "/" + value.substring(2, 4);
+          }
+          e.target.value = value;
+        });
+
+      // CVV input - num only
+      document.getElementById("cvv")?.addEventListener("input", function (e) {
+        e.target.value = e.target.value.replace(/[^0-9]/g, "");
+      });
+
+      function goBack() {
+        window.location.href = "checkout.html";
+      }
+
+      function proceedToConfirmation() {
+        if (!selectedPaymentMethod) {
+          alert("Silakan pilih metode pembayaran");
+          return;
+        }
+
+        let paymentInfo = {
+          method: selectedPaymentMethod,
+          details: {},
+        };
+
+        if (selectedPaymentMethod === "card") {
+          const cardName = document.getElementById("cardName")
+            ? document.getElementById("cardName").value
+            : "";
+          const cardNumber = document.getElementById("cardNumber")
+            ? document.getElementById("cardNumber").value
+            : "";
+          const expiryDate = document.getElementById("expiryDate")
+            ? document.getElementById("expiryDate").value
+            : "";
+          const cvv = document.getElementById("cvv")
+            ? document.getElementById("cvv").value
+            : "";
+
+          if (!cardName || !cardNumber || !expiryDate || !cvv) {
+            alert("Silakan lengkapi semua data kartu");
+            return;
+          }
+          if (cardNumber.replace(/\s/g, "").length < 13) {
+            alert("Nomor kartu tidak valid");
+            return;
+          }
+
+          paymentInfo.details = {
+            cardName,
+            cardNumber: cardNumber.replace(/\s/g, ""),
+            expiryDate,
+          };
+        } else if (selectedPaymentMethod === "bank") {
+          paymentInfo.details = {
+            bank: "Bank Transfer",
+          };
+        } else if (selectedPaymentMethod === "ewallet") {
+          const walletId = document.getElementById("walletId")
+            ? document.getElementById("walletId").value
+            : "";
+          paymentInfo.details = {
+            walletId,
+          };
+        }
+
+        // Sv -> localStorage
+        localStorage.setItem("skarden_payment", JSON.stringify(paymentInfo));
+
+        window.location.href = "confirmation.html";
+      }
+
+      const originalTitle = document.title;
+      const hiddenTitle = "Payment | Skarden";
+
+      document.addEventListener("visibilitychange", () => {
+        if (document.hidden) {
+          document.title = hiddenTitle;
+        } else {
+          document.title = originalTitle;
+        }
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,48 @@
+{
+  "organic-pest-control": {
+    "title": "Mengatasi Hama Tanaman Secara Organik",
+    "author": "Ahmad Fauzi",
+    "date": "05 Juli 2025",
+    "category": "Perlindungan Tanaman",
+    "image": "https://images.unsplash.com/photo-1602524206271-2a5d8b9d7840?q=80&w=1170&auto=format&fit=crop",
+    "tags": ["hama", "organik", "tanaman"],
+    "content": [
+      {
+        "type": "paragraph",
+        "text": "Hama merupakan salah satu tantangan utama dalam berkebun. Namun, ada banyak cara alami dan ramah lingkungan untuk mengendalikannya tanpa harus menggunakan pestisida kimia berbahaya."
+      },
+      {
+        "type": "heading",
+        "level": 2,
+        "text": "Mengapa Memilih Cara Organik?"
+      },
+      {
+        "type": "paragraph",
+        "text": "Metode pengendalian hama organik lebih aman bagi kesehatan manusia, hewan peliharaan, dan lingkungan. Selain itu, cara ini juga membantu menjaga keseimbangan ekosistem kebun."
+      },
+      {
+        "type": "image",
+        "src": "https://images.unsplash.com/photo-1501004318641-b39e6451bec6?q=80&w=1170&auto=format&fit=crop",
+        "caption": "Kumbang kecil yang sering menjadi hama pada daun tanaman"
+      },
+      {
+        "type": "heading",
+        "level": 2,
+        "text": "Metode Pengendalian Hama Organik"
+      },
+      {
+        "type": "paragraph",
+        "text": "Beberapa metode yang dapat digunakan antara lain:\n- Menanam tanaman pengusir hama seperti serai atau kemangi.\n- Menggunakan larutan bawang putih, cabai, atau sabun cair sebagai pestisida alami.\n- Memelihara predator alami seperti kepik dan laba-laba yang memangsa serangga hama."
+      },
+      {
+        "type": "heading",
+        "level": 2,
+        "text": "Tips Pencegahan"
+      },
+      {
+        "type": "paragraph",
+        "text": "Lakukan rotasi tanaman, periksa kebun secara rutin, dan pastikan tanaman mendapatkan nutrisi yang cukup. Pencegahan yang baik akan mengurangi risiko serangan hama secara signifikan."
+      }
+    ]
+  }
+}

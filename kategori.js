@@ -5,16 +5,11 @@ button.forEach((btn) => {
     e.preventDefault();
 
     const kategori = btn.dataset.jenis;
-    console.log("Kategori dari link:", kategori, kategori.length);
-
 
     localStorage.setItem("kategori", kategori);
 
     window.location.href =
-    "/skarden_main/app/UI/html/marketpage.html?kategori=" +
-    encodeURIComponent(kategori);
+      "/skarden_main/app/UI/html/marketpage.html?kategori=" +
+      encodeURIComponent(kategori);
   });
 });
-
-
-

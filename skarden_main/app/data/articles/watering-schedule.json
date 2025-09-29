@@ -1,0 +1,48 @@
+{
+  "watering-schedule": {
+    "title": "Jadwal Penyiraman Tanaman yang Optimal",
+    "author": "Lestari Wulandari",
+    "date": "25 Juni 2025",
+    "category": "Perawatan Tanaman",
+    "image": "https://images.unsplash.com/photo-1501004318641-b39e6451bec6?q=80&w=1170&auto=format&fit=crop",
+    "tags": ["penyiraman", "perawatan", "tanaman"],
+    "content": [
+      {
+        "type": "paragraph",
+        "text": "Penyiraman yang tepat adalah salah satu faktor terpenting dalam menjaga kesehatan tanaman. Jadwal penyiraman yang optimal akan membantu tanaman tumbuh subur tanpa kekurangan atau kelebihan air."
+      },
+      {
+        "type": "heading",
+        "level": 2,
+        "text": "Mengapa Jadwal Penyiraman Penting?"
+      },
+      {
+        "type": "paragraph",
+        "text": "Terlalu banyak air dapat menyebabkan akar membusuk, sementara terlalu sedikit air membuat tanaman layu. Dengan jadwal yang teratur, tanaman dapat tumbuh dengan sehat dan produktif."
+      },
+      {
+        "type": "image",
+        "src": "https://images.unsplash.com/photo-1501004318641-b39e6451bec6?q=80&w=1170&auto=format&fit=crop",
+        "caption": "Penyiraman tanaman di pagi hari sangat ideal"
+      },
+      {
+        "type": "heading",
+        "level": 2,
+        "text": "Waktu Penyiraman yang Tepat"
+      },
+      {
+        "type": "paragraph",
+        "text": "Waktu terbaik untuk menyiram tanaman adalah pagi hari sebelum matahari terlalu terik. Pada sore hari juga bisa dilakukan, asalkan tidak terlalu malam agar daun tidak lembap terlalu lama."
+      },
+      {
+        "type": "heading",
+        "level": 2,
+        "text": "Tips Menyiram Tanaman"
+      },
+      {
+        "type": "paragraph",
+        "text": "Gunakan air dengan jumlah secukupnya, fokus pada area akar, dan hindari menyiram langsung ke daun. Gunakan alat penyiram dengan lubang kecil untuk distribusi air yang merata."
+      }
+    ]
+  }
+}

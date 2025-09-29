@@ -1,0 +1,48 @@
+{
+        "pruning-roses-checklist": {
+          "title": "Memangkas Mawar & Daftar Periksa",
+          "author": "Ahmad Wijaya",
+          "date": "25 Juli 2025",
+          "category": "Panduan",
+          "image": "https://images.unsplash.com/photo-1530987573051-8050dcf0c69f?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          "tags": [
+            "mawar",
+            "pemangkasan",
+            "perawatan"
+        ],
+          "content": [
+            {
+              "type": "paragraph",
+              "text": "Memangkas mawar adalah salah satu tugas perawatan terpenting untuk memastikan tanaman tetap sehat dan berbunga melimpah. Berikut adalah panduan lengkap dan daftar periksa untuk memangkas mawar dengan benar."
+            },
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "Kapan Memangkas Mawar"
+            },
+            {
+              "type": "paragraph",
+              "text": "Waktu terbaik untuk memangkas mawar adalah di akhir musim dingin atau awal musim semi, sebelum tanaman mulai tumbuh aktif. Di daerah beriklim tropis, pemangkasan dapat dilakukan selama musim kemarau."
+            },
+            {
+              "type": "image",
+              "src": "https://images.unsplash.com/photo-1593699588296-74e3e3f8489f?q=80&w=1170&auto=format&fit=crop",
+              "caption": "Alat pemangkas yang tajam dan bersih sangat penting"
+            },
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "Alat yang Dibutuhkan"
+            },
+            {
+              "type": "list",
+              "items": [
+                    "Gunting pemangkas yang tajam dan bersih",
+                    "Sarung tangan tahan gores",
+                    "Alat disinfektan untuk membersihkan gunting",
+                    "Obat antiseptik untuk tanaman"
+                ]
+            }
+        ]
+    }
+}

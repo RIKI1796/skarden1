@@ -3177,6 +3177,20 @@ const dataArray = [
 ];
 
 document.addEventListener("DOMContentLoaded", () => {
+  const btn = document.getElementById("apply-filters");
+  const selectPrice = document.getElementById("sort-price");
+  const selectName = document.getElementById("sort-name");
+  const selectDate = document.getElementById("sort-date");
+  const filterKategori = document.getElementById("filter-category");
+  const filterRating = document.getElementById("filter-rating");
+  const minPriceInput = document.getElementById("price-min");
+  const maxPriceInput = document.getElementById("price-max");
+  const resetBtn = document.getElementById("reset-filters");
+  const params = new URLSearchParams(window.location.search);
+  const kategori = params.get("kategori");
+  const container = document.getElementById("products-scroll");
+  const detailProduk = [];
+
   function formatRupiah(angka) {
     return "Rp " + angka.toLocaleString("id-ID");
   }
@@ -3187,22 +3201,21 @@ document.addEventListener("DOMContentLoaded", () => {
     localStorage.setItem("dataFarm", JSON.stringify(produk));
   }
   if (!produk || !Array.isArray(produk) || produk.length === 0) {
-    console.warn("No product data found in localStorage under 'dataFarm'.");
     return;
   }
-
-  const params = new URLSearchParams(window.location.search);
-  const kategori = params.get("kategori");
+  if (kategori && kategori !== "default") {
+    for (let i = filterKategori.options.length - 1; i >= 0; i--) {
+      if (filterKategori.options[i].value !== kategori) {
+        filterKategori.remove(i);
+      }
+    }
+  }
 
   let produkTampil = kategori
-    ? produk.filter((item) =>
-        item.jenis.toLowerCase().includes(kategori.toLowerCase().trim())
+    ? produk.filter(
+        (item) => item.jenis.toLowerCase() === kategori.toLowerCase()
       )
     : [...produk];
-
-  const container = document.getElementById("products-scroll");
-
-  const detailProduk = [];
 
   function renderProduk(arr) {
     container.innerHTML = "";
@@ -3281,16 +3294,6 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   renderProduk(produkTampil);
-
-  const btn = document.getElementById("apply-filters");
-  const selectPrice = document.getElementById("sort-price");
-  const selectName = document.getElementById("sort-name");
-  const selectDate = document.getElementById("sort-date");
-  const filterKategori = document.getElementById("filter-category");
-  const filterRating = document.getElementById("filter-rating");
-  const minPriceInput = document.getElementById("price-min");
-  const maxPriceInput = document.getElementById("price-max");
-  const resetBtn = document.getElementById("reset-filters");
 
   btn.onclick = () => {
     let productt = [...produkTampil];

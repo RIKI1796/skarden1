@@ -1,0 +1,43 @@
+{
+  "stylish-pots-small-spaces": {
+    "title": "5 Pot Stylish untuk Ruang Sempit",
+    "author": "Rina Santoso",
+    "date": "30 Juli 2025",
+    "category": "Produk Sorotan",
+    "image": "https://plus.unsplash.com/premium_photo-1683121593702-fa71cf311971?q=80&w=1025&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "tags": [
+      "pot",
+      "ruang kecil",
+      "dekorasi"
+    ],
+    "content": [
+      {
+        "type": "paragraph",
+        "text": "Ruang terbatas bukanlah halangan untuk memiliki taman yang indah. Dengan pemilihan pot yang tepat, Anda dapat menciptakan taman mini yang stylish dan fungsional."
+      },
+      {
+        "type": "heading",
+        "level": 2,
+        "text": "1. Pot Gantung Minimalis"
+      },
+      {
+        "type": "paragraph",
+        "text": "Pot gantung dengan desain minimalis adalah pilihan sempurna untuk ruang terbatas. Dengan berbagai bentuk dan ukuran, pot ini dapat ditempatkan di teras, balkon, atau bahkan di dalam ruangan."
+      },
+      {
+        "type": "image",
+        "src": "https://images.unsplash.com/photo-1593699588296-74e3e3f8489f?q=80&w=1170&auto=format&fit=crop",
+        "caption": "Pot gantung minimalis untuk tanaman hias"
+      },
+      {
+        "type": "heading",
+        "level": 2,
+        "text": "2. Pot Dinding Vertikal"
+      },
+      {
+        "type": "paragraph",
+        "text": "Sistem pot dinding vertikal memungkinkan Anda untuk menanam berbagai jenis tanaman dalam ruang vertikal. Ini adalah solusi ideal untuk mereka yang memiliki lantai terbatas tetapi ingin memiliki banyak tanaman."
+      }
+    ]
+  }
+}

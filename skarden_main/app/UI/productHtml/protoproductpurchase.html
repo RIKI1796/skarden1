@@ -265,8 +265,7 @@
                 <!-- Q&A -->
                 <div class="tab-pane fade" id="qa" role="tabpanel">
                   <div class="qa-item">
-                    <div id="quest1" class="question">
-                    </div>
+                    <div id="quest1" class="question"></div>
                     <div id="answer1" class="answer"></div>
                   </div>
 
@@ -314,7 +313,7 @@
       <div class="bubble-items" id="bubble-items">
         <button class="bubble-item" onclick="openCart()">
           <i class="bi bi-cart3"></i>
-          <span class="cart-badge">0</span>
+          <span id="cart-badge" class="cart-badge">0</span>
           <span class="bubble-tooltip">Keranjang</span>
         </button>
         <button class="bubble-item" onclick="openShare()">
@@ -446,9 +445,36 @@
         }
       }
 
+      function updateCartBadge() {
+        const cartBadge = document.getElementById("cart-badge");
+        const cart = JSON.parse(localStorage.getItem("cart")) || [];
+        const totalQuantity = cart.reduce(
+          (sum, item) => sum + item.quantity,
+          0
+        );
+        cartBadge.textContent = totalQuantity;
+      }
+      document.addEventListener("DOMContentLoaded", updateCartBadge);
       function addToCart() {
-        const quantity = document.getElementById("quantity").value;
-        alert(`Added ${quantity} item(s) to your cart!`);
+        let cart = JSON.parse(localStorage.getItem("cart")) || [];
+        let quantity = parseInt(document.getElementById("quantity").value) || 0;
+        const data = JSON.parse(localStorage.getItem("detailProduk"))[0];
+
+        if (quantity > 0) {
+          const existingItem = cart.find((item) => item.id === data.id);
+
+          if (existingItem) {
+            existingItem.quantity += quantity;
+          } else {
+            cart.push({
+              ...data,
+              quantity: quantity,
+            });
+          }
+
+          localStorage.setItem("cart", JSON.stringify(cart));
+          updateCartBadge(); 
+        }
       }
 
       function buyNow() {
@@ -473,8 +499,7 @@
       }
 
       function openCart() {
-        alert("Opening cart...");
-        toggleBubbleMenu();
+        window.location.href = "/skarden_main/app/UI/productHtml/cart.html";
       }
 
       function openShare() {

@@ -34,7 +34,7 @@
       </ul>
       <div class="search-cart">
         <input type="search" placeholder="Search products..."><i class="fas fa-search"></i>
-        <a href="#"><i class="fas fa-shopping-cart"></i></a>
+        <a href="skarden_main/app/UI/productHtml/cart.html"><i class="fas fa-shopping-cart"></i></a>
       </div>
     </nav>
   </div>
@@ -294,14 +294,6 @@
     </div>
   </section>
 
-  <!-- Cp -->
-  <div id="cart-panel" class="cart-hidden">
-    <div class="cart-content">
-      <h2>Your Cart</h2>
-      <p>No items in cart.</p>
-    </div>
-  </div>
-
   <!-- SubS-->
   <section class="subscribe-section">
     <div class="subs-content">
@@ -412,24 +404,6 @@
       } else {
         document.title = originalTitle;
       }
-    });
-  </script>
-
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const cartIcon = document.querySelector('.fa-shopping-cart');
-      const cartPanel = document.getElementById('cart-panel');
-
-      cartIcon.addEventListener('click', (e) => {
-        e.preventDefault();
-        cartPanel.classList.toggle('show');
-      });
-
-      document.addEventListener('click', (e) => {
-        if (!cartPanel.contains(e.target) && !cartIcon.contains(e.target)) {
-          cartPanel.classList.remove('show');
-        }
-      });
     });
   </script>
 

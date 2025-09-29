@@ -1,0 +1,48 @@
+{
+  "small-garden-design": {
+    "title": "Desain Taman untuk Ruang Terbatas",
+    "author": "Rina Maharani",
+    "date": "01 Juli 2025",
+    "category": "Desain Taman",
+    "image": "https://images.unsplash.com/photo-1501004318641-b39e6451bec6?q=80&w=1170&auto=format&fit=crop",
+    "tags": ["taman", "desain", "ruang terbatas"],
+    "content": [
+      {
+        "type": "paragraph",
+        "text": "Memiliki lahan sempit bukan berarti Anda tidak bisa memiliki taman indah. Dengan desain yang tepat, ruang terbatas dapat disulap menjadi area hijau yang asri dan menyegarkan."
+      },
+      {
+        "type": "heading",
+        "level": 2,
+        "text": "Pemanfaatan Vertikal"
+      },
+      {
+        "type": "paragraph",
+        "text": "Gunakan rak tanaman, dinding hijau, atau pot gantung untuk menanam lebih banyak tanaman tanpa memakan banyak ruang. Konsep taman vertikal sangat cocok untuk balkon atau halaman kecil."
+      },
+      {
+        "type": "image",
+        "src": "https://images.unsplash.com/photo-1585325701954-5dd7f43f2f37?q=80&w=1170&auto=format&fit=crop",
+        "caption": "Taman vertikal di dinding luar rumah"
+      },
+      {
+        "type": "heading",
+        "level": 2,
+        "text": "Pilih Tanaman yang Tepat"
+      },
+      {
+        "type": "paragraph",
+        "text": "Pilih tanaman berukuran kecil hingga sedang yang tidak membutuhkan banyak ruang akar. Tanaman hias daun, sukulen, atau sayuran kecil cocok untuk ruang terbatas."
+      },
+      {
+        "type": "heading",
+        "level": 2,
+        "text": "Tambahkan Elemen Multifungsi"
+      },
+      {
+        "type": "paragraph",
+        "text": "Gunakan furnitur taman yang juga berfungsi sebagai pot atau penyimpanan. Selain hemat tempat, ini juga membuat taman lebih rapi dan fungsional."
+      }
+    ]
+  }
+}

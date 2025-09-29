@@ -1,0 +1,927 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="/skarden_main/app/UI/icon/png/prim1.1nbg.png" />
+    <title>Order Confirmation | Skarden</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css"
+    />
+    <style>
+      :root {
+        --dark-green: #2e7d32;
+        --white: #ffffff;
+        --light-gray: #f5f5f5;
+        --text-dark: #111;
+        --text-medium: #555;
+      }
+
+      @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet"');
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap");
+
+      body {
+        background-color: var(--light-gray);
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        color: var(--text-dark);
+        padding-top: 2rem;
+      }
+
+      body::-webkit-scrollbar {
+        display: none;
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        position: relative;
+        z-index: 6;
+      }
+
+      /* Navbar style */
+      .navbar-container {
+        height: auto;
+      }
+      .navbar-container,
+      .navbar {
+        position: relative;
+        z-index: 2000;
+      }
+      .navbar {
+        background-color: white;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        box-shadow: none;
+        width: 100%;
+        z-index: 1000;
+        position: relative;
+        transition: background-color 0.3s ease, transform 0.4s ease-out;
+        padding: 1rem 0;
+      }
+      .nav-links {
+        list-style: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 1.5rem;
+        flex: 2;
+        padding: 0;
+        margin: 0;
+      }
+      .nav-links a {
+        text-decoration: none;
+        color: #333;
+        font-family: "Open Sans", sans-serif;
+        transition: color 0.3s;
+      }
+      .nav-links a:hover,
+      .nav-links a.active {
+        color: #8fb299;
+        text-decoration: none;
+      }
+      .search-cart {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        padding-right: 2rem;
+      }
+      .search-cart input[type="search"] {
+        padding: 0.5rem;
+        border-radius: 999px;
+        border: 1px solid #ccc;
+      }
+      .search-cart i {
+        color: #666;
+      }
+
+      /* Checkout Steps */
+      .checkout-steps {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 2rem;
+        position: relative;
+      }
+
+      .checkout-steps::before {
+        content: "";
+        position: absolute;
+        top: 20px;
+        left: 0;
+        right: 0;
+        height: 2px;
+        background-color: #e0e0e0;
+        z-index: 1;
+      }
+
+      .step {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: relative;
+        z-index: 2;
+        background-color: var(--light-gray);
+        padding: 0 10px;
+      }
+
+      .step-circle {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background-color: #e0e0e0;
+        color: #999;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-weight: 600;
+        margin-bottom: 8px;
+        transition: all 0.3s ease;
+      }
+
+      .step.active .step-circle {
+        background-color: var(--dark-green);
+        color: var(--white);
+      }
+
+      .step.completed .step-circle {
+        background-color: var(--dark-green);
+        color: var(--white);
+      }
+
+      .step.completed .step-circle::after {
+        content: "✓";
+      }
+
+      .step-label {
+        font-size: 0.9rem;
+        color: #666;
+        text-align: center;
+      }
+
+      .step.active .step-label {
+        color: var(--dark-green);
+        font-weight: 600;
+      }
+
+      /* Section Styling */
+      .section-card {
+        background-color: var(--white);
+        border-radius: 10px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        padding: 1.5rem;
+        margin-bottom: 1.5rem;
+      }
+
+      .section-title {
+        font-size: 1.5rem;
+        font-weight: 600;
+        color: var(--dark-green);
+        margin-bottom: 1.5rem;
+        padding-bottom: 0.5rem;
+        border-bottom: 2px solid #e8f5e9;
+      }
+
+      /* Success Message */
+      .success-container {
+        text-align: center;
+        padding: 2rem 0;
+      }
+
+      .success-icon {
+        width: 80px;
+        height: 80px;
+        background-color: rgba(46, 125, 50, 0.1);
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto 1.5rem;
+      }
+
+      .success-icon i {
+        font-size: 3rem;
+        color: var(--dark-green);
+      }
+
+      .success-title {
+        font-size: 2rem;
+        font-weight: 700;
+        color: var(--dark-green);
+        margin-bottom: 1rem;
+      }
+
+      .success-message {
+        font-size: 1.1rem;
+        color: var(--text-medium);
+        margin-bottom: 1.5rem;
+      }
+
+      .order-number {
+        background-color: rgba(46, 125, 50, 0.1);
+        color: var(--dark-green);
+        font-weight: 600;
+        padding: 0.5rem 1rem;
+        border-radius: 30px;
+        display: inline-block;
+        margin-bottom: 1.5rem;
+      }
+
+      /* Order Summary */
+      .order-item {
+        display: flex;
+        align-items: center;
+        padding: 1rem 0;
+        border-bottom: 1px solid #eee;
+      }
+
+      .order-item:last-child {
+        border-bottom: none;
+      }
+
+      .order-item-img {
+        width: 60px;
+        height: 60px;
+        object-fit: cover;
+        border-radius: 8px;
+        margin-right: 1rem;
+      }
+
+      .order-item-details {
+        flex: 1;
+      }
+
+      .order-item-title {
+        font-weight: 600;
+        margin-bottom: 0.25rem;
+        font-size: 0.95rem;
+      }
+
+      .order-item-quantity {
+        color: var(--text-medium);
+        font-size: 0.85rem;
+      }
+
+      .order-item-price {
+        font-weight: 600;
+        color: var(--dark-green);
+      }
+
+      /* Info Display */
+      .info-row {
+        display: flex;
+        margin-bottom: 0.75rem;
+      }
+
+      .info-label {
+        font-weight: 600;
+        width: 150px;
+        color: var(--text-medium);
+      }
+
+      .info-value {
+        flex: 1;
+      }
+
+      /* Payment Method Display */
+      .payment-method-display {
+        display: flex;
+        align-items: center;
+        padding: 1rem;
+        background-color: #f9f9f9;
+        border-radius: 8px;
+        margin-bottom: 1rem;
+      }
+
+      .payment-method-icon {
+        width: 50px;
+        height: 50px;
+        background-color: var(--white);
+        border-radius: 8px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-right: 1rem;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+      }
+
+      .payment-method-icon i {
+        font-size: 1.5rem;
+        color: var(--dark-green);
+      }
+
+      .payment-method-details h4 {
+        margin-bottom: 0.25rem;
+        font-size: 1.1rem;
+      }
+
+      .payment-method-details p {
+        margin-bottom: 0;
+        color: var(--text-medium);
+        font-size: 0.9rem;
+      }
+
+      /* Price Breakdown */
+      .price-row {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 0.75rem;
+      }
+
+      .price-row.total {
+        font-weight: 700;
+        font-size: 1.2rem;
+        color: var(--dark-green);
+        padding-top: 0.75rem;
+        border-top: 2px solid #eee;
+        margin-top: 0.75rem;
+      }
+
+      /* Action Buttons */
+      .action-buttons {
+        display: flex;
+        gap: 1rem;
+        margin-top: 2rem;
+      }
+
+      .btn-home {
+        background-color: transparent;
+        color: var(--dark-green);
+        border: 2px solid var(--dark-green);
+        padding: 0.75rem 1.5rem;
+        font-weight: 600;
+        border-radius: 6px;
+        flex: 1;
+        transition: all 0.3s ease;
+      }
+
+      .btn-home:hover {
+        background-color: rgba(46, 125, 50, 0.1);
+        transform: translateY(-2px);
+      }
+
+      .btn-track {
+        background-color: var(--dark-green);
+        color: var(--white);
+        border: none;
+        padding: 0.75rem 1.5rem;
+        font-weight: 600;
+        border-radius: 6px;
+        flex: 1;
+        transition: all 0.3s ease;
+      }
+
+      .btn-track:hover {
+        background-color: #1b5e20;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      /* Timeline */
+      .timeline {
+        position: relative;
+        padding-left: 2rem;
+      }
+
+      .timeline::before {
+        content: "";
+        position: absolute;
+        left: 10px;
+        top: 0;
+        bottom: 0;
+        width: 2px;
+        background-color: #e0e0e0;
+      }
+
+      .timeline-item {
+        position: relative;
+        margin-bottom: 1.5rem;
+      }
+
+      .timeline-item:last-child {
+        margin-bottom: 0;
+      }
+
+      .timeline-marker {
+        position: absolute;
+        left: -2rem;
+        top: 0;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background-color: #e0e0e0;
+        border: 2px solid var(--white);
+        z-index: 1;
+      }
+
+      .timeline-item.completed .timeline-marker {
+        background-color: var(--dark-green);
+      }
+
+      .timeline-item.active .timeline-marker {
+        background-color: var(--dark-green);
+        box-shadow: 0 0 0 4px rgba(46, 125, 50, 0.2);
+      }
+
+      .timeline-content {
+        padding-left: 0.5rem;
+      }
+
+      .timeline-title {
+        font-weight: 600;
+        margin-bottom: 0.25rem;
+      }
+
+      .timeline-time {
+        font-size: 0.85rem;
+        color: var(--text-medium);
+      }
+
+      /* Mobile Responsive */
+      @media (max-width: 768px) {
+        .checkout-steps {
+          overflow-x: auto;
+          padding-bottom: 1rem;
+        }
+
+        .step {
+          min-width: 100px;
+        }
+
+        .section-title {
+          font-size: 1.3rem;
+        }
+
+        .success-title {
+          font-size: 1.5rem;
+        }
+
+        .action-buttons {
+          flex-direction: column;
+        }
+
+        .info-row {
+          flex-direction: column;
+        }
+
+        .info-label {
+          width: 100%;
+          margin-bottom: 0.25rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <!-- Checkout Steps -->
+      <div class="checkout-steps">
+        <div class="step completed">
+          <div class="step-circle">1</div>
+          <div class="step-label">Keranjang</div>
+        </div>
+        <div class="step completed">
+          <div class="step-circle">2</div>
+          <div class="step-label">Pengiriman</div>
+        </div>
+        <div class="step completed">
+          <div class="step-circle">3</div>
+          <div class="step-label">Pembayaran</div>
+        </div>
+        <div class="step active">
+          <div class="step-circle">4</div>
+          <div class="step-label">Konfirmasi</div>
+        </div>
+      </div>
+
+      <div class="row">
+        <!-- Left Column -->
+        <div class="col-lg-8">
+          <div class="section-card">
+            <div class="success-container">
+              <div class="success-icon">
+                <i class="bi bi-check-circle-fill"></i>
+              </div>
+              <h2 class="success-title">Pesanan Anda Berhasil!</h2>
+              <p class="success-message">
+                Terima kasih telah berbelanja di Skarden. Pesanan Anda sedang
+                diproses.
+              </p>
+              <div class="order-number">
+                <i class="bi bi-receipt"></i> Nomor Pesanan: #SK20250805001
+              </div>
+            </div>
+          </div>
+
+          <div class="section-card">
+            <h3 class="section-title">Ringkasan Pesanan</h3>
+
+            <div id="order-item" class="order-item"></div>
+
+            <div class="price-row">
+              <span>Subtotal</span>
+              <span id="price">Rp 200.000</span>
+            </div>
+
+            <div class="price-row">
+              <span>Biaya Pengiriman</span>
+              <span>Rp 15.000</span>
+            </div>
+
+            <div class="price-row">
+              <span>Pajak (10%)</span>
+              <span id="tax">Rp 20.000</span>
+            </div>
+
+            <div class="price-row">
+              <span>Diskon</span>
+              <span id="discount">-Rp 10.000</span>
+            </div>
+
+            <div class="price-row total">
+              <span>Total</span>
+              <span id="subtotal">Rp 225.000</span>
+            </div>
+          </div>
+
+          <!-- Shipping Info -->
+          <div class="section-card">
+            <h3 class="section-title">Informasi Pengiriman</h3>
+
+            <div class="info-row">
+              <div class="info-label">Nama Penerima:</div>
+              <div class="info-value">Ahmad Wijaya</div>
+            </div>
+
+            <div class="info-row">
+              <div class="info-label">Alamat:</div>
+              <div class="info-value">
+                Jl. Merdeka No. 123, RT 001/RW 002, Kelurahan Sukajadi,
+                Kecamatan Coblong
+              </div>
+            </div>
+
+            <div class="info-row">
+              <div class="info-label">Kota:</div>
+              <div class="info-value">Bandung, Jawa Barat</div>
+            </div>
+
+            <div class="info-row">
+              <div class="info-label">Kode Pos:</div>
+              <div class="info-value">40135</div>
+            </div>
+
+            <div class="info-row">
+              <div class="info-label">Telepon:</div>
+              <div class="info-value">0812-3456-7890</div>
+            </div>
+
+            <div class="info-row">
+              <div class="info-label">Email:</div>
+              <div class="info-value">ahmad.wijaya@example.com</div>
+            </div>
+          </div>
+
+          <!-- Payment Info -->
+          <div class="section-card">
+            <h3 class="section-title">Informasi Pembayaran</h3>
+
+            <div class="payment-method-display">
+              <div class="payment-method-icon">
+                <i class="bi bi-credit-card"></i>
+              </div>
+              <div class="payment-method-details">
+                <h4>Kartu Kredit</h4>
+                <p>Visa ending in 4242</p>
+              </div>
+            </div>
+
+            <div class="info-row">
+              <div class="info-label">Status Pembayaran:</div>
+              <div class="info-value">
+                <span class="badge bg-success">Berhasil</span>
+              </div>
+            </div>
+
+            <div class="info-row">
+              <div class="info-label">Tanggal Pembayaran:</div>
+              <div class="info-value">5 Agustus 2025, 14:30 WIB</div>
+            </div>
+          </div>
+
+          <!-- Order Timeline -->
+          <!-- dummy obvs -->
+          <div class="section-card">
+            <h3 class="section-title">Status Pesanan</h3>
+
+            <div class="timeline">
+              <div class="timeline-item completed">
+                <div class="timeline-marker"></div>
+                <div class="timeline-content">
+                  <div class="timeline-title">Pesanan Diterima</div>
+                  <div class="timeline-time">5 Agustus 2025, 14:30 WIB</div>
+                </div>
+              </div>
+
+              <div class="timeline-item completed">
+                <div class="timeline-marker"></div>
+                <div class="timeline-content">
+                  <div class="timeline-title">Pembayaran Berhasil</div>
+                  <div class="timeline-time">5 Agustus 2025, 14:32 WIB</div>
+                </div>
+              </div>
+
+              <div class="timeline-item active">
+                <div class="timeline-marker"></div>
+                <div class="timeline-content">
+                  <div class="timeline-title">Sedang Diproses</div>
+                  <div class="timeline-time">
+                    Estimasi selesai: 6 Agustus 2025
+                  </div>
+                </div>
+              </div>
+
+              <div class="timeline-item">
+                <div class="timeline-marker"></div>
+                <div class="timeline-content">
+                  <div class="timeline-title">Dikirim</div>
+                  <div class="timeline-time">Estimasi: 7 Agustus 2025</div>
+                </div>
+              </div>
+
+              <div class="timeline-item">
+                <div class="timeline-marker"></div>
+                <div class="timeline-content">
+                  <div class="timeline-title">Tiba di Tujuan</div>
+                  <div class="timeline-time">Estimasi: 8 Agustus 2025</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="action-buttons">
+            <button class="btn-home" onclick="goToHome()">
+              <i class="bi bi-house"></i> Kembali ke Beranda
+            </button>
+            <button class="btn-track" onclick="trackOrder()">
+              <i class="bi bi-truck"></i> Lacak Pesanan
+            </button>
+          </div>
+        </div>
+
+        <!-- Right Column -->
+        <!-- Order Summary Card -->
+        <div class="col-lg-4">
+          <div class="section-card">
+            <h3 class="section-title">Detail Pesanan</h3>
+
+            <div class="mb-3">
+              <div class="info-row">
+                <div class="info-label">Nomor Pesanan:</div>
+                <div class="info-value">#SK20250805001</div>
+              </div>
+
+              <div class="info-row">
+                <div class="info-label">Tanggal Pemesanan:</div>
+                <div class="info-value">5 Agustus 2025</div>
+              </div>
+
+              <div class="info-row">
+                <div class="info-label">Metode Pembayaran:</div>
+                <div class="info-value">Kartu Kredit (Visa)</div>
+              </div>
+
+              <div class="info-row">
+                <div class="info-label">Metode Pengiriman:</div>
+                <div class="info-value">Reguler (2-3 hari)</div>
+              </div>
+            </div>
+
+            <hr />
+
+            <h4 class="mb-3">Butuh Bantuan?</h4>
+            <p class="text-muted mb-3">
+              Jika Anda memiliki pertanyaan tentang pesanan Anda, silakan
+              hubungi kami:
+            </p>
+
+            <div class="d-grid gap-2">
+              <a href="tel:+6281234567890" class="btn btn-outline-success">
+                <i class="bi bi-telephone"></i> Hubungi Kami
+              </a>
+              <a
+                href="mailto:support@skarden.com"
+                class="btn btn-outline-success"
+              >
+                <i class="bi bi-envelope"></i> Email Kami
+              </a>
+            </div>
+          </div>
+
+          <!-- Recommendations -->
+          <div class="section-card">
+            <h3 class="section-title">Produk Rekomendasi</h3>
+
+            <div class="order-item">
+              <img
+                src="https://images.unsplash.com/photo-1593699588296-74e3e3f8489f?auto=format&fit=crop&w=60&h=60"
+                alt="Product"
+                class="order-item-img"
+              />
+              <div class="order-item-details">
+                <div class="order-item-title">Sprayer Tanaman</div>
+                <div class="order-item-quantity">Rp 75.000</div>
+              </div>
+            </div>
+
+            <div class="order-item">
+              <img
+                src="https://images.unsplash.com/photo-1625246333195-78d9c38ad449?auto=format&fit=crop&w=60&h=60"
+                alt="Product"
+                class="order-item-img"
+              />
+              <div class="order-item-details">
+                <div class="order-item-title">Pupuk NPK 16-16-16</div>
+                <div class="order-item-quantity">Rp 55.000</div>
+              </div>
+            </div>
+
+            <div class="order-item">
+              <img
+                src="https://images.unsplash.com/photo-1618897996318-5a901fa6ca71?auto=format&fit=crop&w=60&h=60"
+                alt="Product"
+                class="order-item-img"
+              />
+              <div class="order-item-details">
+                <div class="order-item-title">Sekop Kecil</div>
+                <div class="order-item-quantity">Rp 45.000</div>
+              </div>
+            </div>
+
+            <button class="btn btn-success w-100 mt-3">
+              Lihat Semua Produk
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      let hargacheckout = JSON.parse(localStorage.getItem("harga") || "{}"); // default object
+      let subtotal = hargacheckout.subtotal || 0;
+      let diskon = hargacheckout.diskon || 0;
+      let totalsemua = hargacheckout.total || 0;
+      let pajak = hargacheckout.pajak || 0;
+      function goToHome() {
+        window.location.href = "../../../../index.html";
+      }
+
+      // Track order
+      function trackOrder() {
+        alert("Anda akan diarahkan ke halaman pelacakan pesanan");
+      }
+
+      function renderOrderSummary() {
+        let cart = JSON.parse(localStorage.getItem("produkcheckout") || "[]");
+        let html = "";
+        cart.forEach((item) => {
+          html += `
+                    <div class="order-item">
+                        <img src="${item.gambar}" alt="${item.nama}" class="order-item-img">
+                        <div class="order-item-details">
+                            <div class="order-item-title">${item.nama}</div>
+                            <div class="order-item-quantity">${
+                              item.quantity
+                            } x Rp ${item.harga.toLocaleString("id-ID")}</div>
+                        </div>
+                        <div class="order-item-price">Rp ${(
+                          item.harga * item.quantity
+                        ).toLocaleString("id-ID")}</div>
+                    </div>
+                `;
+          subtotal = subtotal;
+        });
+        document.querySelectorAll(".section-card")[1].innerHTML = `
+                <h3 class="section-title">Ringkasan Pesanan</h3>
+                ${html}
+                <div class="price-row">
+                    <span>Subtotal</span>
+                    <span>Rp ${subtotal.toLocaleString("id-ID")}</span>
+                </div>
+                <div class="price-row">
+                    <span>Biaya Pengiriman</span>
+                    <span>Rp 15.000</span>
+                </div>
+                <div class="price-row">
+                    <span>Pajak (10%)</span>
+                    <span>Rp ${pajak.toLocaleString(
+                      "id-ID"
+                    )}</span>
+                </div>
+                <div class="price-row">
+                    <span>Diskon</span>
+                    <span>-${diskon.toLocaleString("id-ID")}</span>
+                </div>
+                <div class="price-row total">
+                    <span>Total</span>
+                    <span>${totalsemua.toLocaleString("id-ID")}</span>
+                </div>
+            `;
+      }
+
+      function renderShippingInfo() {
+        const shipping = JSON.parse(
+          localStorage.getItem("skarden_shipping") || "{}"
+        );
+        if (shipping && shipping.name) {
+          document.querySelectorAll(".info-value")[0].textContent =
+            shipping.name;
+          document.querySelectorAll(".info-value")[1].textContent =
+            shipping.address;
+          document.querySelectorAll(".info-value")[2].textContent =
+            shipping.city;
+          document.querySelectorAll(".info-value")[3].textContent =
+            shipping.postalCode;
+          document.querySelectorAll(".info-value")[4].textContent =
+            shipping.phone;
+          document.querySelectorAll(".info-value")[5].textContent =
+            shipping.email;
+        }
+      }
+
+      function renderPaymentInfo() {
+        const payment = JSON.parse(
+          localStorage.getItem("skarden_payment") || "{}"
+        );
+        if (payment && payment.method) {
+          let icon = '<i class="bi bi-credit-card"></i>';
+          let methodName = "Kartu Kredit";
+          let desc = "";
+          if (payment.method === "card") {
+            icon = '<i class="bi bi-credit-card"></i>';
+            methodName = "Kartu Kredit";
+            if (payment.details && payment.details.cardNumber) {
+              const last4 = payment.details.cardNumber.slice(-4);
+              desc = `Visa ending in ${last4}`;
+            }
+          } else if (payment.method === "bank") {
+            icon = '<i class="bi bi-bank"></i>';
+            methodName = "Transfer Bank";
+            desc = "Bank Transfer";
+          } else if (payment.method === "ewallet") {
+            icon = '<i class="bi bi-wallet2"></i>';
+            methodName = "E-Wallet";
+            desc =
+              payment.details && payment.details.walletId
+                ? `ID: ${payment.details.walletId}`
+                : "E-Wallet";
+          }
+
+          const paymentDisplay = document.querySelector(
+            ".payment-method-display"
+          );
+          if (paymentDisplay) {
+            paymentDisplay.querySelector(".payment-method-icon").innerHTML =
+              icon;
+            paymentDisplay.querySelector(
+              ".payment-method-details h4"
+            ).textContent = methodName;
+            paymentDisplay.querySelector(
+              ".payment-method-details p"
+            ).textContent = desc;
+          }
+
+          document
+            .querySelectorAll(".info-row .info-label")
+            .forEach(function (label, idx) {
+              if (label.textContent.includes("Metode Pembayaran:")) {
+                label.nextElementSibling.textContent =
+                  methodName + (desc ? ` (${desc})` : "");
+              }
+            });
+        }
+      }
+
+      document.addEventListener("DOMContentLoaded", function () {
+        renderOrderSummary();
+        renderShippingInfo();
+        renderPaymentInfo();
+      });
+
+      const originalTitle = document.title;
+      const hiddenTitle = "Order Confirmation | Skarden";
+
+      document.addEventListener("visibilitychange", () => {
+        if (document.hidden) {
+          document.title = hiddenTitle;
+        } else {
+          document.title = originalTitle;
+        }
+      });
+    </script>
+  </body>
+</html>

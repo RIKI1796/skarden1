@@ -1,0 +1,39 @@
+{
+  "planting-guide": {
+    "title": "Panduan Penanaman Lengkap",
+    "author": "Budi Santoso",
+    "date": "15 Juli 2025",
+    "category": "Pilihan",
+    "image": "https://images.unsplash.com/photo-1584479898061-15742e14f50d?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "tags": ["penanaman", "panduan", "pemula"],
+    "content": [
+      {
+        "type": "paragraph",
+        "text": "Panduan ini akan membantu Anda memahami dasar-dasar penanaman dan memilih tanaman yang tepat untuk kebun Anda. Dari persiapan tanah hingga perawatan, ikuti langkah-langkah berikut untuk kebun yang sukses."
+      },
+      {
+        "type": "heading",
+        "level": 2,
+        "text": "Persiapan Tanah"
+      },
+      {
+        "type": "paragraph",
+        "text": "Tanah yang sehat adalah fondasi kebun yang produktif. Uji pH tanah Anda dan tambahkan kompos atau pupuk organik untuk meningkatkan kesuburan. Pastikan tanah memiliki drainase yang baik untuk mencegah genangan air."
+      },
+      {
+        "type": "image",
+        "src": "https://images.unsplash.com/photo-1593699588296-74e3e3f8489f?q=80&w=1170&auto=format&fit=crop",
+        "caption": "Menyiapkan tanah dengan menambahkan kompos"
+      },
+      {
+        "type": "heading",
+        "level": 2,
+        "text": "Memilih Tanaman yang Tepat"
+      },
+      {
+        "type": "paragraph",
+        "text": "Pertimbangkan iklim, cahaya matahari, dan ruang yang tersedia saat memilih tanaman. Beberapa tanaman membutuhkan sinar matahari penuh, sementara yang lain tumbuh baik di tempat yang teduh."
+      }
+    ]
+  }
+}

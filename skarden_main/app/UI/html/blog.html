@@ -9,11 +9,45 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+  <style>
+    .lazy-load {
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+    
+    .lazy-load.loaded {
+      opacity: 1;
+    }
+    
+    .loading-spinner {
+      display: none;
+      text-align: center;
+      margin: 20px 0;
+    }
+    
+    .loading-spinner.show {
+      display: block;
+    }
+    
+    .spinner-border {
+      width: 2rem;
+      height: 2rem;
+    }
+    
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    
+    .article-card {
+      animation: fadeIn 0.5s ease-in-out;
+    }
+  </style>
 </head>
 <body>
   <script id="cid0020000415284110942" data-cfasync="false" async src="//st.chatango.com/js/gz/emb.js" style="width: 200px;height: 300px;">{"handle":"skardenchat","arch":"js","styles":{"a":"006600","b":100,"c":"FFFFFF","d":"FFFFFF","k":"006600","l":"006600","m":"006600","n":"FFFFFF","p":"10","q":"006600","r":100,"pos":"br","cv":1,"cvbg":"006600","cvw":200,"cvh":30,"ticker":1,"fwtickm":1}}</script>
   
-  <!-- NAVBAR START -->
+  <!-- NAV -->
   <div class="navbar-container">
     <nav class="navbar">
       <a href="../../../../index.html">
@@ -28,11 +62,10 @@
       </ul>
       <div class="search-cart">
         <input type="search" placeholder="Search articles..."><i class="fas fa-search"></i>
-        <a href="#"><i class="fas fa-shopping-cart"></i></a>
+        <a href="/skarden_main/app/UI/productHtml/cart.html"><i class="fas fa-shopping-cart"></i></a>
       </div>
     </nav>
   </div>
-  <!-- NAVBAR END -->
 
 
   <div class="container py-5">
@@ -54,7 +87,7 @@
                 <p>Dari sekop ergonomis hingga alat pengukur kelembapan tanah, kami telah mencoba dan merangkum alat terbaik untuk membuat kebun Anda tumbuh subur—apapun jenisnya.</p>
                 <div class="d-flex justify-content-between align-items-center mt-3">
                   <small class="text-light">4 Agustus 2025</small>
-                  <a href="#" class="read-more">Baca Selengkapnya <i class="bi bi-arrow-right"></i></a>
+                  <a href="article.html?article=essential-gardening-tools" class="read-more">Baca Selengkapnya <i class="bi bi-arrow-right"></i></a>
                 </div>
               </div>
             </div>
@@ -75,7 +108,7 @@
                 <p class="card-text small text-muted">Pot-pot keren yang ramah di kantong.</p>
                 <div class="d-flex justify-content-between align-items-center mt-3">
                   <small class="text-muted">30 Juli 2025</small>
-                  <a href="#" class="read-more-sm">Baca Selengkapnya</a>
+                  <a href="article.html?article=stylish-pots-small-spaces" class="read-more-sm">Baca Selengkapnya</a>
                 </div>
               </div>
             </div>
@@ -92,7 +125,7 @@
                 <p class="card-text small text-muted">Tips agar bunga tetap sehat dan melimpah.</p>
                 <div class="d-flex justify-content-between align-items-center mt-3">
                   <small class="text-muted">25 Juli 2025</small>
-                  <a href="#" class="read-more-sm">Baca Selengkapnya</a>
+                  <a href="article.html?article=pruning-roses-checklist" class="read-more-sm">Baca Selengkapnya</a>
                 </div>
               </div>
             </div>
@@ -109,7 +142,7 @@
                 <p class="card-text small text-muted">Dapatkan kesegaran dari tanaman Anda.</p>
                 <div class="d-flex justify-content-between align-items-center mt-3">
                   <small class="text-muted">20 Juli 2025</small>
-                  <a href="#" class="read-more-sm">Baca Selengkapnya</a>
+                  <a href="article.html?article=harvest-time-methods" class="read-more-sm">Baca Selengkapnya</a>
                 </div>
               </div>
             </div>
@@ -126,22 +159,31 @@
                 <p class="card-text small text-muted">Tanaman terbaik untuk ditanam di Kebun anda.</p>
                 <div class="d-flex justify-content-between align-items-center mt-3">
                   <small class="text-muted">15 Juli 2025</small>
-                  <a href="#" class="read-more-sm">Baca Selengkapnya</a>
+                  <a href="article.html?article=planting-guide" class="read-more-sm">Baca Selengkapnya</a>
                 </div>
               </div>
             </div>
           </div>
         </div>
         
-        <!-- Load More Button -->
+        <!-- LM -->
+        <div class="loading-spinner">
+          <div class="spinner-border text-success" role="status">
+            <span class="visually-hidden">Loading...</span>
+          </div>
+          <p class="mt-2">Memuat artikel lainnya...</p>
+        </div>
+        
+        <div id="additional-articles" class="row g-4"></div>
+        
+        <!--Btn -->
         <div class="text-center mt-5">
-          <button class="btn-load-more">Muat Artikel Lainnya</button>
+          <button id="load-more-btn" class="btn-load-more">Muat Artikel Lainnya</button>
         </div>
       </div>
       
       <!-- Sidebar -->
       <div class="col-lg-4">
-        <!-- Categories Widget -->
         <div class="sidebar-widget">
           <h4>Kategori</h4>
           <ul class="category-list">
@@ -287,6 +329,8 @@
 
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+
   <script>
     const originalTitle = document.title;
     const hiddenTitle = "Sleeping... 😴😴";
@@ -297,6 +341,118 @@
             document.title = originalTitle;
         }
     });
+    
+    // lazy loading
+    document.addEventListener('DOMContentLoaded', function() {
+      const loadMoreBtn = document.getElementById('load-more-btn');
+      const additionalArticlesContainer = document.getElementById('additional-articles');
+      const loadingSpinner = document.querySelector('.loading-spinner');
+      
+      const additionalArticles = [
+        {
+          id: "composting-techniques",
+          title: "Teknik Kompos Modern untuk Pemula",
+          excerpt: "Pelajari cara membuat kompos efektif dengan metode terbaru",
+          image: "https://images.unsplash.com/photo-1516711345667-ebafb3ebea12?q=80&w=1172&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          category: "Panduan",
+          icon: "bi bi-recycle",
+          date: "10 Juli 2025"
+        },
+        {
+          id: "organic-pest-control",
+          title: "Mengatasi Hama Tanaman Secara Organik",
+          excerpt: "Solusi alami untuk melindungi kebun Anda dari serangga",
+          image: "https://images.unsplash.com/photo-1598512752271-33f913a5af13?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          category: "Tips",
+          icon: "bi bi-bug",
+          date: "5 Juli 2025"
+        },
+        {
+          id: "small-garden-design",
+          title: "Desain Taman untuk Ruang Terbatas",
+          excerpt: "Ide kreatif untuk memiliki kebun di area sempit",
+          image: "https://images.unsplash.com/photo-1701484263581-9b796dd5358b?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          category: "Produk Sorotan",
+          icon: "bi bi-building",
+          date: "1 Juli 2025"
+        },
+        {
+          id: "watering-schedule",
+          title: "Jadwal Penyiraman Tanaman yang Optimal",
+          excerpt: "Kapan dan bagaimana cara menyiram tanaman dengan benar",
+          image: "https://images.unsplash.com/photo-1599277100479-3252d492a19a?q=80&w=1112&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          category: "Panduan",
+          icon: "bi bi-droplet",
+          date: "28 Juni 2025"
+        }
+      ];
+      
+      let articlesLoaded = 0;
+      const articlesPerLoad = 4;
+      
+      function createArticleCard(article) {
+        return `
+          <div class="col-sm-6 col-lg-6 article-card">
+            <div class="card h-100 lazy-load">
+              <img
+                src="${article.image}"
+                alt="${article.title}"
+                loading="lazy">
+              <div class="card-body">
+                <span class="badge badge-green mb-2"><i class="bi ${article.icon}"></i> ${article.category}</span>
+                <h6 class="card-title">${article.title}</h6>
+                <p class="card-text small text-muted">${article.excerpt}</p>
+                <div class="d-flex justify-content-between align-items-center mt-3">
+                  <small class="text-muted">${article.date}</small>
+                  <a href="article.html?article=${article.id}" class="read-more-sm">Baca Selengkapnya</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        `;
+      }
+      
+      // load more
+      function loadMoreArticles() {
+        loadingSpinner.classList.add('show');
+        loadMoreBtn.disabled = true;
+        
+        setTimeout(() => {
+          const nextArticles = additionalArticles.slice(articlesLoaded, articlesLoaded + articlesPerLoad);
+          
+          nextArticles.forEach(article => {
+            const articleCard = createArticleCard(article);
+            additionalArticlesContainer.insertAdjacentHTML('beforeend', articleCard);
+          });
+          
+          articlesLoaded += nextArticles.length;
+          
+          loadingSpinner.classList.remove('show');
+          loadMoreBtn.disabled = false;
+          
+          document.querySelectorAll('.lazy-load').forEach(img => {
+            img.classList.add('loaded');
+          });
+          
+          if (articlesLoaded >= additionalArticles.length) {
+            loadMoreBtn.textContent = 'Semua Artikel Telah Dimuat';
+            loadMoreBtn.disabled = true;
+          }
+        }, 800);
+      }
+      
+      loadMoreBtn.addEventListener('click', loadMoreArticles);
+      
+      window.addEventListener('scroll', () => {
+        if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 500) {
+          if (articlesLoaded < additionalArticles.length && !loadMoreBtn.disabled) {
+            loadMoreArticles();
+          }
+        }
+      });
+    });
   </script>
+
+  
 </body>
 </html>
