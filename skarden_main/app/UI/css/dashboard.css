@@ -728,7 +728,7 @@ body {
     font-size: 18px;
   }
   .stat-card {
-    width: 400px;
+    width: 400px !important;
     position: relative;
     left: 50%;
     transform: translateX(-50%);
@@ -747,6 +747,9 @@ body {
   }
   .chart-container {
     height: 180px;
+  }
+  .chart-card {
+    width: 400px !important;
   }
   .account-chart .chart-container {
     height: 160px;
@@ -820,6 +823,9 @@ body {
     gap: 15px;
     width: 80%;
   }
+  .stat-card {
+    width: 730px;
+  }
   .form-row {
     grid-template-columns: 1fr;
   }
@@ -838,7 +844,7 @@ body {
     gap: 15px;
   }
   .chart-card {
-    width: 400px;
+    width: 730px;
   }
   .chart-container {
     height: 200px;
