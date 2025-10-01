@@ -1,4 +1,4 @@
-const button = document.querySelectorAll(".category-section a");
+const button = document.querySelectorAll("#category-filter-menu");
 
 button.forEach((btn) => {
   btn.addEventListener("click", (e) => {

@@ -29,9 +29,27 @@
             <li class="dropdown">
               <a href="marketpage.html" class="dropbtn active">Shop</a>
               <div class="dropdown-content">
-                <a href="#">Plants</a>
-                <a href="#">Tools</a>
-                <a href="#">Seeds</a>
+                <a
+                  id="category-filter-menu"
+                  href=""
+                  data-jenis="Sayuran Dan Buah"
+                  >Sayuran dan Buah</a
+                >
+                <a id="category-filter-menu" href="" data-jenis="Bibit"
+                  >Bibit tanaman</a
+                >
+                <a id="category-filter-menu" href="" data-jenis="Alat Pertanian"
+                  >Alat pertanian</a
+                >
+                <a id="category-filter-menu" href="" data-jenis="Pot"
+                  >Pot tanaman</a
+                >
+                <a id="category-filter-menu" href="" data-jenis="Pupuk"
+                  >Pupuk</a
+                >
+                <a id="category-filter-menu" href="" data-jenis="Bunga"
+                  >Bunga</a
+                >
               </div>
             </li>
             <li><a href="about.html">About</a></li>
@@ -42,14 +60,14 @@
             <input type="search" placeholder="Search products..." /><i
               class="fas fa-search"
             ></i>
-            <a href="/skarden_main/app/UI/productHtml/cart.html"><i class="fas fa-shopping-cart"></i></a>
+            <a href="/skarden_main/app/UI/productHtml/cart.html"
+              ><i class="fas fa-shopping-cart"></i
+            ></a>
           </div>
         </nav>
       </div>
-      
 
       <div class="productslist-container">
-
         <!-- FILTER/SORTING SECTION -->
         <div class="sorting">
           <button
@@ -285,5 +303,6 @@
         }
       });
     </script>
+    <script src="/kategori.js"></script>
   </body>
 </html>

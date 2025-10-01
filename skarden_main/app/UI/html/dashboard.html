@@ -1,0 +1,871 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=2, user-scalable=no"
+    />
+    <title>Skarden Dashboard</title>
+    <link rel="stylesheet" href="../css/dashboard.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <link
+      type="icon"
+      rel="icon"
+      href="/skarden_main/app/UI/icon/png/prim1.1nbg.png"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="dashboard-container">
+      <!-- Sidebar -->
+      <nav class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+          <h1>Skarden</h1>
+          <p>Dashboard Admin</p>
+        </div>
+        <div class="sidebar-menu">
+          <a href="#" class="menu-item active" data-section="dashboard">
+            <i class="fas fa-chart-line"></i>
+            <span>Dashboard</span>
+          </a>
+          <a href="#" class="menu-item" data-section="products">
+            <i class="fas fa-box"></i>
+            <span>Produk</span>
+          </a>
+          <a href="#" class="menu-item" data-section="orders">
+            <i class="fas fa-shopping-cart"></i>
+            <span>Pesanan</span>
+          </a>
+          <a href="#" class="menu-item" data-section="history">
+            <i class="fas fa-history"></i>
+            <span>Riwayat Pembelian</span>
+          </a>
+        </div>
+      </nav>
+
+      <!-- Sidebar Overlay for Mobile -->
+      <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+      <!-- Main Content -->
+      <main class="main-content">
+        <button class="menu-toggle" id="menuToggle">
+          <i class="fas fa-bars"></i>
+        </button>
+
+        <!-- Dashboard Section -->
+        <section id="dashboard" class="content-section">
+          <div class="content-header">
+            <h2>Dashboard</h2>
+            <div class="user-info">
+              <img
+                src="https://i.pinimg.com/736x/aa/a7/d7/aaa7d72fbe21a762ea94d7bb35826d23.jpg"
+                alt="User Avatar"
+              />
+              <span>Admin</span>
+            </div>
+          </div>
+
+          <!-- Stats Cards -->
+          <div class="stats-container">
+            <div class="stat-card income">
+              <div class="stat-header">
+                <div class="stat-title">Jumlah Pemasukan</div>
+                <div class="stat-icon income">
+                  <i class="fas fa-money-bill-wave"></i>
+                </div>
+              </div>
+              <div class="stat-value">Rp. 170.000</div>
+              <div class="stat-change positive">
+                <i class="fas fa-arrow-up"></i> 6,25% dari bulan terakhir
+              </div>
+            </div>
+
+            <div class="stat-card sales">
+              <div class="stat-header">
+                <div class="stat-title">Jumlah Penjualan</div>
+                <div class="stat-icon sales">
+                  <i class="fas fa-shopping-bag"></i>
+                </div>
+              </div>
+              <div class="stat-value">120</div>
+              <div class="stat-change positive">
+                <i class="fas fa-arrow-up"></i> 9,09% dari bulan terakhir
+              </div>
+            </div>
+
+            <div class="stat-card accounts">
+              <div class="stat-header">
+                <div class="stat-title">Account Terdaftar</div>
+                <div class="stat-icon accounts">
+                  <i class="fas fa-users"></i>
+                </div>
+              </div>
+              <div class="stat-value">1000</div>
+              <div class="stat-change positive">
+                <i class="fas fa-arrow-up"></i> 25 account terkini
+              </div>
+            </div>
+
+            <div class="stat-card orders">
+              <div class="stat-header">
+                <div class="stat-title">Pesanan Baru</div>
+                <div class="stat-icon orders">
+                  <i class="fas fa-clipboard-list"></i>
+                </div>
+              </div>
+              <div class="stat-value">24</div>
+              <div class="stat-change positive">
+                <i class="fas fa-arrow-up"></i> 12% dari bulan terakhir
+              </div>
+            </div>
+          </div>
+
+          <!-- Charts -->
+          <div class="charts-container">
+            <div class="chart-card">
+              <h3>Pemasukan</h3>
+              <div class="chart-container">
+                <canvas id="pemasukanChart"></canvas>
+              </div>
+            </div>
+
+            <div class="chart-card">
+              <h3>Penjualan</h3>
+              <div class="chart-container">
+                <canvas id="penjualanChart"></canvas>
+              </div>
+            </div>
+
+            <div class="chart-card account-chart">
+              <h3>Data Account</h3>
+              <div class="chart-container">
+                <canvas id="akunChart"></canvas>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Products Section -->
+        <section id="products" class="content-section d-none">
+          <div class="content-header">
+            <h2>Produk</h2>
+            <div class="user-info">
+              <img
+                src="https://i.pinimg.com/736x/aa/a7/d7/aaa7d72fbe21a762ea94d7bb35826d23.jpg"
+                alt="User Avatar"
+              />
+              <span>Admin</span>
+            </div>
+          </div>
+
+          <div class="product-section">
+            <div class="section-header">
+              <h3>Daftar Produk</h3>
+              <button class="add-product-btn" id="addProductBtn">
+                <i class="fas fa-plus"></i> Tambah Produk
+              </button>
+            </div>
+
+            <div class="product-form" id="productForm">
+              <h4 id="headerTextForm">Tambah Produk</h4>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="productName">Kode</label>
+                  <input
+                    type="text"
+                    id="productName"
+                    class="form-control"
+                    placeholder="Kode"
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="productName">Nama Produk</label>
+                  <input
+                    type="text"
+                    id="productName"
+                    class="form-control"
+                    placeholder="Nama produk"
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="productName">Satuan</label>
+                  <input
+                    type="text"
+                    id="productName"
+                    class="form-control"
+                    placeholder="Satuan"
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="productPrice">Harga</label>
+                  <input
+                    type="number"
+                    id="productPrice"
+                    class="form-control"
+                    placeholder="Harga produk"
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="productCategory">Kategori</label>
+                  <select id="productCategory" class="form-control">
+                    <option value="">Pilih Kategori</option>
+                    <option value="sayurbuah">Sayur Dan Buah</option>
+                    <option value="bibit">Bibit Tanaman</option>
+                    <option value="pot">Pot</option>
+                    <option value="bunga">Bunga</option>
+                    <option value="alat">Alat</option>
+                    <option value="pupuk">Pupuk</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="productImage">Gambar Produk</label>
+                <input type="file" id="productImage" class="form-control" />
+              </div>
+              <button id="btnconfirm" type="button" class="btn-primary">
+                Simpan Produk
+              </button>
+            </div>
+
+            <div class="product-grid">
+              <div class="product-card">
+                <img
+                  src="https://cdn.yummy.co.id/content-images/images/20231112/420f3e59580d5cffd2b971cda34b2c5c.png?x-oss-process=image/format,webp"
+                  alt="Jeruk"
+                  class="product-img"
+                />
+                <div class="product-info">
+                  <div class="product-code">P001</div>
+                  <div class="product-name">Jeruk</div>
+                  <div class="product-price">Rp. 20.000/kg</div>
+                  <div class="product-category">Sayur Dan Buah</div>
+                  <div class="product-actions">
+                    <button id="editProductBtn" class="btn-edit">
+                      <i class="fas fa-edit"></i>
+                    </button>
+                    <button class="btn-delete">
+                      <i class="fas fa-trash"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="product-card">
+                <img
+                  src="https://cdn.yummy.co.id/content-images/images/20231112/420f3e59580d5cffd2b971cda34b2c5c.png?x-oss-process=image/format,webp"
+                  alt="Jeruk"
+                  class="product-img"
+                />
+                <div class="product-info">
+                  <div class="product-code">P002</div>
+                  <div class="product-name">Jeruk</div>
+                  <div class="product-price">Rp. 20.000/kg</div>
+                  <div class="product-category">Sayur Dan Buah</div>
+                  <div class="product-actions">
+                    <button id="editProductBtn" class="btn-edit">
+                      <i class="fas fa-edit"></i>
+                    </button>
+                    <button class="btn-delete">
+                      <i class="fas fa-trash"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="product-card">
+                <img
+                  src="https://cdn.yummy.co.id/content-images/images/20231112/420f3e59580d5cffd2b971cda34b2c5c.png?x-oss-process=image/format,webp"
+                  alt="Jeruk"
+                  class="product-img"
+                />
+                <div class="product-info">
+                  <div class="product-code">P003</div>
+                  <div class="product-name">Jeruk</div>
+                  <div class="product-price">Rp. 20.000/kg</div>
+                  <div class="product-category">Sayur Dan Buah</div>
+                  <div class="product-actions">
+                    <button id="editProductBtn" class="btn-edit">
+                      <i class="fas fa-edit"></i>
+                    </button>
+                    <button class="btn-delete">
+                      <i class="fas fa-trash"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="product-card">
+                <img
+                  src="https://cdn.yummy.co.id/content-images/images/20231112/420f3e59580d5cffd2b971cda34b2c5c.png?x-oss-process=image/format,webp"
+                  alt="Jeruk"
+                  class="product-img"
+                />
+                <div class="product-info">
+                  <div class="product-code">P004</div>
+                  <div class="product-name">Jeruk</div>
+                  <div class="product-price">Rp. 20.000/kg</div>
+                  <div class="product-category">Sayur Dan Buah</div>
+                  <div class="product-actions">
+                    <button id="editProductBtn" class="btn-edit">
+                      <i class="fas fa-edit"></i>
+                    </button>
+                    <button class="btn-delete">
+                      <i class="fas fa-trash"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="product-card">
+                <img
+                  src="https://cdn.yummy.co.id/content-images/images/20231112/420f3e59580d5cffd2b971cda34b2c5c.png?x-oss-process=image/format,webp"
+                  alt="Jeruk"
+                  class="product-img"
+                />
+                <div class="product-info">
+                  <div class="product-code">P005</div>
+                  <div class="product-name">Jeruk</div>
+                  <div class="product-price">Rp. 20.000/kg</div>
+                  <div class="product-category">Sayur Dan Buah</div>
+                  <div class="product-actions">
+                    <button id="editProductBtn" class="btn-edit">
+                      <i class="fas fa-edit"></i>
+                    </button>
+                    <button class="btn-delete">
+                      <i class="fas fa-trash"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="product-card">
+                <img
+                  src="https://cdn.yummy.co.id/content-images/images/20231112/420f3e59580d5cffd2b971cda34b2c5c.png?x-oss-process=image/format,webp"
+                  alt="Jeruk"
+                  class="product-img"
+                />
+                <div class="product-info">
+                  <div class="product-code">P006</div>
+                  <div class="product-name">Jeruk</div>
+                  <div class="product-price">Rp. 20.000/kg</div>
+                  <div class="product-category">Sayur Dan Buah</div>
+                  <div class="product-actions">
+                    <button id="editProductBtn" class="btn-edit">
+                      <i class="fas fa-edit"></i>
+                    </button>
+                    <button class="btn-delete">
+                      <i class="fas fa-trash"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Orders Section -->
+        <section id="orders" class="content-section d-none">
+          <div class="content-header">
+            <h2>Pesanan</h2>
+            <div class="user-info">
+              <img
+                src="https://i.pinimg.com/736x/aa/a7/d7/aaa7d72fbe21a762ea94d7bb35826d23.jpg"
+                alt="User Avatar"
+              />
+              <span>Admin</span>
+            </div>
+          </div>
+
+          <div class="orders-section">
+            <h3>Daftar Pesanan</h3>
+            <div class="table-container">
+              <table class="data-table">
+                <thead>
+                  <tr>
+                    <th>Tanggal dan Waktu Pesanan</th>
+                    <th>Nama</th>
+                    <th>ID Pesanan</th>
+                    <th>Nama Barang</th>
+                    <th>Pembayaran</th>
+                    <th>Status</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>24-07-2025, 20:15</td>
+                    <td>Julianto</td>
+                    <td><a href="">98748787812</a></td>
+                    <td>Jeruk</td>
+                    <td>COD (CASH On Delivery)</td>
+                    <td>
+                      <div class="order-actions">
+                        <button class="btn-accept">Terima</button>
+                        <button class="btn-reject">Tolak</button>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>24-07-2025, 18:30</td>
+                    <td>Siti Nurhaliza</td>
+                    <td><a href="">98748787813</a></td>
+                    <td>Tomat</td>
+                    <td>Transfer Bank</td>
+                    <td>
+                      <div class="order-actions">
+                        <button class="btn-accept">Terima</button>
+                        <button class="btn-reject">Tolak</button>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>24-07-2025, 16:45</td>
+                    <td>Budi Santoso</td>
+                    <td><a href="">98748787814</a></td>
+                    <td>Pupuk Organik</td>
+                    <td>E-Wallet</td>
+                    <td>
+                      <div class="order-actions">
+                        <button class="btn-accept">Terima</button>
+                        <button class="btn-reject">Tolak</button>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <!-- History Section -->
+        <section id="history" class="content-section d-none">
+          <div class="content-header">
+            <h2>Riwayat Pembelian</h2>
+            <div class="user-info">
+              <img
+                src="https://i.pinimg.com/736x/aa/a7/d7/aaa7d72fbe21a762ea94d7bb35826d23.jpg"
+                alt="User Avatar"
+              />
+              <span>Admin</span>
+            </div>
+          </div>
+
+          <div class="history-section">
+            <div class="table-container">
+              <table class="data-table">
+                <thead>
+                  <tr>
+                    <th>No</th>
+                    <th>Tanggal Dan Waktu Selesai</th>
+                    <th>Nama</th>
+                    <th>ID Pesanan</th>
+                    <th>Nama Barang</th>
+                    <th>Pembayaran</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>1</td>
+                    <td>28-07-2025, 13:21</td>
+                    <td>Julianto</td>
+                    <td><a href="">98748787812</a></td>
+                    <td>Jeruk</td>
+                    <td>COD (Cash On Delivery)</td>
+                  </tr>
+                  <tr>
+                    <td>2</td>
+                    <td>28-07-2025, 13:21</td>
+                    <td>Julianto</td>
+                    <td><a href="">98748787812</a></td>
+                    <td>Jeruk</td>
+                    <td>COD (Cash On Delivery)</td>
+                  </tr>
+                  <tr>
+                    <td>3</td>
+                    <td>28-07-2025, 13:21</td>
+                    <td>Julianto</td>
+                    <td><a href="">98748787812</a></td>
+                    <td>Jeruk</td>
+                    <td>COD (Cash On Delivery)</td>
+                  </tr>
+                  <tr>
+                    <td>4</td>
+                    <td>28-07-2025, 13:21</td>
+                    <td>Julianto</td>
+                    <td><a href="">98748787812</a></td>
+                    <td>Jeruk</td>
+                    <td>COD (Cash On Delivery)</td>
+                  </tr>
+                  <tr>
+                    <td>5</td>
+                    <td>28-07-2025, 13:21</td>
+                    <td>Julianto</td>
+                    <td><a href="">98748787812</a></td>
+                    <td>Jeruk</td>
+                    <td>COD (Cash On Delivery)</td>
+                  </tr>
+                  <tr>
+                    <td>6</td>
+                    <td>28-07-2025, 13:21</td>
+                    <td>Julianto</td>
+                    <td><a href="">98748787812</a></td>
+                    <td>Jeruk</td>
+                    <td>COD (Cash On Delivery)</td>
+                  </tr>
+                  <tr>
+                    <td>7</td>
+                    <td>28-07-2025, 13:21</td>
+                    <td>Julianto</td>
+                    <td><a href="">98748787812</a></td>
+                    <td>Jeruk</td>
+                    <td>COD (Cash On Delivery)</td>
+                  </tr>
+                  <tr>
+                    <td>8</td>
+                    <td>28-07-2025, 13:21</td>
+                    <td>Julianto</td>
+                    <td><a href="">98748787812</a></td>
+                    <td>Jeruk</td>
+                    <td>COD (Cash On Delivery)</td>
+                  </tr>
+                  <tr>
+                    <td>9</td>
+                    <td>28-07-2025, 13:21</td>
+                    <td>Julianto</td>
+                    <td><a href="">98748787812</a></td>
+                    <td>Jeruk</td>
+                    <td>COD (Cash On Delivery)</td>
+                  </tr>
+                  <tr>
+                    <td>10</td>
+                    <td>28-07-2025, 13:21</td>
+                    <td>Julianto</td>
+                    <td><a href="">98748787812</a></td>
+                    <td>Jeruk</td>
+                    <td>COD (Cash On Delivery)</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <!-- Floating Action Mobile -->
+      <div class="fab-container">
+        <button class="fab" id="fabButton">
+          <i class="fas fa-plus"></i>
+        </button>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+      // Menu Toggle
+      const menuToggle = document.getElementById("menuToggle");
+      const sidebar = document.getElementById("sidebar");
+      const sidebarOverlay = document.getElementById("sidebarOverlay");
+      const fabButton = document.getElementById("fabButton");
+
+      menuToggle.addEventListener("click", () => {
+        sidebar.classList.toggle("active");
+        sidebarOverlay.classList.toggle("active");
+      });
+
+      sidebarOverlay.addEventListener("click", () => {
+        sidebar.classList.remove("active");
+        sidebarOverlay.classList.remove("active");
+      });
+
+      // Menu Nav
+      const menuItems = document.querySelectorAll(".menu-item");
+      const contentSections = document.querySelectorAll(".content-section");
+
+      menuItems.forEach((item) => {
+        item.addEventListener("click", (e) => {
+          e.preventDefault();
+
+          menuItems.forEach((i) => i.classList.remove("active"));
+
+          item.classList.add("active");
+
+          contentSections.forEach((section) => {
+            section.classList.add("d-none");
+          });
+
+          const sectionId = item.getAttribute("data-section");
+          document.getElementById(sectionId).classList.remove("d-none");
+
+          if (window.innerWidth <= 768) {
+            sidebar.classList.remove("active");
+            sidebarOverlay.classList.remove("active");
+          }
+        });
+      });
+
+      // Product Form
+      const addProductBtn = document.getElementById("addProductBtn");
+      const productForm = document.getElementById("productForm");
+      const editProductBtn = document.getElementById("editProductBtn");
+      const btnconfirm = document.getElementById("btnconfirm");
+      const headerText = document.getElementById("headerTextForm");
+
+      addProductBtn.addEventListener("click", () => {
+        productForm.classList.toggle("active");
+        btnconfirm.textContent = "Simpan Produk";
+        headerText.textContent = "Tambah Produk";
+      });
+      editProductBtn.addEventListener("click", () => {
+        productForm.classList.toggle("active");
+        btnconfirm.textContent = "Update Produk";
+        addProductBtn.classList.toggle("hidden");
+        headerText.textContent = "Update Produk";
+      });
+
+      // FAB Button funct
+      fabButton.addEventListener("click", () => {
+        const productsSection = document.getElementById("products");
+        if (productsSection.classList.contains("d-none")) {
+          menuItems.forEach((i) => i.classList.remove("active"));
+          document
+            .querySelector('[data-section="products"]')
+            .classList.add("active");
+
+          contentSections.forEach((section) => {
+            section.classList.add("d-none");
+          });
+          productsSection.classList.remove("d-none");
+
+          setTimeout(() => {
+            productForm.classList.add("active");
+          }, 300);
+        } else {
+          productForm.classList.toggle("active");
+          btnconfirm.textContent = "Simpan Produk";
+          headerText.textContent = "Tambah Produk";
+        }
+      });
+
+      // Chart Data
+      const labels = [
+        "Jan",
+        "Feb",
+        "Mar",
+        "Apr",
+        "May",
+        "Jun",
+        "Jul",
+        "Agust",
+        "Sept",
+        "Okt",
+        "Nov",
+        "Des",
+      ];
+
+      const dataPemasukan = [
+        60000, 70000, 80000, 50000, 100000, 110000, 120000, 90000, 140000,
+        150000, 160000, 170000,
+      ];
+
+      const dataPenjualan = [10, 20, 30, 25, 50, 60, 70, 60, 90, 100, 110, 120];
+
+      const labelakun = ["Luar negeri", "Indonesia"];
+      const dataAkun = [200, 800];
+
+      // generate colors based on data trend
+      function generateColors(data) {
+        return data.map((val, i) => {
+          if (i === 0) return "#4caf50";
+          return val >= data[i - 1] ? "#4caf50" : "#f44336";
+        });
+      }
+
+      // Pemasukan Chart
+      new Chart(document.getElementById("pemasukanChart"), {
+        type: "bar",
+        data: {
+          labels: labels,
+          datasets: [
+            {
+              label: "Pemasukan",
+              data: dataPemasukan,
+              backgroundColor: generateColors(dataPemasukan),
+              borderRadius: 8,
+              barThickness: 20,
+            },
+          ],
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+            legend: {
+              display: false,
+            },
+            tooltip: {
+              backgroundColor: "rgba(0, 0, 0, 0.8)",
+              padding: 12,
+              titleFont: {
+                size: 14,
+                weight: "bold",
+              },
+              bodyFont: {
+                size: 13,
+              },
+              cornerRadius: 8,
+            },
+          },
+          scales: {
+            y: {
+              beginAtZero: true,
+              grid: {
+                color: "rgba(0, 0, 0, 0.05)",
+              },
+              ticks: {
+                font: {
+                  size: 12,
+                },
+                callback: function (value) {
+                  return "Rp " + value.toLocaleString("id-ID");
+                },
+              },
+            },
+            x: {
+              grid: {
+                display: false,
+              },
+              ticks: {
+                font: {
+                  size: 12,
+                },
+              },
+            },
+          },
+        },
+      });
+
+      // Penjualan Chart
+      new Chart(document.getElementById("penjualanChart"), {
+        type: "bar",
+        data: {
+          labels: labels,
+          datasets: [
+            {
+              label: "Penjualan",
+              data: dataPenjualan,
+              backgroundColor: generateColors(dataPenjualan),
+              borderRadius: 8,
+              barThickness: 20,
+            },
+          ],
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+            legend: {
+              display: false,
+            },
+            tooltip: {
+              backgroundColor: "rgba(0, 0, 0, 0.8)",
+              padding: 12,
+              titleFont: {
+                size: 14,
+                weight: "bold",
+              },
+              bodyFont: {
+                size: 13,
+              },
+              cornerRadius: 8,
+            },
+          },
+          scales: {
+            y: {
+              beginAtZero: true,
+              grid: {
+                color: "rgba(0, 0, 0, 0.05)",
+              },
+              ticks: {
+                font: {
+                  size: 12,
+                },
+              },
+            },
+            x: {
+              grid: {
+                display: false,
+              },
+              ticks: {
+                font: {
+                  size: 12,
+                },
+              },
+            },
+          },
+        },
+      });
+
+      // Akun Chart
+      new Chart(document.getElementById("akunChart"), {
+        type: "doughnut",
+        data: {
+          labels: labelakun,
+          datasets: [
+            {
+              data: dataAkun,
+              backgroundColor: ["#4caf50", "#81c784"],
+              borderColor: "#ffffff",
+              borderWidth: 3,
+              hoverOffset: 10,
+            },
+          ],
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+            legend: {
+              position: "right",
+              labels: {
+                font: {
+                  size: 14,
+                },
+                padding: 20,
+              },
+            },
+            tooltip: {
+              backgroundColor: "rgba(0, 0, 0, 0.8)",
+              padding: 12,
+              titleFont: {
+                size: 14,
+                weight: "bold",
+              },
+              bodyFont: {
+                size: 13,
+              },
+              cornerRadius: 8,
+            },
+          },
+          cutout: "60%",
+        },
+      });
+
+      window.addEventListener("resize", () => {});
+    </script>
+  </body>
+</html>

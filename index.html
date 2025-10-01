@@ -1,412 +1,535 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="/skarden_main/app/UI/icon/png/prim1.1nbg.png" />
+    <title>Skarden | Welcome</title>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/skarden_main/app/UI/css/SKrev1.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css"
+      rel="stylesheet"
+    />
+  </head>
+  <div id="page-fade"></div>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="icon" href="/skarden_main/app/UI/icon/png/prim1.1nbg.png">
-  <title>Skarden | Welcome</title>
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="/skarden_main/app/UI/css/SKrev1.css">
-  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
-</head>
-<div id="page-fade"></div>
-
-<body>
-
-  <!-- Nav -->
-  <div class="navbar-container" data-aos="fade-down">
-    <nav class="navbar">
-      <a href="#"><img src="/skarden_main/app/UI/icon/png/prim1.1nbg.png" style="width: 65px;"></a>
-      <ul class="nav-links">
-        <li><a href="#">Home</a></li>
-        <li class="dropdown">
-          <a href="/skarden_main/app/UI/html/marketpage.html" class="dropbtn">Shop</a>
-          <div class="dropdown-content">
-            <a href="#">Plants</a>
-            <a href="#">Tools</a>
-            <a href="#">Seeds</a>
-          </div>
-        </li>
-        <li><a href="/skarden_main/app/UI/html/about.html">About</a></li>
-        <li><a href="/skarden_main/app/UI/html/blog.html">Blog</a></li>
-        <li><a href="/skarden_main/app/UI/html/contact.html">Contact</a></li>
-      </ul>
-      <div class="search-cart">
-        <input type="search" placeholder="Search products..."><i class="fas fa-search"></i>
-        <a href="skarden_main/app/UI/productHtml/cart.html"><i class="fas fa-shopping-cart"></i></a>
-      </div>
-    </nav>
-  </div>
-
-  <!-- Hero -->
-  <section class="hero">
-    <div class="hero-text" data-aos="fade-right" data-aos-delay="400">
-      <h1 class="animate_animated animate__fadeInLeft">Farming Starts <br><span>with a Single Seed</span></h1>
-      <p>Panen besar dimulai dari langkah kecil. Lengkapi kebutuhan bertani Anda, dan mari tumbuh bersama kami.
-      </p>
-      <a href="#" class="button button-success">Shop Now</a>
-      <a href="#" class="button button-outline">View Catalog</a>
-      <div style="color: #666; margin-top: 1.5rem;">
-        <p><i class="fas fa-truck"></i> Gratis ongkir s/d 200rb</p>
-        <p><i class="fas fa-shield-alt"></i> Jaminan Kualitas 100%</p>
-      </div>
-    </div>
-    <div class="hero-img" data-aos="fade-left" data-aos-delay="600">
-      <img src="https://images.pexels.com/photos/1301856/pexels-photo-1301856.jpeg?auto=compress&cs=tinysrgb&w=800"
-        alt="Gardening">
-
-    </div>
-  </section>
-
-  <!-- Feat -->
-  <section class="features">
-    <div data-aos="zoom-in">
-      <i class="fas fa-truck"></i>
-      <h5>Free Shipping</h5>
-      <p>Gratis ongkir jika belanja di atas 499rb</p>
-    </div>
-    <div data-aos="zoom-in">
-      <i class="fas fa-shield-alt"></i>
-      <h5>Quality Guarantee</h5>
-      <p>Kualitas 100% & Jaminan uang kembali</p>
-    </div>
-    <div data-aos="zoom-in">
-      <i class="fas fa-undo-alt"></i>
-      <h5>Easy Returns</h5>
-      <p>30 hari pengembalian bebas biaya</p>
-    </div>
-    <div data-aos="zoom-in">
-      <i class="fas fa-leaf"></i>
-      <h5>Eco-Friendly</h5>
-      <p>Produk tahan lama dan organik</p>
-    </div>
-  </section>
-
-  <!-- Cat -->
-  <section class="category-section">
-    <div class="container">
-      <h2 data-aos="zoom-in-up">Shop by Category</h2>
-      <p data-aos="zoom-in-up">Temukan semua yang anda butuhkan untuk menanam & merawat tanaman anda</p>
-
-      <div class="category-grid">
-        <div data-aos="fade-up">
-          <div class="category-card lighter-green">
-            <img
-              src="https://www.gardentech.com/-/media/project/oneweb/gardentech/images/blog/starting-seeds-right-in-your-garden/starting_seeds_right_in_your_garden_header.jpg"
-              alt="Seeds & Bulbs" />
-            <div class="cattext">
-              <h3>Seeds & Bulbs</h3>
-              <p>Organic vegetable, flower, and herb seeds</p>
-              <a href="#" data-jenis="Bibit">Shop Now <span>&rarr;</span></a>
+  <body>
+    <!-- Nav -->
+    <div class="navbar-container" data-aos="fade-down">
+      <nav class="navbar">
+        <a href="#"
+          ><img
+            src="/skarden_main/app/UI/icon/png/prim1.1nbg.png"
+            style="width: 65px"
+        /></a>
+        <ul class="nav-links">
+          <li><a href="#">Home</a></li>
+          <li class="dropdown">
+            <a href="/skarden_main/app/UI/html/marketpage.html" class="dropbtn"
+              >Shop</a
+            >
+            <div class="dropdown-content">
+              <a id="category-filter-menu" href="" data-jenis="Sayuran Dan Buah"
+                >Sayuran dan Buah</a
+              >
+              <a id="category-filter-menu" href="" data-jenis="Bibit"
+                >Bibit tanaman</a
+              >
+              <a id="category-filter-menu" href="" data-jenis="Alat Pertanian"
+                >Alat pertanian</a
+              >
+              <a id="category-filter-menu" href="" data-jenis="Pot"
+                >Pot tanaman</a
+              >
+              <a id="category-filter-menu" href="" data-jenis="Pupuk">Pupuk</a>
+              <a id="category-filter-menu" href="" data-jenis="Bunga">Bunga</a>
             </div>
-          </div>
-        </div>
-
-        <div data-aos="fade-up" data-aos-delay="100">
-          <div class="category-card lighter-green">
-            <img
-              src="https://www.sciencing.com/sciencing/farming-tools-ancient-egypt-6893/3d2167ddf1634b76a375716f1c76827b.jpg"
-              alt="Garden Tools" />
-            <div class="cattext">
-              <h3>Farming Tools</h3>
-              <p>Professional Farming tools</p>
-              <a href="#" data-jenis="Alat Pertanian">Shop Now <span>&rarr;</span></a>
-            </div>
-          </div>
-        </div>
-
-        <div data-aos="fade-up" data-aos-delay="200">
-          <div class="category-card lighter-green">
-            <img src="https://eos.com/wp-content/uploads/2023/11/components-of-different-types-of-fertilizers.jpg"
-              alt="Fertilizers" />
-            <div class="cattext">
-              <h3>Fertilizers</h3>
-              <p>Organic and synthetic plant nutrition</p>
-              <a href="#" data-jenis="Pupuk">Shop Now <span>&rarr;</span></a>
-            </div>
-          </div>
-        </div>
-
-        <div data-aos="fade-up" data-aos-delay="300">
-          <div class="category-card lighter-green">
-            <img src="https://www.glastresgreens.com/img/bg-img/blog/11-1.jpg" alt="Pots & Planters" />
-            <div class="cattext">
-              <h3>Pots & Planters</h3>
-              <p>Beautiful containers for every plants</p>
-              <a href="#" data-jenis="Pot">Shop Now <span>&rarr;</span></a>
-            </div>
-          </div>
-        </div>
-
-        <div data-aos="fade-up" data-aos-delay="400">
-          <div class="category-card lighter-green">
-            <img src="https://rimage.savorjapan.com/svj/image/discover_oishii_japan/4721/article_259832_w640z.jpg"
-              alt="Flowers" />
-            <div class="cattext">
-              <h3>Flowers</h3>
-              <p>Nature’s Finest Blooms</p>
-              <a href="#" data-jenis="Bunga">Shop Now <span>&rarr;</span></a>
-            </div>
-          </div>
-        </div>
-
-        <div data-aos="fade-up" data-aos-delay="500">
-          <div class="category-card lighter-green">
-            <img
-              src="https://cdn-prod.medicalnewstoday.com/content/images/articles/316/316022/a-colorful-selection-of-fruits-and-vegetables.jpg"
-              alt="Fruits" />
-            <div class="cattext">
-              <h3>vegetable & Fruits</h3>
-              <p>Shop Fresh, Eat Healthy</p>
-              <a href="#" data-jenis="Sayuran Dan Buah">Shop Now <span>&rarr;</span></a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- FP -->
-  <section class="featured-products">
-    <div class="container">
-      <h2>Featured Products</h2>
-      <p class="subtitle">Hand-picked favorites from our gardening experts</p>
-
-      <div class="products-grid">
-        <!-- P1 -->
-        <div data-aos="zoom-in-up">
-          <div class="product-card">
-            <span class="badge">Best Seller</span>
-            <img src="https://organicbazar.net/cdn/shop/products/Untitled-design-2023-02-05T170000.099.jpg?v=1694169301"
-              alt="Tomato">
-            <div class="product-body">
-              <div class="rating">★★★★☆ <span>(124)</span></div>
-              <div class="product-title">Organic Tomato Seeds</div>
-              <div class="price">$24.99 <span class="old">$34.99</span></div>
-              <button class="btn">Add to Cart</button>
-            </div>
-          </div>
-        </div>
-
-        <!-- P2 -->
-        <div data-aos="zoom-in-up" data-aos-delay="100">
-          <div class="product-card">
-            <span class="badge">Premium</span>
-            <img src="https://competition.adesignaward.com/award-winner-design-image.php?ID=33246&N=2" alt="Tool Set">
-            <div class="product-body">
-              <div class="rating">★★★★☆ <span>(89)</span></div>
-              <div class="product-title">Farming Tool set</div>
-              <div class="price">$89.99 <span class="old">$119.99</span></div>
-              <button class="btn">Add to Cart</button>
-            </div>
-          </div>
-        </div>
-
-        <!-- P3 -->
-        <div data-aos="zoom-in-up" data-aos-delay="200">
-          <div class="product-card">
-            <span class="badge">New</span>
-            <img
-              src="https://mobileimages.lowes.com/productimages/e6dfb144-982f-4e17-abba-ea22495385b7/08228339.jpg?size=pdhism"
-              alt="Planter">
-            <div class="product-body">
-              <div class="rating">★★★★☆ <span>(67)</span></div>
-              <div class="product-title">Ceramic Planter</div>
-              <div class="price">$45.99</div>
-              <button class="btn">Add to Cart</button>
-            </div>
-          </div>
-        </div>
-
-        <!-- P4 -->
-        <div data-aos="zoom-in-up" data-aos-delay="300">
-          <div class="product-card">
-            <span class="badge">Eco-Friendly</span>
-            <img
-              src="https://lazydogfarm.com/cdn/shop/articles/organic-fertilizer-for-peppers-1080x1080.png?v=1703093696"
-              alt="Fertilizer">
-            <div class="product-body">
-              <div class="rating">★★★★☆ <span>(156)</span></div>
-              <div class="product-title">Organic Fertilizer</div>
-              <div class="price">$39.99 <span class="old">$49.99</span></div>
-              <button class="btn">Add to Cart</button>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="vacontainer">
-        <div class="vabtn"><a href="marketpage.html">View All</a></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Tsm-->
-  <section class="testimonials">
-    <div class="container">
-      <h2>What Our Customers Say</h2>
-      <p>Join thousands of happy people who trust us</p>
-
-      <div class="testimonial-cards">
-        <div class="card">
-          <div class="stars">★★★★★</div>
-          <p class="quote">
-            <em>"-"</em>
-          </p>
-          <div class="user">
-            <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Sarah Johnson">
-            <div>
-              <strong>Ruby chan</strong><br>
-              <span>lokasi</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="card">
-          <div class="stars">★★★★★</div>
-          <p class="quote">
-            <em>"-"</em>
-          </p>
-          <div class="user">
-            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Mike Chen">
-            <div>
-              <strong>Ayumu chan</strong><br>
-              <span>lokasi</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="card">
-          <div class="stars">★★★★★</div>
-          <p class="quote">
-            <em>"-"</em>
-          </p>
-          <div class="user">
-            <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Emily Rodriguez">
-            <div>
-              <strong>Hafiz kun</strong><br>
-              <span>East Java</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- SubS-->
-  <section class="subscribe-section">
-    <div class="subs-content">
-      <h3>Stay Updated</h3>
-      <p>Get the latest farming tips and exclusive offers delivered to your inbox.</p>
-      <form class="subscribe-form">
-        <input type="email" placeholder="Enter your email">
-        <button type="submit"><i class="fas fa-envelope"></i> Subscribe</button>
-      </form>
-    </div>
-  </section>
-
-  <!-- FT-->
-  <div class="main-footer">
-    <div class="footer-content">
-      <div class="footer-column">
-        <div class="footer-column-img">
-          <img src="/skarden_main/app/UI/icon/png/whitegrayscale.png" style="width: 70%;">
-        </div>
-      </div>
-      <div class="footer-column">
-        <h2 class="logo">Skarden</h2>
-        <p>Your trusted partner in building productive, flourishing farms. Quality supplies for every farming journey.
-        </p>
-        <div class="social-icons">
-          <a href="#"><i class="fab fa-facebook-f"></i></a>
-          <a href="#"><i class="fab fa-x-twitter"></i></a>
-          <a href="#"><i class="fab fa-instagram"></i></a>
-          <a href="#"><i class="fab fa-whatsapp"></i></a>
-        </div>
-      </div>
-
-      <div class="footer-column">
-        <h3>Quick Links</h3>
-        <ul>
-          <li><a href="/skarden_main/app/UI/html/about.html">About Us</a></li>
+          </li>
+          <li><a href="/skarden_main/app/UI/html/about.html">About</a></li>
+          <li><a href="/skarden_main/app/UI/html/blog.html">Blog</a></li>
           <li><a href="/skarden_main/app/UI/html/contact.html">Contact</a></li>
-          <li><a href="/skarden_main/app/UI/html/faq.html">FAQ</a></li>
-          <li><a href="/skarden_main/app/UI/html/shipping.html">Shipping Info</a></li>
-          <li><a href="/skarden_main/app/UI/html/return.html">Returns</a></li>
         </ul>
+        <div class="search-cart">
+          <input type="search" placeholder="Search products..." /><i
+            class="fas fa-search"
+          ></i>
+          <a href="skarden_main/app/UI/productHtml/cart.html"
+            ><i class="fas fa-shopping-cart"></i
+          ></a>
+          <div class="akun">
+            <a class="iconakun" href="#"><i class="fa-solid fa-user"></i></a>
+            <div class="dropdownakun">
+              <a href="/skarden_main/app/UI/html/login.html">Login</a>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </div>
+
+    <!-- Hero -->
+    <section class="hero">
+      <div class="hero-text" data-aos="fade-right" data-aos-delay="400">
+        <h1 class="animate_animated animate__fadeInLeft">
+          Farming Starts <br /><span>with a Single Seed</span>
+        </h1>
+        <p>
+          Panen besar dimulai dari langkah kecil. Lengkapi kebutuhan bertani
+          Anda, dan mari tumbuh bersama kami.
+        </p>
+        <a href="/skarden_main/app/UI/html/marketpage.html" class="button button-success">Shop Now</a>
+        <a href="#" class="button button-outline">View Catalog</a>
+        <div style="color: #666; margin-top: 1.5rem">
+          <p><i class="fas fa-truck"></i> Gratis ongkir s/d 200rb</p>
+          <p><i class="fas fa-shield-alt"></i> Jaminan Kualitas 100%</p>
+        </div>
+      </div>
+      <div class="hero-img" data-aos="fade-left" data-aos-delay="600">
+        <img
+          src="https://images.pexels.com/photos/1301856/pexels-photo-1301856.jpeg?auto=compress&cs=tinysrgb&w=800"
+          alt="Gardening"
+        />
+      </div>
+    </section>
+
+    <!-- Feat -->
+    <section class="features">
+      <div data-aos="zoom-in">
+        <i class="fas fa-truck"></i>
+        <h5>Free Shipping</h5>
+        <p>Gratis ongkir jika belanja di atas 499rb</p>
+      </div>
+      <div data-aos="zoom-in">
+        <i class="fas fa-shield-alt"></i>
+        <h5>Quality Guarantee</h5>
+        <p>Kualitas 100% & Jaminan uang kembali</p>
+      </div>
+      <div data-aos="zoom-in">
+        <i class="fas fa-undo-alt"></i>
+        <h5>Easy Returns</h5>
+        <p>30 hari pengembalian bebas biaya</p>
+      </div>
+      <div data-aos="zoom-in">
+        <i class="fas fa-leaf"></i>
+        <h5>Eco-Friendly</h5>
+        <p>Produk tahan lama dan organik</p>
+      </div>
+    </section>
+
+    <!-- Cat -->
+    <section class="category-section">
+      <div class="container">
+        <h2 data-aos="zoom-in-up">Shop by Category</h2>
+        <p data-aos="zoom-in-up">
+          Temukan semua yang anda butuhkan untuk menanam & merawat tanaman anda
+        </p>
+
+        <div class="category-grid">
+          <div data-aos="fade-up">
+            <div class="category-card lighter-green">
+              <img
+                src="https://www.gardentech.com/-/media/project/oneweb/gardentech/images/blog/starting-seeds-right-in-your-garden/starting_seeds_right_in_your_garden_header.jpg"
+                alt="Seeds & Bulbs"
+              />
+              <div class="cattext">
+                <h3>Bibit tanaman</h3>
+                <p>Benih sayuran, bunga, dan rempah-rempah</p>
+                <a id="category-filter-menu" href="" data-jenis="Bibit"
+                  >Shop Now <span>&rarr;</span></a
+                >
+              </div>
+            </div>
+          </div>
+
+          <div data-aos="fade-up" data-aos-delay="100">
+            <div class="category-card lighter-green">
+              <img
+                src="https://www.sciencing.com/sciencing/farming-tools-ancient-egypt-6893/3d2167ddf1634b76a375716f1c76827b.jpg"
+                alt="Garden Tools"
+              />
+              <div class="cattext">
+                <h3>Alat pertanian</h3>
+                <p>Alat pertanian profesional</p>
+                <a id="category-filter-menu" href="" data-jenis="Alat Pertanian"
+                  >Shop Now <span>&rarr;</span></a
+                >
+              </div>
+            </div>
+          </div>
+
+          <div data-aos="fade-up" data-aos-delay="200">
+            <div class="category-card lighter-green">
+              <img
+                src="https://eos.com/wp-content/uploads/2023/11/components-of-different-types-of-fertilizers.jpg"
+                alt="Fertilizers"
+              />
+              <div class="cattext">
+                <h3>Pupuk</h3>
+                <p>Nutrisi tanaman organik dan sintetis</p>
+                <a id="category-filter-menu" href="" data-jenis="Pupuk"
+                  >Shop Now <span>&rarr;</span></a
+                >
+              </div>
+            </div>
+          </div>
+
+          <div data-aos="fade-up" data-aos-delay="300">
+            <div class="category-card lighter-green">
+              <img
+                src="https://www.glastresgreens.com/img/bg-img/blog/11-1.jpg"
+                alt="Pots & Planters"
+              />
+              <div class="cattext">
+                <h3>Pot tanaman</h3>
+                <p>Wadah untuk semua tanaman</p>
+                <a id="category-filter-menu" href="" data-jenis="Pot"
+                  >Shop Now <span>&rarr;</span></a
+                >
+              </div>
+            </div>
+          </div>
+
+          <div data-aos="fade-up" data-aos-delay="400">
+            <div class="category-card lighter-green">
+              <img
+                src="https://rimage.savorjapan.com/svj/image/discover_oishii_japan/4721/article_259832_w640z.jpg"
+                alt="Flowers"
+              />
+              <div class="cattext">
+                <h3>Bunga</h3>
+                <p>Keindahan Bunga Pilihan Alam</p>
+                <a id="category-filter-menu" href="" data-jenis="Bunga"
+                  >Shop Now <span>&rarr;</span></a
+                >
+              </div>
+            </div>
+          </div>
+
+          <div data-aos="fade-up" data-aos-delay="500">
+            <div class="category-card lighter-green">
+              <img
+                src="https://cdn-prod.medicalnewstoday.com/content/images/articles/316/316022/a-colorful-selection-of-fruits-and-vegetables.jpg"
+                alt="Fruits"
+              />
+              <div class="cattext">
+                <h3>Sayuran dan Buah</h3>
+                <p>Belanja Segar, Hidup Sehat</p>
+                <a
+                  id="category-filter-menu"
+                  href=""
+                  data-jenis="Sayuran Dan Buah"
+                  >Shop Now <span>&rarr;</span></a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FP -->
+    <section class="featured-products">
+      <div class="container">
+        <h2>Produk unggulan</h2>
+        <p class="subtitle">Pilihan favorit dari para ahli berkebun kami</p>
+
+        <div class="products-grid">
+          <!-- P1 -->
+          <div data-aos="zoom-in-up">
+            <div class="product-card">
+              <span class="badge">Best Seller</span>
+              <img
+                src="https://static.vecteezy.com/system/resources/previews/029/721/159/non_2x/broccoli-transparent-background-png.png"
+                alt="Tomato"
+              />
+              <div class="product-body">
+                <div class="rating">★★★★⯪<span>(124)</span></div>
+                <div class="product-title">Brokoli</div>
+                <div class="price">
+                  Rp 30.000 <span class="old">Rp 60.000 </span>
+                </div>
+                <button class="btn">Add to Cart</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- P2 -->
+          <div data-aos="zoom-in-up" data-aos-delay="100">
+            <div class="product-card">
+              <span class="badge">Premium</span>
+              <img
+                src="https://down-id.img.susercontent.com/file/f568c079ae460c7829249c7d68bcf660"
+                alt="Cangkul"
+              />
+              <div class="product-body">
+                <div class="rating">★★★★☆ <span>(89)</span></div>
+                <div class="product-title">Cangkul</div>
+                <div class="price">
+                  Rp 180.000 <span class="old">Rp 360.000</span>
+                </div>
+                <button class="btn">Add to Cart</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- P3 -->
+          <div data-aos="zoom-in-up" data-aos-delay="200">
+            <div class="product-card">
+              <span class="badge">New</span>
+              <img
+                src="https://www.tanamanmart.com/wp-content/uploads/2022/02/8-e1632819262451.png"
+                alt="Planter"
+              />
+              <div class="product-body">
+                <div class="rating">★★★☆☆ <span>(67)</span></div>
+                <div class="product-title">Pot Tanaman Plastik</div>
+                <div class="price">Rp 50.000</div>
+                <button class="btn">Add to Cart</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- P4 -->
+          <div data-aos="zoom-in-up" data-aos-delay="300">
+            <div class="product-card">
+              <span class="badge">Eco-Friendly</span>
+              <img
+                src="https://down-id.img.susercontent.com/file/id-11134207-7r98o-ll1e7v5p3dcw57"
+                alt="Fertilizer"
+              />
+              <div class="product-body">
+                <div class="rating">★★★★★ <span>(156)</span></div>
+                <div class="product-title">Urea Non-Subsidi (Petro)</div>
+                <div class="price">
+                  Rp 175.000 <span class="old">Rp 350.000</span>
+                </div>
+                <button class="btn">Add to Cart</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="vacontainer">
+          <div class="vabtn">
+            <a href="/skarden_main//app/UI/html/marketpage.html">View All</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tsm-->
+    <section class="testimonials">
+      <div class="container">
+        <h2>Apa Kata Pelanggan Kami</h2>
+        <p>Bergabunglah dengan ribuan orang bahagia yang mempercayai kami</p>
+
+        <div class="testimonial-cards">
+          <div class="card">
+            <div class="stars">★★★★★</div>
+            <p class="quote">
+              <em>"-"</em>
+            </p>
+            <div class="user">
+              <img
+                src="https://randomuser.me/api/portraits/women/44.jpg"
+                alt="Sarah Johnson"
+              />
+              <div>
+                <strong>Ruby chan</strong><br />
+                <span>lokasi</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="stars">★★★★★</div>
+            <p class="quote">
+              <em>"-"</em>
+            </p>
+            <div class="user">
+              <img
+                src="https://randomuser.me/api/portraits/men/32.jpg"
+                alt="Mike Chen"
+              />
+              <div>
+                <strong>Ayumu chan</strong><br />
+                <span>lokasi</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="stars">★★★★★</div>
+            <p class="quote">
+              <em>"-"</em>
+            </p>
+            <div class="user">
+              <img
+                src="https://randomuser.me/api/portraits/women/65.jpg"
+                alt="Emily Rodriguez"
+              />
+              <div>
+                <strong>Hafiz kun</strong><br />
+                <span>East Java</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SubS-->
+    <section class="subscribe-section">
+      <div class="subs-content">
+        <h3>Stay Updated</h3>
+        <p>
+          Dapatkan tips bertani terkini dan penawaran eksklusif yang dikirimkan
+          ke kotak masuk Anda.
+        </p>
+        <form class="subscribe-form">
+          <input type="email" placeholder="Enter your email" />
+          <button type="submit">
+            <i class="fas fa-envelope"></i> Subscribe
+          </button>
+        </form>
+      </div>
+    </section>
+
+    <!-- FT-->
+    <div class="main-footer">
+      <div class="footer-content">
+        <div class="footer-column">
+          <div class="footer-column-img">
+            <img
+              src="/skarden_main/app/UI/icon/png/whitegrayscale.png"
+              style="width: 70%"
+            />
+          </div>
+        </div>
+        <div class="footer-column">
+          <h2 class="logo">Skarden</h2>
+          <p>
+            Mitra tepercaya Anda dalam membangun pertanian yang produktif dan
+            sejahtera. Perlengkapan berkualitas untuk setiap perjalanan bertani.
+          </p>
+          <div class="social-icons">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-x-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-whatsapp"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-column">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="/skarden_main/app/UI/html/about.html">About Us</a></li>
+            <li>
+              <a href="/skarden_main/app/UI/html/contact.html">Contact</a>
+            </li>
+            <li><a href="/skarden_main/app/UI/html/faq.html">FAQ</a></li>
+            <li>
+              <a href="/skarden_main/app/UI/html/shipping.html"
+                >Shipping Info</a
+              >
+            </li>
+            <li><a href="/skarden_main/app/UI/html/return.html">Returns</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <h3>Categories</h3>
+          <ul>
+            <li>
+              <a
+                id="category-filter-menu"
+                href="#"
+                data-jenis="Sayuran Dan Buah"
+                >Sayuran dan Buah</a
+              >
+            </li>
+            <li>
+              <a id="category-filter-menu" href="" data-jenis="Bibit"
+                >Bibit tanaman</a
+              >
+            </li>
+            <li>
+              <a id="category-filter-menu" href="" data-jenis="Alat Pertanian"
+                >Alat Pertanian</a
+              >
+            </li>
+            <li>
+              <a id="category-filter-menu" href="" data-jenis="Pot"
+                >Pot tanaman</a
+              >
+            </li>
+            <li>
+              <a id="category-filter-menu" href="" data-jenis="Pupuk">Pupuk</a>
+            </li>
+            <li>
+              <a id="category-filter-menu" href="" data-jenis="Bunga">Bunga</a>
+            </li>
+          </ul>
+        </div>
       </div>
 
-      <div class="footer-column">
-        <h3>Categories</h3>
-        <ul>
-          <li><a href="#">Seeds & Bulbs</a></li>
-          <li><a href="#">Garden Tools</a></li>
-          <li><a href="#">Fertilizers</a></li>
-          <li><a href="#">Pots & Planters</a></li>
-          <li><a href="#">Live Plants</a></li>
-        </ul>
+      <div class="footer-bottom">
+        <p>© 2025 Skarden. All rights reserved.</p>
+        <div class="footer-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+          <a href="#">Cookie Policy</a>
+        </div>
       </div>
     </div>
 
-    <div class="footer-bottom">
-      <p>© 2025 Skarden. All rights reserved.</p>
-      <div class="footer-links">
-        <a href="#">Privacy Policy</a>
-        <a href="#">Terms of Service</a>
-        <a href="#">Cookie Policy</a>
-      </div>
-    </div>
-  </div>
+    <script src="/skarden_main/app/UI/js/fade.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script src="kategori.js"></script>
+    <script src="array.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.26/bundled/lenis.min.js"></script>
 
+    <script>
+      AOS.init({
+        duration: 800,
+        offset: 120,
+        once: false,
+      });
+    </script>
 
+    <script>
+      const lenis = new Lenis({
+        duration: 1.2,
+        easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+        direction: "vertical",
+        gestureDirection: "vertical",
+        smooth: true,
+        smoothTouch: false,
+        touchMultiplier: 2,
+      });
 
-  <script src="/skarden_main/app/UI/js/fade.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-  <script src="kategori.js"></script>
-  <script src="array.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.26/bundled/lenis.min.js"></script>
-
-  <script>
-    AOS.init({
-      duration: 800,
-      offset: 120,
-      once: false
-    });
-  </script>
-
-  <script>
-    const lenis = new Lenis({
-      duration: 1.2,
-      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-      direction: 'vertical',
-      gestureDirection: 'vertical',
-      smooth: true,
-      smoothTouch: false,
-      touchMultiplier: 2,
-    });
-
-    function raf(time) {
-      lenis.raf(time);
-      requestAnimationFrame(raf);
-    }
-
-    requestAnimationFrame(raf);
-  </script>
-
-  <script>
-    const originalTitle = document.title;
-    const hiddenTitle = "Sleeping... 😴😴";
-
-    document.addEventListener("visibilitychange", () => {
-      if (document.hidden) {
-        document.title = hiddenTitle;
-      } else {
-        document.title = originalTitle;
+      function raf(time) {
+        lenis.raf(time);
+        requestAnimationFrame(raf);
       }
-    });
-  </script>
 
-</body>
+      requestAnimationFrame(raf);
+    </script>
 
+    <script>
+      const originalTitle = document.title;
+      const hiddenTitle = "Sleeping... 😴😴";
+
+      document.addEventListener("visibilitychange", () => {
+        if (document.hidden) {
+          document.title = hiddenTitle;
+        } else {
+          document.title = originalTitle;
+        }
+      });
+    </script>
+  </body>
 </html>

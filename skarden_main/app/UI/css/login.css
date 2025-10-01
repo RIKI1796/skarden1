@@ -1,0 +1,83 @@
+* {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+.loginForm {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100dvh;
+  border: 5px solid green;
+}
+
+.loginForm img {
+    display: block;
+    margin: auto auto 0 auto;
+    width: 7dvw;
+}
+
+.loginForm .form {
+  background-color: green;
+  width: 30dvw;
+  height: 70dvh;
+  border-radius: 20px;
+}
+
+.loginForm .header {
+  font-size: 1.5em;
+  text-align: center;
+  overflow: hidden;
+  margin-top: 2dvh;
+  padding-bottom: 2dvh;
+  color: white;
+}
+
+.loginForm input {
+  display: block;
+  width: 70%;
+  margin: 5dvh auto 0 auto;
+  border-radius: 5px;
+  border: 0.1px;
+  padding-left: 1dvw;
+}
+
+.passwordGroup {
+  position: relative;
+  width: 100%;
+  margin: auto;
+}
+.passwordGroup .iconHide {
+  position: absolute;
+  top: 54%;
+  right: 5vw;
+  cursor: pointer;
+  font-size: 18px;
+  color: #555;
+}
+
+.loginForm .button {
+  display: block;
+  width: 70%;
+  margin: 5dvh auto 0 auto;
+}
+
+.register {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+  width: 100%;
+  color: white;
+}
+
+@media screen and (max-width: 600px) {
+  .loginForm .form {
+    width: 70dvw;
+    height: 50dvh;
+  }
+  .loginForm img {
+    width: 15dvw;
+}
+}

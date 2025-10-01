@@ -2870,7 +2870,7 @@ const dataArray = [
   },
   {
     id: 60,
-    nama: "Bibit Tomat",
+    nama: "Zibit Tomat",
     deskripsi:
       "Bibit tomat berkualitas tinggi dengan daya kecambah optimal. Cocok untuk ditanam di pot maupun lahan terbuka, menghasilkan buah tomat segar berwarna merah cerah.",
     harga: 12000,
@@ -3177,6 +3177,7 @@ const dataArray = [
 ];
 
 document.addEventListener("DOMContentLoaded", () => {
+  // get
   const btn = document.getElementById("apply-filters");
   const selectPrice = document.getElementById("sort-price");
   const selectName = document.getElementById("sort-name");
@@ -3187,36 +3188,29 @@ document.addEventListener("DOMContentLoaded", () => {
   const maxPriceInput = document.getElementById("price-max");
   const resetBtn = document.getElementById("reset-filters");
   const params = new URLSearchParams(window.location.search);
-  const kategori = params.get("kategori");
+  const kategoriURL = params.get("kategori");
   const container = document.getElementById("products-scroll");
   const detailProduk = [];
 
+  // format
   function formatRupiah(angka) {
     return "Rp " + angka.toLocaleString("id-ID");
   }
 
+  // data
   let produk = JSON.parse(localStorage.getItem("dataFarm"));
   if (!produk || !Array.isArray(produk) || produk.length === 0) {
     produk = [...dataArray];
     localStorage.setItem("dataFarm", JSON.stringify(produk));
   }
-  if (!produk || !Array.isArray(produk) || produk.length === 0) {
-    return;
-  }
-  if (kategori && kategori !== "default") {
-    for (let i = filterKategori.options.length - 1; i >= 0; i--) {
-      if (filterKategori.options[i].value !== kategori) {
-        filterKategori.remove(i);
-      }
-    }
+  if (!produk || !Array.isArray(produk) || produk.length === 0) return;
+
+  // apply URL category
+  if (kategoriURL && kategoriURL !== "default") {
+    filterKategori.value = kategoriURL;
   }
 
-  let produkTampil = kategori
-    ? produk.filter(
-        (item) => item.jenis.toLowerCase() === kategori.toLowerCase()
-      )
-    : [...produk];
-
+  // render
   function renderProduk(arr) {
     container.innerHTML = "";
     arr.forEach((product) => {
@@ -3225,17 +3219,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
       let diskonPersen = 0;
       if (product.diskon && product.harga && product.diskon > 0) {
-        diskonPersen = Math.round(
-          ((product.diskon - product.harga) / product.diskon) * 100
-        );
+        diskonPersen = Math.round(((product.diskon - product.harga) / product.diskon) * 100);
       }
+
       function renderStars(rating) {
         let r = Math.round(rating * 2) / 2;
-        return (
-          "★".repeat(Math.floor(r)) +
-          (r % 1 ? "⯪" : "") +
-          "☆".repeat(5 - Math.ceil(r))
-        );
+        return "★".repeat(Math.floor(r)) + (r % 1 ? "⯪" : "") + "☆".repeat(5 - Math.ceil(r));
       }
 
       card.innerHTML = `
@@ -3247,9 +3236,7 @@ document.addEventListener("DOMContentLoaded", () => {
           <h3>${product.nama}</h3>
           <div class="price-row">
             <span class="product-price">${formatRupiah(product.harga)}</span>
-            <span class="product-price-old">${formatRupiah(
-              product.diskon
-            )}</span>
+            <span class="product-price-old">${formatRupiah(product.diskon)}</span>
           </div>
           <div class="product-meta">
             <span class="product-weight">${product.berat}</span> | 
@@ -3287,98 +3274,67 @@ document.addEventListener("DOMContentLoaded", () => {
         detailProduk.push(data);
         localStorage.setItem("detailProduk", JSON.stringify(detailProduk));
         window.location.href =
-          "/skarden_main/app/UI/productHtml/protoproductpurchase.html?id=" +
-          data.id;
+          "/skarden_main/app/UI/productHtml/protoproductpurchase.html?id=" + data.id;
       });
     });
   }
 
-  renderProduk(produkTampil);
+  // first load
+  applyFilters();
 
-  btn.onclick = () => {
-    let productt = [...produkTampil];
+  // filter
+  btn.onclick = applyFilters;
+  function applyFilters() {
+    let arr = [...produk];
 
-    if (selectPrice.value === "low-to-high") {
-      productt.sort((a, b) => a.harga - b.harga);
-    } else if (selectPrice.value === "high-to-low") {
-      productt.sort((a, b) => b.harga - a.harga);
-    }
-
-    if (selectName.value === "a-to-z") {
-      productt.sort((a, b) => a.nama.localeCompare(b.nama, "id"));
-    } else if (selectName.value === "z-to-a") {
-      productt.sort((a, b) => b.nama.localeCompare(a.nama, "id"));
-    }
-
-    if (selectDate.value === "terbaru") {
-      productt.sort((a, b) => new Date(b.tanggal) - new Date(a.tanggal));
-    } else if (selectDate.value === "terlama") {
-      productt.sort((a, b) => new Date(a.tanggal) - new Date(b.tanggal));
-    }
-
-    if (filterKategori.value !== "default") {
-      console.log("Filter kategori dipilih:", filterKategori.value);
-      productt = productt.filter(
-        (item) =>
-          item.jenis.toLowerCase() === filterKategori.value.toLowerCase()
+    if (kategoriURL && kategoriURL !== "default") {
+      arr = arr.filter(
+        (item) => item.jenis.toLowerCase() === kategoriURL.toLowerCase()
+      );
+    } else if (filterKategori.value !== "default") {
+      arr = arr.filter(
+        (item) => item.jenis.toLowerCase() === filterKategori.value.toLowerCase()
       );
     }
+
+    if (selectPrice.value === "low-to-high") arr.sort((a, b) => a.harga - b.harga);
+    if (selectPrice.value === "high-to-low") arr.sort((a, b) => b.harga - a.harga);
+    if (selectName.value === "a-to-z") arr.sort((a, b) => a.nama.localeCompare(b.nama, "id"));
+    if (selectName.value === "z-to-a") arr.sort((a, b) => b.nama.localeCompare(a.nama, "id"));
+    if (selectDate.value === "terbaru") arr.sort((a, b) => new Date(b.tanggal) - new Date(a.tanggal));
+    if (selectDate.value === "terlama") arr.sort((a, b) => new Date(a.tanggal) - new Date(b.tanggal));
+
     if (filterRating.value !== "all") {
-      let minRating = 0;
-      let maxRating = 5;
-
-      if (filterRating.value === "4") {
-        minRating = 4;
-        maxRating = 5;
-      } else if (filterRating.value === "3") {
-        minRating = 3;
-        maxRating = 3.9;
-      } else if (filterRating.value === "2") {
-        minRating = 2;
-        maxRating = 2.9;
-      }
-
-      productt = productt.filter((item) => {
-        const r = Number(item.rating) || 0;
-        const lolos = r >= minRating && r <= maxRating;
-        return lolos;
-      });
+      const [minRating, maxRating] =
+        filterRating.value === "4" ? [4, 5] :
+        filterRating.value === "3" ? [3, 3.9] :
+        filterRating.value === "2" ? [2, 2.9] : [0, 5];
+      arr = arr.filter((item) => (Number(item.rating) || 0) >= minRating && (Number(item.rating) || 0) <= maxRating);
     }
 
-    const minPrice =
-      minPriceInput.value !== "" ? Number(minPriceInput.value) : 0;
-    const maxPrice =
-      maxPriceInput.value !== "" ? Number(maxPriceInput.value) : Infinity;
+    const minPrice = minPriceInput.value !== "" ? Number(minPriceInput.value) : 0;
+    const maxPrice = maxPriceInput.value !== "" ? Number(maxPriceInput.value) : Infinity;
+    arr = arr.filter((item) => (Number(item.harga) || 0) >= minPrice && (Number(item.harga) || 0) <= maxPrice);
 
-    productt = productt.filter((item) => {
-      const h = Number(item.harga) || 0;
-      const lolos = h >= minPrice && h <= maxPrice;
-      return lolos;
-    });
+    renderProduk(arr);
+  }
 
-    if (
-      selectPrice.value === "default" &&
-      selectName.value === "default" &&
-      selectDate.value === "default" &&
-      filterKategori.value === "default" &&
-      filterRating.value === "default" &&
-      minPriceInput.value === "" &&
-      maxPriceInput.value === ""
-    ) {
-      productt = produkTampil;
-    }
-    renderProduk(productt);
-  };
-
+  // reset
   resetBtn.onclick = () => {
     selectPrice.value = "default";
     selectName.value = "default";
     selectDate.value = "default";
-    filterKategori.value = "default";
     filterRating.value = "default";
-    maxPriceInput.value = "";
     minPriceInput.value = "";
+    maxPriceInput.value = "";
 
-    renderProduk(produkTampil);
+    if (kategoriURL && kategoriURL !== "default") {
+      filterKategori.value = kategoriURL;
+    } else {
+      filterKategori.value = "default";
+    }
+
+    applyFilters();
   };
 });
+
